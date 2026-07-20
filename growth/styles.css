@@ -1914,42 +1914,69 @@ body.dark-theme .stat-badge-item {
 .search-suggestions-row {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
-    margin-top: -0.5rem;
+    padding: 0.4rem 0.2rem 0;
 }
 .suggestion-label {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-.quick-pill-btn {
-    background-color: rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: #e65100;
+    background: rgba(230, 81, 0, 0.08);
+    padding: 0.25rem 0.65rem;
     border-radius: 50px;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+body.dark-theme .suggestion-label {
+    color: #ff9800;
+    background: rgba(255, 152, 0, 0.12);
+}
+
+.quick-pill-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50px;
+    padding: 0.35rem 0.85rem;
+    font-family: inherit;
+    font-size: 0.78rem;
     font-weight: 600;
-    color: var(--color-text-muted);
+    color: var(--color-text-dark, #2d3b2d);
     cursor: pointer;
-    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 body.dark-theme .quick-pill-btn {
-    background-color: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.06);
-    color: #aaaaaa;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #FAF7F2;
+    box-shadow: none;
 }
 .quick-pill-btn:hover {
     border-color: var(--color-primary);
-    color: var(--color-primary);
-    background-color: rgba(45, 59, 45, 0.05);
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 59, 45, 0.18);
 }
 body.dark-theme .quick-pill-btn:hover {
     border-color: #c5a880;
-    color: #c5a880;
-    background-color: rgba(197, 168, 128, 0.08);
+    background-color: #c5a880;
+    color: #1e281e;
+    box-shadow: 0 4px 12px rgba(197, 168, 128, 0.2);
+}
+.quick-pill-btn:active {
+    transform: translateY(0);
 }
 
 /* Card Metadata Tags & Ratings */
