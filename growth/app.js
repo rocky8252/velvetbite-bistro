@@ -479,6 +479,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Quick Search Suggestions Pills Listener
+        const quickPillBtns = document.querySelectorAll('.quick-pill-btn');
+        quickPillBtns.forEach(pill => {
+            pill.addEventListener('click', () => {
+                const query = pill.getAttribute('data-query');
+                if (menuSearchInput) {
+                    menuSearchInput.value = query;
+                }
+                searchQuery = query;
+                applyMenuFilters();
+            });
+        });
+
         // Clear Search Trigger
         if (clearSearchBtn) {
             clearSearchBtn.addEventListener('click', () => {

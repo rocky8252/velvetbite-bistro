@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,7 +22,7 @@
     <div class="client-demo-banner" id="clientDemoBanner">
         <div class="demo-banner-content">
             <span class="demo-badge">DEMO PREVIEW</span>
-            <p class="demo-text">💡 <strong>Restaurant Owner Preview:</strong> This is the <strong>₹4,999 Growth Plan</strong> site. Try the tabletop <strong>"Scan QR Menu"</strong> standee model, table selector, and details popup modals!</p>
+            <p class="demo-text">💡 <strong>Restaurant Owner Preview:</strong> This is the <strong>₹4,999 Growth Plan</strong> site. Try the <strong>Category Filters, Diet Pills & Live Search Bar</strong> on all 35 signature menu items!</p>
         </div>
         <button class="demo-banner-close" id="closeDemoBanner" aria-label="Close Preview Banner">&times;</button>
     </div>
@@ -47,12 +47,19 @@
         </div>
     </header>
 
-    <!-- Menu Page Header -->
+    <!-- Menu Page Hero Header -->
     <section class="menu-page-header">
-        <div class="container">
-            <span class="section-tag">Aesthetic Selection</span>
-            <h1 class="font-serif" style="font-size: 3rem; margin-bottom: 1rem; color: var(--color-text-dark);">Our Digital Menu</h1>
-            <p style="max-width: 600px; margin: 0 auto; line-height: 1.6;">Browse our 15 signature handcrafted creations. Click the WhatsApp button on any item to place an order or make a pickup inquiry directly.</p>
+        <div class="container text-center">
+            <span class="section-tag"><i class="fa-solid fa-utensils"></i> Artisanal Culinary Catalog</span>
+            <h1 class="font-serif menu-hero-title">Our Digital Menu</h1>
+            <p class="menu-hero-subtitle">Explore 35 handcrafted signature creations from organic stoneground matchas to single-origin brews, fresh coolers, sourdough toasties, and Japanese desserts.</p>
+
+            <!-- Hero Stats Row -->
+            <div class="hero-stats-row">
+                <div class="stat-badge-item"><i class="fa-solid fa-award"></i> <span>35 Signature Items</span></div>
+                <div class="stat-badge-item"><i class="fa-solid fa-leaf"></i> <span>100% Organic Ingredients</span></div>
+                <div class="stat-badge-item"><i class="fa-solid fa-stopwatch"></i> <span>Fast Direct WhatsApp Order</span></div>
+            </div>
         </div>
     </section>
 
@@ -65,18 +72,31 @@
                 <!-- Search Box Row -->
                 <div class="search-box-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="menuSearchInput" class="menu-search-input" placeholder="Search food, juices, matcha, lattes, croissants, cakes...">
+                    <input type="text" id="menuSearchInput" class="menu-search-input" placeholder="Search food, juices, matcha, espresso, sourdough, croissant, cheesecake...">
                     <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search">&times;</button>
+                </div>
+
+                <!-- Quick Search Suggestions Pills -->
+                <div class="search-suggestions-row">
+                    <span class="suggestion-label"><i class="fa-solid fa-fire"></i> Popular:</span>
+                    <button class="quick-pill-btn" data-query="Matcha">🍵 Matcha</button>
+                    <button class="quick-pill-btn" data-query="Cold Brew">☕ Cold Brew</button>
+                    <button class="quick-pill-btn" data-query="Juice">🧃 Juices</button>
+                    <button class="quick-pill-btn" data-query="Salmon">🍣 Salmon</button>
+                    <button class="quick-pill-btn" data-query="Croissant">🥐 Croissant</button>
+                    <button class="quick-pill-btn" data-query="Cheesecake">🍰 Cheesecake</button>
                 </div>
 
                 <!-- Controls Row: Category & Diet Buttons -->
                 <div class="filter-controls-row">
                     <div class="filter-group category-filter-tabs">
-                        <button class="menu-filter-btn active" data-cat="all"><i class="fa-solid fa-border-all"></i> All Items</button>
-                        <button class="menu-filter-btn" data-cat="matcha"><i class="fa-solid fa-leaf"></i> Matchas & Teas</button>
-                        <button class="menu-filter-btn" data-cat="coffee"><i class="fa-solid fa-mug-hot"></i> Coffee Brews</button>
-                        <button class="menu-filter-btn" data-cat="juices"><i class="fa-solid fa-wine-glass"></i> Juices & Coolers</button>
-                        <button class="menu-filter-btn" data-cat="bakery"><i class="fa-solid fa-bread-slice"></i> Bakery & Starters</button>
+                        <button class="menu-filter-btn active" data-cat="all"><i class="fa-solid fa-border-all"></i> All (35)</button>
+                        <button class="menu-filter-btn" data-cat="matcha"><i class="fa-solid fa-leaf"></i> Matchas (6)</button>
+                        <button class="menu-filter-btn" data-cat="coffee"><i class="fa-solid fa-mug-hot"></i> Coffees (6)</button>
+                        <button class="menu-filter-btn" data-cat="juices"><i class="fa-solid fa-wine-glass"></i> Juices (6)</button>
+                        <button class="menu-filter-btn" data-cat="starters"><i class="fa-solid fa-bowl-food"></i> Starters (6)</button>
+                        <button class="menu-filter-btn" data-cat="sandwiches"><i class="fa-solid fa-bread-slice"></i> Sandwiches (5)</button>
+                        <button class="menu-filter-btn" data-cat="desserts"><i class="fa-solid fa-cake-candles"></i> Desserts (6)</button>
                     </div>
 
                     <div class="filter-group diet-filter-pills">
@@ -89,7 +109,7 @@
 
                 <!-- Results Counter & Reset Action -->
                 <div class="menu-filter-results-bar">
-                    <span class="results-count" id="menuResultsCount">Showing 17 signature handcrafted creations</span>
+                    <span class="results-count" id="menuResultsCount">Showing 35 signature handcrafted creations</span>
                     <button class="reset-filters-link" id="resetFiltersLink" style="display: none;"><i class="fa-solid fa-rotate-right"></i> Reset All Filters</button>
                 </div>
             </div>
@@ -99,12 +119,12 @@
                 <div class="empty-icon-wrapper"><i class="fa-solid fa-utensils"></i></div>
                 <h3>No Matching Menu Items Found</h3>
                 <p>We couldn't find any items matching your selected category, diet, or search query.</p>
-                <button class="btn btn-primary" id="emptyStateResetBtn"><i class="fa-solid fa-arrow-rotate-left"></i> View All Menu Items</button>
+                <button class="btn btn-primary" id="emptyStateResetBtn"><i class="fa-solid fa-arrow-rotate-left"></i> View All 35 Menu Items</button>
             </div>
             
             <!-- Category 1: Matchas & Teas -->
             <div class="menu-category-group" data-group="matcha">
-                <h2 class="menu-category-title"><i class="fa-solid fa-leaf"></i> Specialty Matchas & Teas</h2>
+                <h2 class="menu-category-title"><i class="fa-solid fa-leaf"></i> Specialty Matchas & Teas (6)</h2>
                 <div class="menu-catalog-grid">
                     
                     <!-- Item 1 -->
@@ -112,15 +132,20 @@
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500&auto=format&fit=crop&q=60" alt="Ceremonial Matcha">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
                                 <h3 class="item-title">Ceremonial Matcha Shot</h3>
                                 <span class="item-price">₹250</span>
                             </div>
-                            <p class="item-desc">Pure stoneground Uji matcha whisked in a traditional clay chawan bowl with water at exactly 80°C, offering thick umami flavor notes.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 3 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 45 kcal</span>
+                            </div>
+                            <p class="item-desc">Pure stoneground Uji matcha whisked in a traditional clay chawan bowl with water at 80°C for thick umami notes.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Ceremonial%20Matcha%20Shot%20(₹250)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Ceremonial%20Matcha%20Shot%20(₹250)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
@@ -130,15 +155,20 @@
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=500&auto=format&fit=crop&q=60" alt="Iced Matcha Latte">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
                                 <h3 class="item-title">Iced Basil Matcha Latte</h3>
                                 <span class="item-price">₹380</span>
                             </div>
-                            <p class="item-desc">Sweetened stoneground green matcha tea shaken with sweet basil leaves infusion, served chilled over cold organic almond milk and crushed ice.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 5 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 180 kcal</span>
+                            </div>
+                            <p class="item-desc">Stoneground green matcha shaken with fresh sweet basil infusion over cold almond milk and crushed ice.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Iced%20Basil%20Matcha%20Latte%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Iced%20Basil%20Matcha%20Latte%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
@@ -148,51 +178,89 @@
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=500&auto=format&fit=crop&q=60" alt="Hojicha Latte">
                             <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Hojicha Maple Latte</h3>
+                                <h3 class="item-title">Hojicha Maple Oat Latte</h3>
                                 <span class="item-price">₹360</span>
                             </div>
-                            <p class="item-desc">Roasted green tea powder producing a nutty, warm chocolate aroma, sweet-brewed with organic maple syrup and warm oat milk.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 5 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 160 kcal</span>
+                            </div>
+                            <p class="item-desc">Roasted green tea powder producing a nutty, warm chocolate aroma, sweet-brewed with maple syrup and oat milk.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Hojicha%20Maple%20Latte%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Hojicha%20Maple%20Oat%20Latte%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 4 (Juices & Coolers) -->
-                    <div class="menu-item-card" data-category="juices" data-diet="veg" data-search="yuzu matcha sparkling cooler juice tonic citrus float refreshing drink">
+                    <!-- Item 4 -->
+                    <div class="menu-item-card" data-category="matcha" data-diet="veg" data-search="yuzu matcha sparkling cooler juice tonic citrus float refreshing drink">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500&auto=format&fit=crop&q=60" alt="Yuzu Matcha Spritz">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Yuzu Matcha Sparkling Juice</h3>
+                                <h3 class="item-title">Yuzu Matcha Sparkling</h3>
                                 <span class="item-price">₹390</span>
                             </div>
-                            <p class="item-desc">A refreshing layered citrus cooler with premium tonic water, Japanese yuzu juice peels syrup, finished with a float of cold whisked matcha.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 120 kcal</span>
+                            </div>
+                            <p class="item-desc">Refreshing layered citrus cooler with tonic water, Japanese yuzu juice syrup, finished with whisked cold matcha.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Yuzu%20Matcha%20Sparkling%20Juice%20(₹390)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Yuzu%20Matcha%20Sparkling%20(₹390)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 5 -->
-                    <div class="menu-item-card" data-category="matcha" data-diet="vegan" data-search="kyoto blossom tea pickled sakura cherry floral tea hot steep">
+                    <div class="menu-item-card" data-category="matcha" data-diet="vegan" data-search="kyoto cherry blossom tea pickled sakura floral steep tea">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&auto=format&fit=crop&q=60" alt="Sakura Tea">
                             <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.7</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Kyoto Blossom Tea</h3>
+                                <h3 class="item-title">Kyoto Cherry Blossom Tea</h3>
                                 <span class="item-price">₹320</span>
                             </div>
-                            <p class="item-desc">Pickled sakura cherry blossoms steeped in hot water, producing a subtle salty-sweet floral tea with notes of plum fruit.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 30 kcal</span>
+                            </div>
+                            <p class="item-desc">Pickled sakura cherry blossoms steeped in hot spring water for a subtle salty-sweet floral infusion.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Kyoto%20Blossom%20Tea%20(₹320)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Kyoto%20Cherry%20Blossom%20Tea%20(₹320)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="menu-item-card" data-category="matcha" data-diet="vegan" data-search="dragon fruit cold brew matcha green tea tropical iced drink">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&auto=format&fit=crop&q=60" alt="Dragonfruit Matcha">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Dragon Fruit Matcha Brew</h3>
+                                <span class="item-price">₹410</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 6 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 140 kcal</span>
+                            </div>
+                            <p class="item-desc">Vibrant pink red dragonfruit puree layered with coconut water and topped with cold whisked ceremonial matcha.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Dragon%20Fruit%20Matcha%20Brew%20(₹410)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
@@ -201,228 +269,700 @@
 
             <!-- Category 2: Specialty Coffee -->
             <div class="menu-category-group" data-group="coffee">
-                <h2 class="menu-category-title"><i class="fa-solid fa-mug-hot"></i> Single-Origin Coffee Brews</h2>
+                <h2 class="menu-category-title"><i class="fa-solid fa-mug-hot"></i> Single-Origin Espresso & Brews (6)</h2>
                 <div class="menu-catalog-grid">
                     
-                    <!-- Item 6 -->
+                    <!-- Item 7 -->
                     <div class="menu-item-card" data-category="coffee" data-diet="vegan" data-search="ethiopia yirgacheffe v60 filter drip single origin coffee jasmine honey">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=500&auto=format&fit=crop&q=60" alt="Ethiopia V60">
                             <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
                                 <h3 class="item-title">Ethiopia Yirgacheffe V60</h3>
                                 <span class="item-price">₹320</span>
                             </div>
-                            <p class="item-desc">Artisan filter drip extraction showcasing bright acidity with floral jasmine notes, light honey sweetness, and citrus tea-like texture.</p>
-                            <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Ethiopia%20Yirgacheffe%20V60%20(₹320)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 6 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 10 kcal</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 7 -->
-                    <div class="menu-item-card" data-category="coffee" data-diet="vegan" data-search="kyoto style cold drip tower single origin coffee chilled drink">
-                        <div class="menu-item-img">
-                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&auto=format&fit=crop&q=60" alt="Kyoto Cold Drip">
-                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
-                        </div>
-                        <div class="menu-item-body">
-                            <div class="menu-item-top">
-                                <h3 class="item-title">Kyoto Style Cold Drip</h3>
-                                <span class="item-price">₹380</span>
-                            </div>
-                            <p class="item-desc">Single-origin beans cold extracted drop-by-drop through a glass tower for 12 hours, resulting in a rich, clean-tasting cold coffee.</p>
+                            <p class="item-desc">Artisan filter drip extraction showcasing bright acidity with floral jasmine notes and tea-like texture.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Kyoto%20Style%20Cold%20Drip%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Ethiopia%20Yirgacheffe%20V60%20(₹320)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 8 -->
-                    <div class="menu-item-card" data-category="coffee" data-diet="veg" data-search="caramel shakerato double espresso salted caramel coffee shaken frothy">
+                    <div class="menu-item-card" data-category="coffee" data-diet="vegan" data-search="kyoto style cold drip tower single origin coffee chilled drink">
                         <div class="menu-item-img">
-                            <img src="https://images.unsplash.com/photo-1510972527409-cacab14e007d?w=500&auto=format&fit=crop&q=60" alt="Caramel Shakerato">
-                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&auto=format&fit=crop&q=60" alt="Kyoto Cold Drip">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 5.0</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Caramel Shakerato</h3>
-                                <span class="item-price">₹340</span>
+                                <h3 class="item-title">Kyoto Cold Drip Tower</h3>
+                                <span class="item-price">₹380</span>
                             </div>
-                            <p class="item-desc">Double shots of bold espresso and house-made salted caramel syrup vigorously shaken with ice cubes, served frothy in a coupe glass.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 2 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 15 kcal</span>
+                            </div>
+                            <p class="item-desc">Single-origin beans cold extracted drop-by-drop through a glass tower for 12 hours for intense smoothness.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Caramel%20Shakerato%20(₹340)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Kyoto%20Cold%20Drip%20Tower%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 9 -->
-                    <div class="menu-item-card" data-category="coffee" data-diet="veg" data-search="vanilla bean cortado espresso textured milk madagascar vanilla coffee">
+                    <div class="menu-item-card" data-category="coffee" data-diet="veg" data-search="caramel shakerato double espresso salted caramel coffee shaken frothy">
                         <div class="menu-item-img">
-                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=60" alt="Cortado">
+                            <img src="https://images.unsplash.com/photo-1510972527409-cacab14e007d?w=500&auto=format&fit=crop&q=60" alt="Caramel Shakerato">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Vanilla Bean Cortado</h3>
-                                <span class="item-price">₹290</span>
+                                <h3 class="item-title">Salted Caramel Shakerato</h3>
+                                <span class="item-price">₹340</span>
                             </div>
-                            <p class="item-desc">Equal parts rich double-shot espresso and warm textured milk, infused with a drop of organic Madagascar vanilla pod extract.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 190 kcal</span>
+                            </div>
+                            <p class="item-desc">Double shots of bold espresso and house salted caramel vigorously shaken with ice, served frothy in a coupe glass.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Vanilla%20Bean%20Cortado%20(₹290)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Salted%20Caramel%20Shakerato%20(₹340)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 10 -->
+                    <div class="menu-item-card" data-category="coffee" data-diet="veg" data-search="vanilla bean cortado espresso textured milk madagascar vanilla coffee">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=60" alt="Cortado">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Madagascar Vanilla Cortado</h3>
+                                <span class="item-price">₹290</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 110 kcal</span>
+                            </div>
+                            <p class="item-desc">Equal parts rich double-shot espresso and warm textured milk infused with organic vanilla pod extract.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Madagascar%20Vanilla%20Cortado%20(₹290)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 11 -->
                     <div class="menu-item-card" data-category="coffee" data-diet="veg" data-search="rose charcoal latte activated charcoal rose petal vanilla milk coffee">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=500&auto=format&fit=crop&q=60" alt="Charcoal Latte">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
                                 <h3 class="item-title">Rose Charcoal Latte</h3>
                                 <span class="item-price">₹360</span>
                             </div>
-                            <p class="item-desc">Aesthetic latte crafted with organic activated charcoal powder, delicate rose petal essence, sweetened vanilla, and steamed milk.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 5 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 170 kcal</span>
+                            </div>
+                            <p class="item-desc">Aesthetic black latte crafted with activated charcoal, rose petal essence, sweetened vanilla, and steamed milk.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Rose%20Charcoal%20Latte%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Rose%20Charcoal%20Latte%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 12 -->
+                    <div class="menu-item-card" data-category="coffee" data-diet="veg" data-search="hazelnut cloud cold foam espresso iced coffee sweet cream">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60" alt="Hazelnut Cloud Coffee">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Hazelnut Cloud Cold Foam</h3>
+                                <span class="item-price">₹370</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 210 kcal</span>
+                            </div>
+                            <p class="item-desc">Rich iced espresso topped with thick velvety whipped hazelnut cold foam cream and crushed praline.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Hazelnut%20Cloud%20Cold%20Foam%20(₹370)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 3: Bakery, Starters & Desserts -->
-            <div class="menu-category-group" data-group="bakery">
-                <h2 class="menu-category-title"><i class="fa-solid fa-bread-slice"></i> Artisan Bakery, Starters & Desserts</h2>
+            <!-- Category 3: Artisan Juices & Coolers -->
+            <div class="menu-category-group" data-group="juices">
+                <h2 class="menu-category-title"><i class="fa-solid fa-wine-glass"></i> Artisan Juices, Coolers & Smoothies (6)</h2>
                 <div class="menu-catalog-grid">
                     
-                    <!-- Item 11 -->
-                    <div class="menu-item-card" data-category="bakery" data-diet="veg" data-search="matcha almond croissant butter frangipane cream pastry starter bakery">
+                    <!-- Item 13 -->
+                    <div class="menu-item-card" data-category="juices" data-diet="vegan" data-search="yuzu watermelon juice fresh mint cold pressed drink">
                         <div class="menu-item-img">
-                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&auto=format&fit=crop&q=60" alt="Matcha Croissant">
-                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <img src="https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=500&auto=format&fit=crop&q=60" alt="Yuzu Watermelon Juice">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Matcha Almond Croissant</h3>
-                                <span class="item-price">₹280</span>
+                                <h3 class="item-title">Yuzu Watermelon Fresh Juice</h3>
+                                <span class="item-price">₹310</span>
                             </div>
-                            <p class="item-desc">Twice-baked flaky butter croissant stuffed with rich organic Uji matcha frangipane cream, topped with toasted sliced almonds.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 110 kcal</span>
+                            </div>
+                            <p class="item-desc">Cold-pressed sweet seedless watermelon juice infused with Japanese yuzu citrus and muddled garden mint.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Matcha%20Almond%20Croissant%20(₹280)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Yuzu%20Watermelon%20Fresh%20Juice%20(₹310)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 12 -->
-                    <div class="menu-item-card" data-category="bakery" data-diet="veg" data-search="basque burnt cheesecake crustless caramel custard cake dessert bakery">
+                    <!-- Item 14 -->
+                    <div class="menu-item-card" data-category="juices" data-diet="vegan" data-search="wild berry hibiscus cooler iced tea juice tart berries">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop&q=60" alt="Wild Berry Hibiscus">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Wild Berry Hibiscus Cooler</h3>
+                                <span class="item-price">₹340</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 95 kcal</span>
+                            </div>
+                            <p class="item-desc">Organic dried hibiscus flowers steeped with wild raspberries, elderberry syrup, and served iced with lemon slices.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Wild%20Berry%20Hibiscus%20Cooler%20(₹340)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 15 -->
+                    <div class="menu-item-card" data-category="juices" data-diet="vegan" data-search="green goddess detox smoothie kale spinach cucumber apple chia juice">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&auto=format&fit=crop&q=60" alt="Green Detox Smoothie">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Green Goddess Detox Smoothie</h3>
+                                <span class="item-price">₹380</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 5 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 160 kcal</span>
+                            </div>
+                            <p class="item-desc">Nutrient-dense blend of baby spinach, Japanese cucumber, green apple, coconut water, and soaked chia seeds.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Green%20Goddess%20Detox%20Smoothie%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 16 -->
+                    <div class="menu-item-card" data-category="juices" data-diet="veg" data-search="passionfruit mango spritz tropical juice sparkling soda cooler">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60" alt="Passionfruit Mango">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Tropical Mango Passion Spritz</h3>
+                                <span class="item-price">₹360</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 130 kcal</span>
+                            </div>
+                            <p class="item-desc">Alphonso mango nectar mixed with fresh passionfruit seeds and sparkling soda water over crushed ice.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Tropical%20Mango%20Passion%20Spritz%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 17 -->
+                    <div class="menu-item-card" data-category="juices" data-diet="vegan" data-search="lychee lavender sparkling elixir floral juice cooler refreshing">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500&auto=format&fit=crop&q=60" alt="Lychee Lavender">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Lychee Lavender Elixir</h3>
+                                <span class="item-price">₹350</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 105 kcal</span>
+                            </div>
+                            <p class="item-desc">Sweet Taiwanese lychee juice infused with French lavender essence and topped with effervescent soda.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Lychee%20Lavender%20Elixir%20(₹350)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 18 -->
+                    <div class="menu-item-card" data-category="juices" data-diet="vegan" data-search="peach oolong iced tea lemonade fruit juice citrus brewed">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=500&auto=format&fit=crop&q=60" alt="Peach Oolong Lemonade">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Peach Oolong Lemonade</h3>
+                                <span class="item-price">₹330</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 4 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 85 kcal</span>
+                            </div>
+                            <p class="item-desc">Slow-steeped Formosa Oolong tea shaken with fresh white peach pulp and hand-squeezed yellow lemons.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Peach%20Oolong%20Lemonade%20(₹330)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 4: Gourmet Starters -->
+            <div class="menu-category-group" data-group="starters">
+                <h2 class="menu-category-title"><i class="fa-solid fa-bowl-food"></i> Gourmet Starters & Appetizers (6)</h2>
+                <div class="menu-catalog-grid">
+                    
+                    <!-- Item 19 -->
+                    <div class="menu-item-card" data-category="starters" data-diet="vegan" data-search="crispy truffle edamame sea salt pod starter japanese snack">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&auto=format&fit=crop&q=60" alt="Truffle Edamame">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Crispy Truffle Edamame</h3>
+                                <span class="item-price">₹340</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 8 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 220 kcal</span>
+                            </div>
+                            <p class="item-desc">Steamed young soy bean pods tossed in white truffle oil, roasted black sesame, and Maldon sea salt flakes.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Crispy%20Truffle%20Edamame%20(₹340)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 20 -->
+                    <div class="menu-item-card" data-category="starters" data-diet="vegan" data-search="wasabi guacamole rice crisp avocado dip appetizer starter">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop&q=60" alt="Wasabi Guacamole">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Wasabi Guac & Rice Crisps</h3>
+                                <span class="item-price">₹390</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 7 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 260 kcal</span>
+                            </div>
+                            <p class="item-desc">Freshly smashed Hass avocado infused with Japanese wasabi, served with house-fried nori rice crisps.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Wasabi%20Guac%20%26%20Rice%20Crisps%20(₹390)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 21 -->
+                    <div class="menu-item-card" data-category="starters" data-diet="nonveg" data-search="smoked salmon tartare tartlet fish capers starter appetizer nonveg">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&auto=format&fit=crop&q=60" alt="Salmon Tartare">
+                            <span class="badge-tag nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 5.0</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Salmon Tartare Tartlet</h3>
+                                <span class="item-price">₹460</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 10 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 290 kcal</span>
+                            </div>
+                            <p class="item-desc">Finely diced raw Norwegian salmon tossed in ponzu citrus sauce, filled into crispy sesame pastry shells.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Salmon%20Tartare%20Tartlet%20(₹460)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 22 -->
+                    <div class="menu-item-card" data-category="starters" data-diet="nonveg" data-search="honey sesame chicken skewers yakitori starter nonveg appetizer">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&auto=format&fit=crop&q=60" alt="Chicken Skewers">
+                            <span class="badge-tag nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Honey Sesame Chicken Skewers</h3>
+                                <span class="item-price">₹420</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 12 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 340 kcal</span>
+                            </div>
+                            <p class="item-desc">Charcoal-grilled tender chicken thighs glazed with dark soy honey reduction and toasted white sesame.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Honey%20Sesame%20Chicken%20Skewers%20(₹420)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 23 -->
+                    <div class="menu-item-card" data-category="starters" data-diet="veg" data-search="wild mushroom crostini sourdough garlic herb starter appetizer">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=500&auto=format&fit=crop&q=60" alt="Mushroom Crostini">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Wild Mushroom Crostini</h3>
+                                <span class="item-price">₹360</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 8 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 210 kcal</span>
+                            </div>
+                            <p class="item-desc">Sauteed shiitake and enoki mushrooms with thyme butter served over grilled sourdough crostini slices.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Wild%20Mushroom%20Crostini%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 24 -->
+                    <div class="menu-item-card" data-category="starters" data-diet="nonveg" data-search="crispy japanese karaage chicken bites spicy mayo starter nonveg">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&auto=format&fit=crop&q=60" alt="Japanese Karaage">
+                            <span class="badge-tag nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Japanese Karaage Chicken</h3>
+                                <span class="item-price">₹390</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 10 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 380 kcal</span>
+                            </div>
+                            <p class="item-desc">Ginger-marinated crispy fried chicken bites served with house-made spicy kewpie mayo and fresh lemon wedges.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Japanese%20Karaage%20Chicken%20(₹390)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 5: Artisan Sandwiches -->
+            <div class="menu-category-group" data-group="sandwiches">
+                <h2 class="menu-category-title"><i class="fa-solid fa-bread-slice"></i> Artisan Sandwiches & Toasties (5)</h2>
+                <div class="menu-catalog-grid">
+                    
+                    <!-- Item 25 -->
+                    <div class="menu-item-card" data-category="sandwiches" data-diet="nonveg" data-search="smoked salmon capers croissant sandwich sourdough nonveg">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&auto=format&fit=crop&q=60" alt="Smoked Salmon Croissant">
+                            <span class="badge-tag nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 5.0</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Smoked Salmon Croissant Sando</h3>
+                                <span class="item-price">₹450</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 8 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 410 kcal</span>
+                            </div>
+                            <p class="item-desc">Flaky sourdough croissant filled with Norwegian smoked salmon, dill cream cheese, capers, and arugula.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Smoked%20Salmon%20Croissant%20Sando%20(₹450)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 26 -->
+                    <div class="menu-item-card" data-category="sandwiches" data-diet="veg" data-search="avocado burrata sourdough toast pesto tomato sandwich veg">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=60" alt="Avocado Toast">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Avocado & Burrata Toast</h3>
+                                <span class="item-price">₹420</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 7 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 380 kcal</span>
+                            </div>
+                            <p class="item-desc">Toasted sourdough topped with mashed avocado, creamy Italian burrata, heirloom tomatoes, and basil oil.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Avocado%20%26%20Burrata%20Toast%20(₹420)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 27 -->
+                    <div class="menu-item-card" data-category="sandwiches" data-diet="nonveg" data-search="japanese katsu chicken sando milk bread sandwich nonveg">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=500&auto=format&fit=crop&q=60" alt="Chicken Katsu Sando">
+                            <span class="badge-tag nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Japanese Katsu Chicken Sando</h3>
+                                <span class="item-price">₹440</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 12 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 520 kcal</span>
+                            </div>
+                            <p class="item-desc">Crispy panko-crusted chicken cutlet sandwiched between soft shokupan milk bread with tonkatsu sauce.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Japanese%20Katsu%20Chicken%20Sando%20(₹440)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 28 -->
+                    <div class="menu-item-card" data-category="sandwiches" data-diet="veg" data-search="grilled truffle cheese toastie sourdough cheddar mozzarella veg">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&auto=format&fit=crop&q=60" alt="Truffle Cheese Toastie">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Grilled Truffle Cheese Toastie</h3>
+                                <span class="item-price">₹380</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 8 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 460 kcal</span>
+                            </div>
+                            <p class="item-desc">Aged English cheddar and gruyere cheese melted inside buttered sourdough with black truffle butter drizzle.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Grilled%20Truffle%20Cheese%20Toastie%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 29 -->
+                    <div class="menu-item-card" data-category="sandwiches" data-diet="vegan" data-search="miso glazed tofu kimchi wrap avocado spinach vegan">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop&q=60" alt="Miso Tofu Wrap">
+                            <span class="badge-tag vegan"><i class="fa-solid fa-leaf"></i> Vegan</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Miso Glazed Tofu & Kimchi Wrap</h3>
+                                <span class="item-price">₹360</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 8 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 320 kcal</span>
+                            </div>
+                            <p class="item-desc">Seared organic tofu cubes glazed in red miso, wrapped with napa cabbage kimchi, avocado, and sesame dressing.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Miso%20Glazed%20Tofu%20%26%20Kimchi%20Wrap%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 6: Pastries & Desserts -->
+            <div class="menu-category-group" data-group="desserts">
+                <h2 class="menu-category-title"><i class="fa-solid fa-cake-candles"></i> Japanese Pastries & Desserts (6)</h2>
+                <div class="menu-catalog-grid">
+                    
+                    <!-- Item 30 -->
+                    <div class="menu-item-card" data-category="desserts" data-diet="veg" data-search="matcha almond croissant butter frangipane cream pastry dessert">
+                        <div class="menu-item-img">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&auto=format&fit=crop&q=60" alt="Matcha Croissant">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <div class="menu-item-top">
+                                <h3 class="item-title">Uji Matcha Almond Croissant</h3>
+                                <span class="item-price">₹280</span>
+                            </div>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 2 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 310 kcal</span>
+                            </div>
+                            <p class="item-desc">Twice-baked flaky butter croissant stuffed with rich organic Uji matcha frangipane cream and sliced almonds.</p>
+                            <div class="menu-item-action">
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Uji%20Matcha%20Almond%20Croissant%20(₹280)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 31 -->
+                    <div class="menu-item-card" data-category="desserts" data-diet="veg" data-search="basque burnt cheesecake crustless caramel custard cake dessert">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?w=500&auto=format&fit=crop&q=60" alt="Basque Cheesecake">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 5.0</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
                                 <h3 class="item-title">Basque Burnt Cheesecake</h3>
                                 <span class="item-price">₹380</span>
                             </div>
-                            <p class="item-desc">Crustless high-baked cheesecake featuring a deeply caramelized scorched top and a soft, custard-like creamy interior.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 2 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 420 kcal</span>
+                            </div>
+                            <p class="item-desc">Crustless high-baked cheesecake featuring a caramelized scorched top and soft, creamy custard center.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Basque%20Burnt%20Cheesecake%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Basque%20Burnt%20Cheesecake%20(₹380)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 13 -->
-                    <div class="menu-item-card" data-category="bakery" data-diet="veg" data-search="sourdough cinnamon bun ceylon sugar wild yeast glaze starter bakery">
+                    <!-- Item 32 -->
+                    <div class="menu-item-card" data-category="desserts" data-diet="veg" data-search="sourdough ceylon cinnamon bun wild yeast glaze pastry dessert">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=60" alt="Cinnamon Morning Bun">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Sourdough Cinnamon Bun</h3>
+                                <h3 class="item-title">Sourdough Ceylon Cinnamon Bun</h3>
                                 <span class="item-price">₹240</span>
                             </div>
-                            <p class="item-desc">House wild yeast sourdough layers rolled with dark Ceylon cinnamon sugar, baked golden, and drizzled with vanilla glaze cream.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 2 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 290 kcal</span>
+                            </div>
+                            <p class="item-desc">House wild sourdough layers rolled with dark Ceylon cinnamon sugar and drizzled with vanilla glaze cream.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Sourdough%20Cinnamon%20Bun%20(₹240)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Sourdough%20Ceylon%20Cinnamon%20Bun%20(₹240)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 14 -->
-                    <div class="menu-item-card" data-category="bakery" data-diet="veg" data-search="black sesame mochi waffles crisp glutinous maple syrup starter bakery">
+                    <!-- Item 33 -->
+                    <div class="menu-item-card" data-category="desserts" data-diet="veg" data-search="black sesame mochi waffles crisp glutinous maple syrup dessert">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=500&auto=format&fit=crop&q=60" alt="Mochi Waffles">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
                                 <h3 class="item-title">Black Sesame Mochi Waffles</h3>
                                 <span class="item-price">₹320</span>
                             </div>
-                            <p class="item-desc">Crisp glutinous mochi waffles infused with toasted black sesame paste, topped with fresh whipping cream and pure maple syrup.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 8 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 360 kcal</span>
+                            </div>
+                            <p class="item-desc">Crisp glutinous mochi waffles infused with toasted black sesame paste, fresh whipped cream, and maple syrup.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Black%20Sesame%20Mochi%20Waffles%20(₹320)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Black%20Sesame%20Mochi%20Waffles%20(₹320)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 15 -->
-                    <div class="menu-item-card" data-category="bakery" data-diet="veg" data-search="yuzu lemon curd tart shortcrust custard dessert bakery">
+                    <!-- Item 34 -->
+                    <div class="menu-item-card" data-category="desserts" data-diet="veg" data-search="yuzu lemon curd tart shortcrust custard pastry dessert">
                         <div class="menu-item-img">
                             <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&auto=format&fit=crop&q=60" alt="Yuzu Lemon Tart">
                             <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
                                 <h3 class="item-title">Yuzu Lemon Curd Tart</h3>
                                 <span class="item-price">₹290</span>
                             </div>
-                            <p class="item-desc">A sweet, buttery shortcrust tart casing filled with silky, sour Japanese yuzu-lemon custard, finished with fine powdered sugar.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 2 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 270 kcal</span>
+                            </div>
+                            <p class="item-desc">Sweet shortcrust tart casing filled with silky Japanese yuzu-lemon custard and powdered sugar dusting.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Yuzu%20Lemon%20Curd%20Tart%20(₹290)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Yuzu%20Lemon%20Curd%20Tart%20(₹290)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 16 (Non-Veg Starter) -->
-                    <div class="menu-item-card" data-category="bakery" data-diet="nonveg" data-search="smoked salmon croissant norwegian fish dill cream cheese capers starter nonveg">
+                    <!-- Item 35 -->
+                    <div class="menu-item-card" data-category="desserts" data-diet="veg" data-search="fluffy japanese souffle pancakes maple syrup whipped butter dessert">
                         <div class="menu-item-img">
-                            <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500&auto=format&fit=crop&q=60" alt="Smoked Salmon Croissant">
-                            <span class="badge-tag nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span>
+                            <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&auto=format&fit=crop&q=60" alt="Japanese Souffle Pancakes">
+                            <span class="badge-tag veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                            <span class="rating-badge"><i class="fa-solid fa-star"></i> 5.0</span>
                         </div>
                         <div class="menu-item-body">
                             <div class="menu-item-top">
-                                <h3 class="item-title">Smoked Salmon Croissant</h3>
-                                <span class="item-price">₹420</span>
+                                <h3 class="item-title">Japanese Soufflé Pancakes</h3>
+                                <span class="item-price">₹390</span>
                             </div>
-                            <p class="item-desc">Flaky artisan sourdough croissant layered with premium Norwegian smoked salmon, dill cream cheese spread, and pickled capers.</p>
+                            <div class="item-meta-row">
+                                <span class="meta-tag"><i class="fa-regular fa-clock"></i> 15 mins</span>
+                                <span class="meta-tag"><i class="fa-solid fa-fire-flame-curved"></i> 440 kcal</span>
+                            </div>
+                            <p class="item-desc">Ultra-fluffy jiggly soufflé pancakes served warm with whipped honey butter, fresh berries, and pure maple syrup.</p>
                             <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Smoked%20Salmon%20Croissant%20(₹420)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 17 (Non-Veg Starter) -->
-                    <div class="menu-item-card" data-category="bakery" data-diet="nonveg" data-search="japanese teriyaki chicken puff charcoal grilled scallions starter nonveg">
-                        <div class="menu-item-img">
-                            <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&auto=format&fit=crop&q=60" alt="Teriyaki Chicken Puff">
-                            <span class="badge-tag nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span>
-                        </div>
-                        <div class="menu-item-body">
-                            <div class="menu-item-top">
-                                <h3 class="item-title">Teriyaki Chicken Puff</h3>
-                                <span class="item-price">₹360</span>
-                            </div>
-                            <p class="item-desc">Golden baked puff pastry envelope stuffed with charcoal-broiled teriyaki chicken chunks, fresh scallions, and toasted sesame seeds.</p>
-                            <div class="menu-item-action">
-                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Teriyaki%20Chicken%20Puff%20(₹360)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+                                <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I%20want%20to%20order%20the%20Japanese%20Souffle%20Pancakes%20(₹390)." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Order Order</a>
                             </div>
                         </div>
                     </div>
@@ -439,43 +979,9 @@
             <a href="index.html" class="logo" style="color: #FAF7F2;">
                 Komorebi<span class="logo-dot">.</span>
             </a>
-            
-            <nav class="footer-nav">
-                <a href="index.html" class="footer-link">Home</a>
-                <a href="menu.html" class="footer-link">Menu</a>
-                <a href="gallery.html" class="footer-link">Gallery & Contact</a>
-            </nav>
-        </div>
-        <div class="container">
-            <p class="copyright">&copy; 2026 Komorebi Cafe. All Rights Reserved. Growth Plan Template Showcase.</p>
+            <p style="color: #a0a5a0; font-size: 0.85rem;">© 2026 Komorebi Sanctuary & Cafe. All rights reserved. Direct Commission-Free WhatsApp Ordering Platform.</p>
         </div>
     </footer>
-
-    <!-- Floating WhatsApp Widget -->
-    <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I'd%20like%20to%20place%20an%20order%20or%20make%20an%20inquiry." target="_blank" class="whatsapp-float-btn" aria-label="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Menu Details Modal Overlay (Inherited Starter Feature) -->
-    <div class="menu-modal-overlay" id="menuDetailsModal">
-        <div class="menu-modal-card">
-            <button class="menu-modal-close" id="menuModalClose" aria-label="Close details">&times;</button>
-            <div class="menu-modal-img">
-                <img id="menuModalImage" src="" alt="Food item image">
-                <span class="badge-tag" id="menuModalBadge">Veg</span>
-            </div>
-            <div class="menu-modal-body">
-                <div class="menu-modal-header">
-                    <h3 id="menuModalTitle" class="menu-modal-title">Item Title</h3>
-                    <span id="menuModalPrice" class="menu-modal-price">₹0</span>
-                </div>
-                <p id="menuModalDesc" class="menu-modal-desc">Detailed item description goes here.</p>
-                <div class="menu-modal-action">
-                    <a href="#" id="menuModalWaBtn" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Scripts -->
     <script src="app.js"></script>
