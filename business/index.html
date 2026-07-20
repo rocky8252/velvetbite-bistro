@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Culinary Sanctuary | VelvetBite Business Plan</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Client Preview Demo Banner -->
+    <div class="client-demo-banner" id="clientDemoBanner">
+        <div class="demo-banner-content">
+            <span class="demo-badge">BUSINESS PLAN DEMO</span>
+            <p class="demo-text">💡 <strong>Restaurant Owner Preview:</strong> This is the <strong>₹7,999 Business Plan</strong> site. Try the <strong>Today's Special, Festival Combos, Video Reels, FAQ Accordions & Google Reviews</strong>!</p>
+        </div>
+        <button class="demo-banner-close" id="closeDemoBanner" aria-label="Close Preview Banner">&times;</button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                VelvetBite Bistro<span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="menu.html" class="nav-link">Digital Menu</a>
+                <a href="#specials" class="nav-link">Today's Special</a>
+                <a href="#combos" class="nav-link">Offers & Combos</a>
+                <a href="gallery.html" class="nav-link">Gallery & Reels</a>
+                <a href="reservation.html" class="nav-link">Table Booking</a>
+                <a href="reviews.html" class="nav-link">Reviews & FAQ</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+                <a href="tel:+919999999999" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.82rem;"><i class="fa-solid fa-phone"></i> Call Desk</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-crown"></i> Complete Enterprise Culinary Solution</span>
+            <h1 class="font-serif hero-title">Gastronomy Redefined</h1>
+            <p class="section-subtitle">Experience artisan woodfired pizzas, slow-brewed single-origin coffees, and fine Japanese pastries in an ambient dining setting. Commission-free direct ordering & instant table reservations.</p>
+
+            <!-- Hero Stats Row -->
+            <div class="hero-stats-row">
+                <div class="stat-badge"><i class="fa-solid fa-star text-gold" style="color:#ffc107;"></i> <span>4.9 Google Rating (520+ Reviews)</span></div>
+                <div class="stat-badge"><i class="fa-solid fa-utensils"></i> <span>Unlimited Categories & Menu Items</span></div>
+                <div class="stat-badge"><i class="fa-solid fa-qrcode"></i> <span>QR Tabletop Standee Enabled</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:1rem; margin-top:2rem;">
+                <a href="menu.html" class="btn btn-primary"><i class="fa-solid fa-book-open"></i> Explore Digital Menu</a>
+                <a href="reservation.html" class="btn btn-secondary"><i class="fa-solid fa-calendar-check"></i> Book Zen Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Special Section -->
+    <section class="specials-section" id="specials" style="padding: 5rem 0; background-color: var(--color-card-bg);">
+        <div class="container">
+            <div class="text-center" style="text-align:center; max-width:700px; margin:0 auto 3rem;">
+                <span class="section-tag"><i class="fa-solid fa-fire"></i> Chef Recommendations</span>
+                <h2 class="section-title font-serif">Today's Special Creations</h2>
+                <p class="section-subtitle">Curated daily by Executive Chef Arthur Laurent using organic, seasonal farm ingredients.</p>
+            </div>
+
+            <div class="cards-grid-3">
+                
+                <!-- Special 1 -->
+                <div class="glow-card">
+                    <div class="special-card-img">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" alt="Black Angus Ribeye">
+                        <span class="special-price-badge">₹1,450</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <h3 class="font-serif" style="font-size:1.2rem; color:var(--color-text-dark);">Black Angus Ribeye Steak</h3>
+                        <span style="font-size:0.75rem; color:#ef5350; font-weight:700;"><i class="fa-solid fa-pepper-hot"></i> Mild</span>
+                    </div>
+                    <p style="font-size:0.88rem; line-height:1.5; color:var(--color-text-muted); margin-bottom:1rem;">Pan-seared 28-day dry-aged beef ribeye served with black truffle butter sauce and roasted baby potatoes.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.75rem; font-weight:600;"><i class="fa-regular fa-clock"></i> 15 mins prep</span>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20order%20Today's%20Special:%20Black%20Angus%20Ribeye%20Steak%20(₹1,450)." target="_blank" class="btn btn-secondary" style="padding:0.4rem 1rem; font-size:0.78rem;"><i class="fa-brands fa-whatsapp"></i> Quick Order</a>
+                    </div>
+                </div>
+
+                <!-- Special 2 -->
+                <div class="glow-card">
+                    <div class="special-card-img">
+                        <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500&auto=format&fit=crop&q=60" alt="Truffle Mushroom Pizza">
+                        <span class="special-price-badge">₹820</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <h3 class="font-serif" style="font-size:1.2rem; color:var(--color-text-dark);">Truffle Wild Mushroom Pizza</h3>
+                        <span style="font-size:0.75rem; color:#4caf50; font-weight:700;"><i class="fa-solid fa-leaf"></i> Veg</span>
+                    </div>
+                    <p style="font-size:0.88rem; line-height:1.5; color:var(--color-text-muted); margin-bottom:1rem;">Wood-fired sourdough crust topped with white cream base, fior di latte mozzarella, porcini mushrooms, and white truffle oil.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.75rem; font-weight:600;"><i class="fa-regular fa-clock"></i> 10 mins prep</span>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20order%20Today's%20Special:%20Truffle%20Wild%20Mushroom%20Pizza%20(₹820)." target="_blank" class="btn btn-secondary" style="padding:0.4rem 1rem; font-size:0.78rem;"><i class="fa-brands fa-whatsapp"></i> Quick Order</a>
+                    </div>
+                </div>
+
+                <!-- Special 3 -->
+                <div class="glow-card">
+                    <div class="special-card-img">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop&q=60" alt="Smoked Rosemary Cocktail">
+                        <span class="special-price-badge">₹550</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <h3 class="font-serif" style="font-size:1.2rem; color:var(--color-text-dark);">Smoked Rosemary Negroni</h3>
+                        <span style="font-size:0.75rem; color:#c5a880; font-weight:700;"><i class="fa-solid fa-martini-glass-citrus"></i> Craft Drink</span>
+                    </div>
+                    <p style="font-size:0.88rem; line-height:1.5; color:var(--color-text-muted); margin-bottom:1rem;">Artisanal smoked gin infused with torched rosemary sprigs, Campari bitters, and sweet red vermouth over clear ice sphere.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.75rem; font-weight:600;"><i class="fa-regular fa-clock"></i> 5 mins prep</span>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20order%20Today's%20Special:%20Smoked%20Rosemary%20Negroni%20(₹550)." target="_blank" class="btn btn-secondary" style="padding:0.4rem 1rem; font-size:0.78rem;"><i class="fa-brands fa-whatsapp"></i> Quick Order</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Combo & Festival Offers Section -->
+    <section class="combos-section" id="combos" style="padding: 5rem 0;">
+        <div class="container">
+            <div style="text-align:center; max-width:700px; margin:0 auto 3rem;">
+                <span class="section-tag"><i class="fa-solid fa-tags"></i> Exclusive Group Packages</span>
+                <h2 class="section-title font-serif">Combo Deals & Festival Packages</h2>
+                <p class="section-subtitle">Save up to 30% on curated multi-course food & drink bundles designed for families, couples, and group celebrations.</p>
+            </div>
+
+            <div class="cards-grid-3">
+                
+                <!-- Combo 1 -->
+                <div class="glow-card" style="border:2px solid var(--color-accent);">
+                    <span style="background-color:var(--color-primary); color:#fff; font-size:0.68rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block; margin-bottom:1rem;">SAVE 25%</span>
+                    <h3 class="font-serif" style="font-size:1.3rem; margin-bottom:0.5rem; color:var(--color-text-dark);">Family Royal Feast Bundle</h3>
+                    <p style="font-size:0.88rem; color:var(--color-text-muted); margin-bottom:1rem;">Includes 2 Woodfired Pizzas, 2 Gourmet Pasta Bowls, 1 Truffle Edamame Starter & 4 Artisan Drinks.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem;">
+                        <div>
+                            <span style="text-decoration:line-through; font-size:0.85rem; color:var(--color-text-muted);">₹2,800</span>
+                            <span style="font-size:1.4rem; font-weight:800; color:var(--color-primary); margin-left:0.5rem;">₹2,099</span>
+                        </div>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20book%20the%20Family%20Royal%20Feast%20Bundle%20(₹2,099)." target="_blank" class="btn btn-primary" style="padding:0.5rem 1.2rem; font-size:0.82rem;"><i class="fa-brands fa-whatsapp"></i> Claim Offer</a>
+                    </div>
+                </div>
+
+                <!-- Combo 2 -->
+                <div class="glow-card" style="border:2px solid var(--color-accent);">
+                    <span style="background-color:var(--color-accent); color:#fff; font-size:0.68rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block; margin-bottom:1rem;">POPULAR PAIR</span>
+                    <h3 class="font-serif" style="font-size:1.3rem; margin-bottom:0.5rem; color:var(--color-text-dark);">Weekend Couple Treat</h3>
+                    <p style="font-size:0.88rem; color:var(--color-text-muted); margin-bottom:1rem;">1 Chef Special Steak, 1 Smoked Salmon Croissant, 2 Craft Cocktails & 1 Basque Cheesecake Dessert.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem;">
+                        <div>
+                            <span style="text-decoration:line-through; font-size:0.85rem; color:var(--color-text-muted);">₹2,100</span>
+                            <span style="font-size:1.4rem; font-weight:800; color:var(--color-primary); margin-left:0.5rem;">₹1,599</span>
+                        </div>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20book%20the%20Weekend%20Couple%20Treat%20(₹1,599)." target="_blank" class="btn btn-primary" style="padding:0.5rem 1.2rem; font-size:0.82rem;"><i class="fa-brands fa-whatsapp"></i> Claim Offer</a>
+                    </div>
+                </div>
+
+                <!-- Combo 3 -->
+                <div class="glow-card" style="border:2px solid var(--color-accent);">
+                    <span style="background-color:#4caf50; color:#fff; font-size:0.68rem; font-weight:800; padding:3px 10px; border-radius:50px; display:inline-block; margin-bottom:1rem;">HAPPY HOUR (4-7 PM)</span>
+                    <h3 class="font-serif" style="font-size:1.3rem; margin-bottom:0.5rem; color:var(--color-text-dark);">Matcha & Pastry Combo</h3>
+                    <p style="font-size:0.88rem; color:var(--color-text-muted); margin-bottom:1rem;">Choose any 1 Ceremonial Matcha / Cold Brew + 1 Japanese Soufflé Pancake or Almond Croissant.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem;">
+                        <div>
+                            <span style="text-decoration:line-through; font-size:0.85rem; color:var(--color-text-muted);">₹770</span>
+                            <span style="font-size:1.4rem; font-weight:800; color:var(--color-primary); margin-left:0.5rem;">₹499</span>
+                        </div>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20book%20the%20Matcha%20%26%20Pastry%20Combo%20(₹499)." target="_blank" class="btn btn-primary" style="padding:0.5rem 1.2rem; font-size:0.82rem;"><i class="fa-brands fa-whatsapp"></i> Claim Offer</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordions Section -->
+    <section class="faq-section" id="faq" style="padding: 5rem 0; background-color: var(--color-card-bg);">
+        <div class="container">
+            <div style="text-align:center; max-width:700px; margin:0 auto 3rem;">
+                <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Help & Inquiries</span>
+                <h2 class="section-title font-serif">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about table reservations, party hosting, and direct commission-free ordering.</p>
+            </div>
+
+            <div class="faq-accordion-container">
+                
+                <!-- Q1 -->
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>How does direct WhatsApp ordering work without aggregator commissions?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        When you order via our digital menu, your dish choices, quantities, and table/delivery details are pre-formatted into a direct WhatsApp message sent to our desk manager. You pay 0% extra commission fees and enjoy direct kitchen service!
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I reserve specific dining zones for private birthday or corporate events?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Our Table Booking system allows you to select between the Garden Terrace (Outdoor), Matcha Lounge (Cozy Tatami), and Espresso Bar. For group parties over 8 guests, you can select 'Private VIP Lounge'.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you cater to vegetarian, vegan, and gluten-free dietary requirements?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. All menu items are tagged with clear 🟢 Veg, 🌿 Vegan, and 🥩 Non-Veg markers, along with preparation times and calorie tags so guests can filter items matching their dietary preferences.
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are the kitchen service operating hours for table bookings?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Our kitchen operates daily from 11:30 AM to 11:30 PM. Happy hour specials are valid between 04:00 PM and 07:00 PM Monday through Friday.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Live WhatsApp Chat -->
+    <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20have%20an%20inquiry%20about%20your%20Business%20Plan%20Website." target="_blank" class="floating-whatsapp-btn" aria-label="Live WhatsApp Chat">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
+            <p style="margin-top:0.8rem; font-size:0.85rem; color:var(--color-text-muted);">© 2026 VelvetBite Enterprise Bistro. ₹7,999 Business Plan Demonstration.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>

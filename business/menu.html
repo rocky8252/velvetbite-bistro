@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Digital QR Menu | VelvetBite Business Plan</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Client Preview Demo Banner -->
+    <div class="client-demo-banner" id="clientDemoBanner">
+        <div class="demo-banner-content">
+            <span class="demo-badge">BUSINESS PLAN DEMO</span>
+            <p class="demo-text">💡 <strong>Restaurant Owner Preview:</strong> Try the <strong>Unlimited Categories, Dietary Filters, Real-Time Search & Star Ratings</strong> on 35 signature menu items!</p>
+        </div>
+        <button class="demo-banner-close" id="closeDemoBanner" aria-label="Close Preview Banner">&times;</button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                VelvetBite Bistro<span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link active">Digital Menu</a>
+                <a href="index.html#specials" class="nav-link">Today's Special</a>
+                <a href="index.html#combos" class="nav-link">Offers & Combos</a>
+                <a href="gallery.html" class="nav-link">Gallery & Reels</a>
+                <a href="reservation.html" class="nav-link">Table Booking</a>
+                <a href="reviews.html" class="nav-link">Reviews & FAQ</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+                <a href="tel:+919999999999" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.82rem;"><i class="fa-solid fa-phone"></i> Call Desk</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Hero -->
+    <section class="hero-section" style="padding: 4rem 0 3rem;">
+        <div class="container text-center">
+            <span class="section-tag"><i class="fa-solid fa-qrcode"></i> QR Digital Menu Catalog</span>
+            <h1 class="font-serif hero-title" style="font-size: 3rem;">Our Culinary Catalog</h1>
+            <p class="section-subtitle">Explore 35 artisan creations from stoneground matchas to single-origin brews, woodfired pizzas, and Japanese desserts.</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section style="padding: 1rem 0 6rem;">
+        <div class="container">
+            
+            <!-- Filter & Search Control Panel -->
+            <div class="glow-card" style="margin-bottom: 3.5rem;">
+                <!-- Search Box Row -->
+                <div style="position:relative; margin-bottom:1.2rem;">
+                    <i class="fa-solid fa-magnifying-glass" style="position:absolute; left:18px; top:50%; transform:translateY(-50%); color:var(--color-primary); font-size:1.1rem;"></i>
+                    <input type="text" id="menuSearchInput" style="width:100%; padding:0.9rem 1rem 0.9rem 3.2rem; border-radius:50px; border:1px solid var(--border-soft); background:rgba(0,0,0,0.03); color:var(--color-text-dark); font-family:inherit;" placeholder="Search food, matcha, espresso, pizza, croissant, steak, dessert...">
+                </div>
+
+                <!-- Quick Search Suggestions Pills -->
+                <div class="search-suggestions-row" style="margin-bottom:1.5rem;">
+                    <span class="suggestion-label"><i class="fa-solid fa-fire-flame-curved"></i> Popular:</span>
+                    <button type="button" class="quick-pill-btn" data-query="Matcha">🍵 Matcha</button>
+                    <button type="button" class="quick-pill-btn" data-query="Cold Brew">☕ Cold Brew</button>
+                    <button type="button" class="quick-pill-btn" data-query="Pizza">🍕 Pizza</button>
+                    <button type="button" class="quick-pill-btn" data-query="Salmon">🍣 Salmon</button>
+                    <button type="button" class="quick-pill-btn" data-query="Steak">🥩 Steak</button>
+                    <button type="button" class="quick-pill-btn" data-query="Cheesecake">🍰 Cheesecake</button>
+                </div>
+
+                <!-- Controls Row: Category & Diet Buttons -->
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.2rem;">
+                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                        <button class="menu-filter-btn active" data-cat="all" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-border-all"></i> All (35)</button>
+                        <button class="menu-filter-btn" data-cat="matcha" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-leaf"></i> Matchas (6)</button>
+                        <button class="menu-filter-btn" data-cat="coffee" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-mug-hot"></i> Coffees (6)</button>
+                        <button class="menu-filter-btn" data-cat="starters" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-bowl-food"></i> Starters (6)</button>
+                        <button class="menu-filter-btn" data-cat="mains" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-pizza-slice"></i> Mains (6)</button>
+                        <button class="menu-filter-btn" data-cat="desserts" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-cake-candles"></i> Desserts (6)</button>
+                    </div>
+
+                    <div style="display:flex; gap:0.5rem;">
+                        <button class="diet-filter-btn active" data-diet="all" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;">All Diets</button>
+                        <button class="diet-filter-btn" data-diet="veg" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-circle" style="color:#4caf50;"></i> Veg</button>
+                        <button class="diet-filter-btn" data-diet="nonveg" style="padding:0.5rem 1rem; border-radius:50px; border:1px solid var(--border-soft); cursor:pointer; font-weight:600;"><i class="fa-solid fa-drumstick-bite" style="color:#ef5350;"></i> Non-Veg</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 35 Items Catalog Grid -->
+            <div class="cards-grid-3" id="businessMenuGrid">
+                
+                <!-- Item 1 -->
+                <div class="glow-card menu-item-card" data-category="matcha" data-diet="veg" data-search="ceremonial matcha shot uji green tea traditional">
+                    <div class="special-card-img">
+                        <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500&auto=format&fit=crop&q=60" alt="Ceremonial Matcha">
+                        <span class="special-price-badge">₹250</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <h3 class="font-serif" style="font-size:1.15rem; color:var(--color-text-dark);">Ceremonial Matcha Shot</h3>
+                        <span style="font-size:0.75rem; color:#ffc107; font-weight:700;"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <p style="font-size:0.85rem; line-height:1.5; color:var(--color-text-muted); margin-bottom:1rem;">Stoneground Uji green tea whisked in a traditional clay chawan bowl.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.75rem; font-weight:600;"><i class="fa-regular fa-clock"></i> 3 mins • 45 kcal</span>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20order%20Ceremonial%20Matcha%20Shot%20(₹250)." target="_blank" class="btn btn-secondary" style="padding:0.4rem 1rem; font-size:0.78rem;"><i class="fa-brands fa-whatsapp"></i> Order</a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="glow-card menu-item-card" data-category="mains" data-diet="nonveg" data-search="wagyu ribeye steak Japanese Grade A5 beef dinner">
+                    <div class="special-card-img">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" alt="Seared Wagyu Ribeye">
+                        <span class="special-price-badge">₹2,800</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <h3 class="font-serif" style="font-size:1.15rem; color:var(--color-text-dark);">Seared Wagyu Ribeye A5</h3>
+                        <span style="font-size:0.75rem; color:#ffc107; font-weight:700;"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <p style="font-size:0.85rem; line-height:1.5; color:var(--color-text-muted); margin-bottom:1rem;">Grade A5 Japanese Wagyu served with micro herbs and aged balsamic glaze.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.75rem; font-weight:600;"><i class="fa-regular fa-clock"></i> 18 mins • 620 kcal</span>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20order%20Seared%20Wagyu%20Ribeye%20(₹2,800)." target="_blank" class="btn btn-secondary" style="padding:0.4rem 1rem; font-size:0.78rem;"><i class="fa-brands fa-whatsapp"></i> Order</a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="glow-card menu-item-card" data-category="desserts" data-diet="veg" data-search="basque burnt cheesecake caramel custard cake dessert">
+                    <div class="special-card-img">
+                        <img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?w=500&auto=format&fit=crop&q=60" alt="Basque Cheesecake">
+                        <span class="special-price-badge">₹380</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <h3 class="font-serif" style="font-size:1.15rem; color:var(--color-text-dark);">Basque Burnt Cheesecake</h3>
+                        <span style="font-size:0.75rem; color:#ffc107; font-weight:700;"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <p style="font-size:0.85rem; line-height:1.5; color:var(--color-text-muted); margin-bottom:1rem;">Crustless high-baked cheesecake with caramelized top and soft custard center.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.75rem; font-weight:600;"><i class="fa-regular fa-clock"></i> 2 mins • 420 kcal</span>
+                        <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20want%20to%20order%20Basque%20Burnt%20Cheesecake%20(₹380)." target="_blank" class="btn btn-secondary" style="padding:0.4rem 1rem; font-size:0.78rem;"><i class="fa-brands fa-whatsapp"></i> Order</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Live WhatsApp Chat -->
+    <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20have%20an%20inquiry%20about%20your%20Business%20Plan%20Digital%20Menu." target="_blank" class="floating-whatsapp-btn" aria-label="Live WhatsApp Chat">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
+            <p style="margin-top:0.8rem; font-size:0.85rem; color:var(--color-text-muted);">© 2026 VelvetBite Enterprise Bistro. ₹7,999 Business Plan Digital Menu.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>
