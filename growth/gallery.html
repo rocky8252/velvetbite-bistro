@@ -163,61 +163,13 @@
             
             <div class="booking-grid glow-card">
                 <form class="booking-form" id="zenBookingForm">
-                    <div class="booking-form-left">
-                        <div class="input-row-grid">
-                            <div class="input-group">
-                                <label for="bookName"><i class="fa-solid fa-user"></i> Full Name</label>
-                                <input type="text" id="bookName" placeholder="Your name" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="bookPhone"><i class="fa-solid fa-phone"></i> Phone Number</label>
-                                <input type="tel" id="bookPhone" placeholder="Your phone number" required>
-                            </div>
-                        </div>
-
-                        <div class="input-row-grid three-col">
-                            <div class="input-group">
-                                <label for="bookDate"><i class="fa-solid fa-calendar"></i> Date</label>
-                                <input type="date" id="bookDate" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="bookTime"><i class="fa-solid fa-clock"></i> Preferred Time</label>
-                                <select id="bookTime" required>
-                                    <option value="" disabled selected>Select time</option>
-                                    <option value="08:00 AM">08:00 AM</option>
-                                    <option value="10:00 AM">10:00 AM</option>
-                                    <option value="12:00 PM">12:00 PM</option>
-                                    <option value="02:00 PM">02:00 PM</option>
-                                    <option value="04:00 PM">04:00 PM</option>
-                                    <option value="06:00 PM">06:00 PM</option>
-                                    <option value="08:00 PM">08:00 PM</option>
-                                </select>
-                            </div>
-                            <div class="input-group">
-                                <label for="bookGuests"><i class="fa-solid fa-users"></i> Guests</label>
-                                <select id="bookGuests" required>
-                                    <option value="1">1 Guest</option>
-                                    <option value="2" selected>2 Guests</option>
-                                    <option value="3">3 Guests</option>
-                                    <option value="4">4 Guests</option>
-                                    <option value="6">6 Guests</option>
-                                    <option value="8">8 Guests</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Special Request -->
-                        <div class="input-group" style="margin-top: 1rem;">
-                            <label for="bookNotes"><i class="fa-solid fa-message"></i> Special Requests (Optional)</label>
-                            <textarea id="bookNotes" rows="2" placeholder="e.g. silent corner for tea ceremony, wheelchair access..."></textarea>
-                        </div>
-                    </div>
-
-                    <div class="booking-form-right">
-                        <label class="zone-heading-label"><i class="fa-solid fa-chair"></i> Select Preferred Dining Zone</label>
+                    <!-- Part 1: Dining Zone Selector (Full Width Top Row) -->
+                    <div class="booking-form-header-row">
+                        <label class="zone-heading-label"><i class="fa-solid fa-chair"></i> 1. Select Preferred Dining Zone</label>
                         <div class="booking-zones-grid">
                             <!-- Zone 1: Garden Terrace -->
                             <div class="booking-zone-card active" data-zone="Garden Terrace">
+                                <div class="zone-card-selector-dot"></div>
                                 <div class="zone-icon-wrapper">
                                     <i class="fa-solid fa-tree"></i>
                                 </div>
@@ -230,6 +182,7 @@
 
                             <!-- Zone 2: Matcha Lounge -->
                             <div class="booking-zone-card" data-zone="Matcha Lounge">
+                                <div class="zone-card-selector-dot"></div>
                                 <div class="zone-icon-wrapper">
                                     <i class="fa-solid fa-couch"></i>
                                 </div>
@@ -242,28 +195,88 @@
 
                             <!-- Zone 3: Espresso Bar -->
                             <div class="booking-zone-card" data-zone="Espresso Bar">
+                                <div class="zone-card-selector-dot"></div>
                                 <div class="zone-icon-wrapper">
                                     <i class="fa-solid fa-mug-hot"></i>
                                 </div>
                                 <div class="zone-details">
                                     <h4>Espresso Bar</h4>
-                                    <p>High counter stools, viewing window of micro-roasters & interaction with barista.</p>
+                                    <p>High counter stools, micro-roasting window & interact with baristas.</p>
                                 </div>
                                 <div class="zone-badge">BAR SEATING</div>
                             </div>
                         </div>
-
                         <!-- Hidden Input to track zone selection -->
                         <input type="hidden" id="bookZone" value="Garden Terrace">
+                    </div>
 
-                        <!-- Live Availability status box -->
-                        <div class="booking-status-box" id="bookingStatusBox">
-                            <span class="status-indicator-dot"></span>
-                            <span class="status-text" id="bookingStatusText">✨ Select date and time details to confirm seat availability.</span>
+                    <div class="booking-form-divider-horizontal"></div>
+
+                    <!-- Part 2: Split Row: Left Details, Right Schedule -->
+                    <div class="booking-form-details-row">
+                        <div class="booking-details-left">
+                            <label class="zone-heading-label"><i class="fa-solid fa-user-pen"></i> 2. Guest Information</label>
+                            <div class="input-row-grid">
+                                <div class="input-group">
+                                    <label for="bookName">Full Name</label>
+                                    <input type="text" id="bookName" placeholder="e.g. Rocky" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="bookPhone">Phone Number</label>
+                                    <input type="tel" id="bookPhone" placeholder="e.g. +91 99999 99999" required>
+                                </div>
+                            </div>
+
+                            <!-- Special Request -->
+                            <div class="input-group" style="margin-top: 1.2rem;">
+                                <label for="bookNotes">Special Requests (Optional)</label>
+                                <textarea id="bookNotes" rows="3" placeholder="e.g. silent corner for tea ceremony, celebration setup, dietary concerns..."></textarea>
+                            </div>
                         </div>
 
-                        <!-- Form Submit Button -->
-                        <button type="submit" class="btn btn-primary booking-submit-btn" style="width: 100%;"><i class="fa-solid fa-calendar-check"></i> Book Zen Table via WhatsApp</button>
+                        <div class="booking-details-right">
+                            <label class="zone-heading-label"><i class="fa-solid fa-calendar-check"></i> 3. Schedule & Booking</label>
+                            
+                            <div class="input-row-grid three-col">
+                                <div class="input-group">
+                                    <label for="bookDate">Date</label>
+                                    <input type="date" id="bookDate" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="bookTime">Preferred Time</label>
+                                    <select id="bookTime" required>
+                                        <option value="" disabled selected>Select time</option>
+                                        <option value="08:00 AM">08:00 AM</option>
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="12:00 PM">12:00 PM</option>
+                                        <option value="02:00 PM">02:00 PM</option>
+                                        <option value="04:00 PM">04:00 PM</option>
+                                        <option value="06:00 PM">06:00 PM</option>
+                                        <option value="08:00 PM">08:00 PM</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="bookGuests">Guests</label>
+                                    <select id="bookGuests" required>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2" selected>2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="6">6 Guests</option>
+                                        <option value="8">8 Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Live Availability status box -->
+                            <div class="booking-status-box" id="bookingStatusBox">
+                                <span class="status-indicator-dot"></span>
+                                <span class="status-text" id="bookingStatusText">✨ Select date and time details to confirm seat availability.</span>
+                            </div>
+
+                            <!-- Form Submit Button -->
+                            <button type="submit" class="btn btn-primary booking-submit-btn" style="width: 100%;"><i class="fa-solid fa-calendar-check"></i> Book Zen Table via WhatsApp</button>
+                        </div>
                     </div>
                 </form>
             </div>
