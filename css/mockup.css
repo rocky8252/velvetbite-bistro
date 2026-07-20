@@ -1,0 +1,697 @@
+/* --- Interactive Mockup Preview --- */
+.mockup-section {
+    padding: 100px 0;
+    background-color: var(--bg-black);
+}
+
+.mockup-workspace {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.mockup-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.mockup-tab-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 1rem 1.4rem;
+    text-align: left;
+    color: var(--text-secondary);
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.mockup-tab-btn i {
+    font-size: 1rem;
+    width: 20px;
+}
+
+.mockup-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.mockup-tab-btn.active {
+    background: var(--accent-red-glow);
+    border-color: var(--accent-red);
+    color: var(--text-primary);
+}
+
+/* Simulated Smartphone Device */
+.device-frame {
+    width: 100%;
+    max-width: 780px;
+    height: 600px;
+    background: #0d0d0d;
+    border: 12px solid #1a1a1a;
+    border-radius: 36px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.device-notch {
+    height: 26px;
+    width: 180px;
+    background: #1a1a1a;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.notch-speaker {
+    width: 45px;
+    height: 4px;
+    background: #2b2b2b;
+    border-radius: 2px;
+}
+
+.notch-camera {
+    width: 8px;
+    height: 8px;
+    background: #2b2b2b;
+    border-radius: 50%;
+}
+
+.device-screen {
+    flex-grow: 1;
+    overflow-y: auto;
+    background: #080808;
+    position: relative;
+    padding-top: 26px; /* Space for notch */
+}
+
+/* Custom internal scrollbar for device */
+.device-screen::-webkit-scrollbar {
+    width: 5px;
+}
+.device-screen::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.device-home-bar {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* --- Rendered Mockup UI Elements (Inside Device) --- */
+.mock-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(10, 10, 10, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    backdrop-filter: blur(8px);
+}
+
+.mock-logo {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+}
+
+.mock-menu-trigger {
+    font-size: 0.8rem;
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+.mock-hero {
+    position: relative;
+    padding: 4rem 1.2rem 2.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255, 42, 75, 0.04) 0%, transparent 100%);
+    overflow: hidden;
+}
+
+.mock-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 42, 75, 0.15) 0%, transparent 70%);
+    filter: blur(15px);
+    z-index: 0;
+}
+
+.mock-hero h3 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.mock-hero p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    max-width: 320px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.mock-btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    background-color: var(--accent-red);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(255, 42, 75, 0.2);
+}
+
+.mock-content-box {
+    padding: 1.5rem 1.2rem;
+}
+
+.mock-section-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.mock-menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mock-menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.mock-dish-details {
+    max-width: 78%;
+}
+
+.mock-dish-name {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.mock-dish-desc {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.mock-dish-price {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-red);
+}
+
+/* Gallery Masonry mockup */
+.mock-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.mock-gallery-card {
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mock-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mock-gallery-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.4rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+/* Chef Layout Mock */
+.mock-chef-block {
+    text-align: center;
+}
+
+.mock-chef-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 1px solid var(--accent-red);
+    background-color: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mock-chef-avatar i {
+    font-size: 2.2rem;
+    color: var(--text-muted);
+}
+
+.mock-chef-quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.mock-chef-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+}
+
+/* Offers Mock */
+.mock-offer-card {
+    background: rgba(255, 42, 75, 0.03);
+    border: 1px dashed rgba(255, 42, 75, 0.25);
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mock-offer-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: var(--accent-red);
+    font-size: 0.55rem;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+}
+
+.mock-offer-title {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.mock-offer-desc {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+/* Contact Mock */
+.mock-map-placeholder {
+    height: 140px;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mock-map-placeholder i {
+    font-size: 1.5rem;
+    color: var(--accent-red);
+}
+
+.mock-map-placeholder span {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.mock-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+}
+
+.mock-info-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    list-style: none;
+    color: var(--text-secondary);
+}
+
+.mock-info-list li i {
+    color: var(--accent-red);
+}
+
+/* Reservation Mock Form */
+.mock-form-group {
+    margin-bottom: 0.8rem;
+    text-align: left;
+}
+
+.mock-form-group label {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.mock-input {
+    width: 100%;
+    background: #121212;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 0.55rem;
+    color: var(--text-primary);
+    font-size: 0.75rem;
+}
+
+.mock-input:focus {
+    border-color: var(--accent-red);
+    outline: none;
+}
+
+.mock-btn-submit {
+    width: 100%;
+    padding: 0.65rem;
+    background: var(--accent-red);
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.4rem;
+}
+
+.mock-booking-success {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.mock-booking-success i {
+    font-size: 2.2rem;
+    color: #4caf50;
+    margin-bottom: 0.8rem;
+}
+
+/* Reviews Mock */
+.mock-review-card {
+    background: #0d0d0d;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.mock-review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.mock-review-author {
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.mock-review-stars {
+    color: #ffb703;
+    font-size: 0.6rem;
+}
+
+.mock-review-text {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.mock-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+    background: rgba(8, 8, 8, 0.9);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   VELVETBITE INTERACTIVE ENHANCEMENTS STYLING
+   ========================================================================== */
+
+/* --- 1. Mockup Theme Switcher --- */
+.mockup-theme-selector {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.mockup-theme-selector .theme-label {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.mockup-theme-selector .theme-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.mockup-theme-selector .theme-btn {
+    flex: 1;
+    min-width: 75px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 0.55rem 0.4rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mockup-theme-selector .theme-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+.mockup-theme-selector .theme-btn.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border-color: var(--theme-color, #ff2a4b);
+    box-shadow: 0 0 12px var(--theme-glow, rgba(255, 42, 75, 0.15));
+}
+.mockup-theme-selector .theme-btn[data-theme="luxury"].active { 
+    --theme-color: #ff2a4b; 
+    --theme-glow: rgba(255, 42, 75, 0.2);
+}
+.mockup-theme-selector .theme-btn[data-theme="pizza"].active { 
+    --theme-color: #e76f51; 
+    --theme-glow: rgba(231, 111, 81, 0.2);
+}
+.mockup-theme-selector .theme-btn[data-theme="coffee"].active { 
+    --theme-color: #1a938c; 
+    --theme-glow: rgba(26, 147, 140, 0.2);
+}
+
+.theme-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.theme-dot.ruby { background: #ff2a4b; }
+.theme-dot.orange { background: #e76f51; }
+.theme-dot.teal { background: #1a938c; }
+
+/* Custom Device Theme Contexts */
+.device-screen {
+    --accent-red: #ff2a4b;
+    --accent-red-glow: rgba(255, 42, 75, 0.1);
+    --mock-font-heading: 'Playfair Display', serif;
+    --mock-font-body: 'Inter', sans-serif;
+    --mock-bg: #080808;
+    --mock-card-bg: rgba(255, 255, 255, 0.02);
+    --mock-border: rgba(255, 255, 255, 0.05);
+    --mock-text-primary: #ffffff;
+    --mock-text-secondary: #a0a0a5;
+    
+    font-family: var(--mock-font-body) !important;
+    background: var(--mock-bg) !important;
+    color: var(--mock-text-primary) !important;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.device-screen.theme-luxury {
+    --accent-red: #ff2a4b;
+    --accent-red-glow: rgba(255, 42, 75, 0.15);
+    --mock-font-heading: 'Playfair Display', serif;
+    --mock-font-body: 'Inter', sans-serif;
+    --mock-bg: #080808;
+    --mock-card-bg: rgba(255, 255, 255, 0.02);
+    --mock-border: rgba(255, 255, 255, 0.05);
+    --mock-text-primary: #ffffff;
+    --mock-text-secondary: #a0a0a5;
+}
+
+.device-screen.theme-pizza {
+    --accent-red: #e76f51;
+    --accent-red-glow: rgba(231, 111, 81, 0.15);
+    --mock-font-heading: 'Outfit', sans-serif;
+    --mock-font-body: 'Outfit', sans-serif;
+    --mock-bg: #faf7f2;
+    --mock-card-bg: #ffffff;
+    --mock-border: rgba(0, 0, 0, 0.05);
+    --mock-text-primary: #1d1e2c;
+    --mock-text-secondary: #5e6472;
+}
+
+.device-screen.theme-coffee {
+    --accent-red: #1a938c;
+    --accent-red-glow: rgba(26, 147, 140, 0.15);
+    --mock-font-heading: 'Outfit', sans-serif;
+    --mock-font-body: 'Inter', sans-serif;
+    --mock-bg: #f5efe6;
+    --mock-card-bg: #ffffff;
+    --mock-border: rgba(0, 0, 0, 0.05);
+    --mock-text-primary: #2d2219;
+    --mock-text-secondary: #6e5e53;
+}
+
+/* Theme variables overrides inside mockup screen dynamically */
+.device-screen .mock-nav {
+    background: var(--mock-bg);
+    border-bottom: 1px solid var(--mock-border);
+    color: var(--mock-text-primary);
+}
+.device-screen .mock-logo,
+.device-screen .mock-hero h3,
+.device-screen .mock-section-title {
+    font-family: var(--mock-font-heading) !important;
+    color: var(--mock-text-primary) !important;
+}
+.device-screen .mock-hero p,
+.device-screen .mock-dish-desc,
+.device-screen .mock-chef-quote,
+.device-screen .mock-offer-desc,
+.device-screen .mock-info-list li,
+.device-screen .mock-footer p {
+    color: var(--mock-text-secondary) !important;
+}
+.device-screen .mock-btn,
+.device-screen .mock-btn-submit {
+    background-color: var(--accent-red) !important;
+    box-shadow: 0 4px 10px var(--accent-red-glow) !important;
+    color: #ffffff !important;
+}
+.device-screen .mock-btn-submit:hover {
+    filter: brightness(1.1);
+}
+.device-screen .mock-dish-name {
+    color: var(--mock-text-primary) !important;
+}
+.device-screen .mock-dish-price,
+.device-screen .mock-chef-name,
+.device-screen .mock-info-list li i,
+.device-screen .mock-map-placeholder i,
+.device-screen .mock-review-stars i {
+    color: var(--accent-red) !important;
+}
+.device-screen .mock-content-box,
+.device-screen .mock-footer {
+    border-color: var(--mock-border) !important;
+}
+.device-screen .mock-menu-item {
+    border-bottom-color: var(--mock-border) !important;
+}
+.device-screen .mock-gallery-card,
+.device-screen .mock-review-card,
+.device-screen .mock-map-placeholder {
+    background: var(--mock-card-bg) !important;
+    border-color: var(--mock-border) !important;
+    color: var(--mock-text-primary) !important;
+}
+.device-screen .mock-offer-card {
+    background: var(--accent-red-glow) !important;
+    border-color: var(--accent-red) !important;
+}
+.device-screen .mock-offer-badge {
+    background: var(--accent-red) !important;
+}
+.device-screen .mock-input {
+    background: var(--mock-card-bg) !important;
+    border-color: var(--mock-border) !important;
+    color: var(--mock-text-primary) !important;
+}
+.device-screen .mock-input:focus {
+    border-color: var(--accent-red) !important;
+}

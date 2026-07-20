@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Olivier Bistro | Premium Mediterranean Dining</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                L'Olivier<span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">Our Story</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+                <a href="tel:+919999999999" class="btn btn-nav"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Est. 2021 • Mediterranean Fine Dining</span>
+                <h1 class="hero-title">Experience the Flavors of the <span class="text-italic font-serif">French Riviera</span></h1>
+                <p class="hero-desc">Indulge in artisanal pizzas, flame-grilled premium steaks, and handcrafted cocktails made with locally sourced seasonal ingredients.</p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> View Menu</a>
+                    <a href="https://wa.me/919999999999?text=Hi%20L'Olivier,%20I'm%20interested%20in%20visiting%20your%20bistro." target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container about-grid">
+            <div class="about-img-container">
+                <div class="about-img-frame">
+                    <img src="../assets/steak_gourmet.png" alt="Signature Gourmet Grill">
+                </div>
+                <div class="about-floating-card">
+                    <span class="card-num">100%</span>
+                    <span class="card-text">Authentic Recipes</span>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <span class="section-tag font-serif">Welcome to L'Olivier</span>
+                <h2 class="section-title">Where Passion Meets Culinary Artistry</h2>
+                <p class="section-desc">Located in the heart of the city, L'Olivier is a celebration of classic Southern French and coastal Italian cuisine. Founded by family chefs, our kitchen honors ancient slow-cooking traditions, high-quality wood fires, and vibrant herbs.</p>
+                
+                <div class="about-features">
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-leaf"></i>
+                        <div>
+                            <h4>Farm-To-Table Fresh</h4>
+                            <p>All greens, cheese toppings, and extra-virgin olive oils are imported from organic farming cooperatives.</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-fire-burner"></i>
+                        <div>
+                            <h4>Traditional Fire Hearth</h4>
+                            <p>Our doughs and steaks are cooked over seasoned oak and grapevines to infuse a rich smoky note.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Menu Section (Standard Static Grid) -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag font-serif">Explore Our Specialties</span>
+                <h2 class="section-title">Chef's Signature Digital Menu</h2>
+                <p class="section-subtitle">Exquisite recipes curated by our culinary masters, featuring a balance of fresh vegetables, delicate seafood, and premium meats.</p>
+            </div>
+            
+            <!-- Category Filtering Tabs -->
+            <div class="menu-tabs-container">
+                <button class="menu-tab-btn active" data-filter="all">All Cuisines</button>
+                <button class="menu-tab-btn" data-filter="appetizers">Appetizers</button>
+                <button class="menu-tab-btn" data-filter="pizzas">Pizzas & Pastas</button>
+                <button class="menu-tab-btn" data-filter="mains">Mains & Grills</button>
+                <button class="menu-tab-btn" data-filter="desserts">Desserts</button>
+                <button class="menu-tab-btn" data-filter="beverages">Beverages</button>
+            </div>
+            
+            <div class="menu-grid" id="starterMenuGrid">
+                
+                <!-- === CATEGORY: APPETIZERS === -->
+                <div class="menu-card show" data-category="appetizers">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=400&auto=format&fit=crop&q=60" alt="Rosemary Focaccia">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Warm Rosemary Focaccia</h3>
+                            <span class="menu-item-price">₹280</span>
+                        </div>
+                        <p class="menu-item-desc">Hearth-baked artisan bread infused with fresh sea salt, rosemary needles, served with extra-virgin olive oil and balsamic glaze vinegar dips.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="appetizers">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?w=400&auto=format&fit=crop&q=60" alt="Burrata Caprese">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Burrata Tomato Caprese</h3>
+                            <span class="menu-item-price">₹480</span>
+                        </div>
+                        <p class="menu-item-desc">Creamy heirloom tomato slices layered with fresh imported burrata cheese, organic basil pesto oil, and wild baby arugula drops.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="appetizers">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&auto=format&fit=crop&q=60" alt="Crispy Calamari">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Crispy Calamari Fritti</h3>
+                            <span class="menu-item-price">₹590</span>
+                        </div>
+                        <p class="menu-item-desc">Golden crisp ocean-caught squid rings dusted with sea salt and cracked pepper, served with a squeeze of fresh lemon and garlic-herb aioli.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="appetizers">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&auto=format&fit=crop&q=60" alt="Stuffed Portobello">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Stuffed Portobello Cups</h3>
+                            <span class="menu-item-price">₹420</span>
+                        </div>
+                        <p class="menu-item-desc">Juicy Portobello mushroom caps baked with garlic cream cheese, fresh spinach leaves, topped with toasted pine nuts and herbs.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="appetizers">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1559737634-118841c634bd?w=400&auto=format&fit=crop&q=60" alt="Garlic Prawns">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Pan-seared Garlic Prawns</h3>
+                            <span class="menu-item-price">₹680</span>
+                        </div>
+                        <p class="menu-item-desc">Succulent bay prawns sautéed with chopped garlic bulbs, white wine reduction, fresh parsley, and cold-pressed olive oils.</p>
+                    </div>
+                </div>
+
+                <!-- === CATEGORY: PIZZAS & PASTAS === -->
+                <div class="menu-card show" data-category="pizzas">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&auto=format&fit=crop&q=60" alt="Truffle Pizza">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Artisan Truffle & Mozzarella Pizza</h3>
+                            <span class="menu-item-price">₹820</span>
+                        </div>
+                        <p class="menu-item-desc">Freshly rolled sourdough crust layered with black truffle paste, wild mushrooms, fresh burrata, and fresh organic basil leaves.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="pizzas">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&auto=format&fit=crop&q=60" alt="Classic Margherita">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Classic Margherita DOC</h3>
+                            <span class="menu-item-price">₹620</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional Napoli sauce, imported buffalo mozzarella cheese rounds, virgin olive oil, baked in our wood-fired brick oven.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="pizzas">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=400&auto=format&fit=crop&q=60" alt="Diavola Pizza">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Diavola Sourdough Pizza</h3>
+                            <span class="menu-item-price">₹780</span>
+                        </div>
+                        <p class="menu-item-desc">Spicy Italian salami slices, crushed San Marzano tomato sauce, mozzarella, finished with a drizzle of organic hot chili honey.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="pizzas">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400&auto=format&fit=crop&q=60" alt="Fettuccine Carbonara">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Handcrafted Carbonara</h3>
+                            <span class="menu-item-price">₹720</span>
+                        </div>
+                        <p class="menu-item-desc">Freshly pulled egg fettuccine tossed with crispy cured bacon bits, raw egg yolk cream, black pepper, and grated pecorino cheese.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="pizzas">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=400&auto=format&fit=crop&q=60" alt="Wild Mushroom Risotto">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Wild Mushroom Risotto</h3>
+                            <span class="menu-item-price">₹690</span>
+                        </div>
+                        <p class="menu-item-desc">Slow-cooked creamy Arborio rice infused with porcini mushrooms, parmesan cheese blocks, butter, and white truffle oil drops.</p>
+                    </div>
+                </div>
+
+                <!-- === CATEGORY: MAINS & GRILLS === -->
+                <div class="menu-card show" data-category="mains">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&auto=format&fit=crop&q=60" alt="Flame Grilled Steak">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Wood-Fired Angus Ribeye</h3>
+                            <span class="menu-item-price">₹1,450</span>
+                        </div>
+                        <p class="menu-item-desc">300g premium dry-aged beef steak grilled on oakwood embers, served with rosemary roasted garlic baby potatoes and red wine jus.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="mains">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=400&auto=format&fit=crop&q=60" alt="Roasted Salmon">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Roasted Mediterranean Salmon</h3>
+                            <span class="menu-item-price">₹1,220</span>
+                        </div>
+                        <p class="menu-item-desc">Fresh Atlantic salmon steak pan-roasted to crisp-skinned perfection, served with blanched asparagus and lemon herb butter sauces.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="mains">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=400&auto=format&fit=crop&q=60" alt="Grilled Lamb Chops">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Herb-Crusted Lamb Chops</h3>
+                            <span class="menu-item-price">₹1,380</span>
+                        </div>
+                        <p class="menu-item-desc">Premium grass-fed lamb rack chops crusted with garlic breadcrumbs, grilled and served with mint chimichurri sauces.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="mains">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&auto=format&fit=crop&q=60" alt="Tuscan Garlic Chicken">
+                        <span class="menu-card-badge non-veg"><i class="fa-solid fa-circle"></i> Non-Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Tuscan Cream Garlic Chicken</h3>
+                            <span class="menu-item-price">₹890</span>
+                        </div>
+                        <p class="menu-item-desc">Pan-seared free-range chicken breasts simmered in a creamy garlic cream with sun-dried tomatoes and wilted spinach leaves.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="mains">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1628191139360-408a56e2e3f6?w=400&auto=format&fit=crop&q=60" alt="Eggplant Parmigiana">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Eggplant Parmigiana Bake</h3>
+                            <span class="menu-item-price">₹750</span>
+                        </div>
+                        <p class="menu-item-desc">Layered baked sheets of sliced eggplant, seasoned tomato marinara, grated parmesan, and molten fresh mozzarella.</p>
+                    </div>
+                </div>
+
+                <!-- === CATEGORY: DESSERTS === -->
+                <div class="menu-card show" data-category="desserts">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&auto=format&fit=crop&q=60" alt="Vanilla Panna Cotta">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Madagascar Vanilla Panna Cotta</h3>
+                            <span class="menu-item-price">₹390</span>
+                        </div>
+                        <p class="menu-item-desc">Silky smooth cream infused with real Madagascar vanilla bean seeds, topped with a tangy fresh raspberry coulis and fresh mint.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="desserts">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&auto=format&fit=crop&q=60" alt="Tiramisu">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Classic Espresso Tiramisu</h3>
+                            <span class="menu-item-price">₹450</span>
+                        </div>
+                        <p class="menu-item-desc">Espresso-dipped savoiardi ladyfinger cookies layered with light sweetened whipped mascarpone cheese and rich cocoa dusting.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="desserts">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&auto=format&fit=crop&q=60" alt="Chocolate Hazelnut Tart">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Deconstructed Hazelnut Tart</h3>
+                            <span class="menu-item-price">₹480</span>
+                        </div>
+                        <p class="menu-item-desc">Shortbread tart crust filled with rich dark chocolate ganache, toasted chopped hazelnuts, finished with flaky Maldon sea salt.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="desserts">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&auto=format&fit=crop&q=60" alt="Apple Galette">
+                        <span class="menu-card-badge veg"><i class="fa-solid fa-circle"></i> Veg</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Warm Apple & Rhubarb Galette</h3>
+                            <span class="menu-item-price">₹420</span>
+                        </div>
+                        <p class="menu-item-desc">Rustic flaky pastry folded over seasoned cinnamon apples and tart rhubarb slices, served with a scoop of salted caramel gelato.</p>
+                    </div>
+                </div>
+
+                <!-- === CATEGORY: BEVERAGES === -->
+                <div class="menu-card show" data-category="beverages">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=400&auto=format&fit=crop&q=60" alt="Lavender Spritz">
+                        <span class="menu-card-badge drinks"><i class="fa-solid fa-glass-martini-alt"></i> Cocktail</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">L'Olivier Lavender Spritz</h3>
+                            <span class="menu-item-price">₹480</span>
+                        </div>
+                        <p class="menu-item-desc">A cooling infusion of dry gin, wild lavender blossom syrup, prosecco, splash of sparkling soda, served in a premium crystal goblet.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="beverages">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&auto=format&fit=crop&q=60" alt="Old Fashioned">
+                        <span class="menu-card-badge drinks"><i class="fa-solid fa-glass-martini-alt"></i> Cocktail</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Smoked Rosemary Old Fashioned</h3>
+                            <span class="menu-item-price">₹550</span>
+                        </div>
+                        <p class="menu-item-desc">Premium Kentucky bourbon whiskey stir-mixed with aromatic bitters, cold orange peel oil, and a smoking sprig of fresh rosemary.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="beverages">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=60" alt="Cucumber Mint Cooler">
+                        <span class="menu-card-badge drinks"><i class="fa-solid fa-circle"></i> Mocktail</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Cucumber Mint Cooler</h3>
+                            <span class="menu-item-price">₹280</span>
+                        </div>
+                        <p class="menu-item-desc">Cooling muddled cucumber juice, fresh mint leaves, squeezed key lime juice, organic sugar syrups, topped with carbonated soda.</p>
+                    </div>
+                </div>
+
+                <div class="menu-card show" data-category="beverages">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1510972527409-cacab14e007d?w=400&auto=format&fit=crop&q=60" alt="Double Shot Espresso">
+                        <span class="menu-card-badge drinks"><i class="fa-solid fa-mug-hot"></i> Coffee</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-title">Double Espresso Arabica</h3>
+                            <span class="menu-item-price">₹220</span>
+                        </div>
+                        <p class="menu-item-desc">Concentrated double-shot pull of organic dark roast Arabica espresso beans, showcasing a thick hazelnut-colored cream layer.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="menu-footer-note">
+                <p><i class="fa-solid fa-info-circle"></i> For dietary adjustments or allergen notices, please communicate directly with our dining host during ordering.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Gallery Section (Masonry Grid with Lightbox) -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag font-serif">Visual Feast</span>
+                <h2 class="section-title">The Culinary Gallery</h2>
+                <p class="section-subtitle">A glimpse inside our kitchens, ambient dining spaces, and signature dishes presented with artistic detail.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-image="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80" alt="Angus Ribeye Roast">
+                    <div class="gallery-hover">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Angus Steak</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-image="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80" alt="Wood-fired Truffle Pizza">
+                    <div class="gallery-hover">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Truffle Pizza</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-image="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&auto=format&fit=crop&q=80" alt="L'Olivier Lavender Spritz">
+                    <div class="gallery-hover">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Lavender Spritz</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-image="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&auto=format&fit=crop&q=80" alt="Vanilla Bean Panna Cotta">
+                    <div class="gallery-hover">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Panna Cotta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag font-serif">Reviews</span>
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="section-subtitle">True opinions and reviews submitted by loyal gourmets who dine frequently at our restaurant table locations.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">VK</div>
+                        <div>
+                            <h4>Vikram Khanna</h4>
+                            <span class="review-date">Reviewer • Google Maps</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Absolutely magnificent experience! The Truffle Pizza was incredibly soft, and the aroma of wood smoke was stellar. The lavender cocktail was refreshing and perfect for summer."</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">MD</div>
+                        <div>
+                            <h4>Meera Dutt</h4>
+                            <span class="review-date">Diner • Local Guide</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Superb customer service and great ambience. The dry-aged steak is cooked precisely medium-rare as ordered. A hidden jewel that is worth visiting every single week."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-info-panel">
+                <span class="section-tag font-serif">Reservations & Dials</span>
+                <h2 class="section-title">Join Us For Dinner</h2>
+                <p class="contact-subtitle">Get in touch to check table availability, schedule small private catering parties, or order immediate takeaways.</p>
+                
+                <ul class="contact-details-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h5>Our Location</h5>
+                            <p>DLF Cyber City, Phase 3, Sector 24, Gurugram, India</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <h5>Call Inquiries</h5>
+                            <p><a href="tel:+919999999999" class="phone-link">+91 99999 99999</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h5>Opening Hours</h5>
+                            <p>Monday - Friday: 12:00 PM - 11:00 PM<br>Saturday - Sunday: 11:00 AM - 12:00 AM</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="contact-map-panel">
+                <div class="mock-map-frame">
+                    <div class="map-inner-placeholder">
+                        <i class="fa-solid fa-map-location-dot map-placeholder-icon"></i>
+                        <h4>Google Maps Local Preview</h4>
+                        <p>DLF Cyber City, Sector 24, Gurugram, Haryana 122002</p>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-secondary btn-map-link"><i class="fa-solid fa-location-arrow"></i> Open Map Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3>L'Olivier</h3>
+                <p>Curating authentic Mediterranean cuisines with modern premium designs.</p>
+            </div>
+            <div class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#about">Story</a>
+                <a href="#menu">Menu</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2026 L'Olivier Bistro. All Rights Reserved. Starter Plan Template Showcase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp button (Starter feature widget) -->
+    <a href="https://wa.me/919999999999?text=Hi%20L'Olivier,%20I'd%20like%20to%20place%20an%20order%20or%20inquire%20about%20a%20table%20reservation." target="_blank" class="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox Modal Overlay -->
+    <div class="lightbox-overlay" id="lightboxModal">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image display">&times;</button>
+        <img class="lightbox-img" id="lightboxImage" src="" alt="Zoomed view">
+    </div>
+
+    <!-- Menu Details Modal Overlay -->
+    <div class="menu-modal-overlay" id="menuDetailsModal">
+        <div class="menu-modal-card">
+            <button class="menu-modal-close" id="menuModalClose" aria-label="Close details">&times;</button>
+            <div class="menu-modal-img">
+                <img id="menuModalImage" src="" alt="Food item image">
+                <span class="menu-card-badge" id="menuModalBadge">Veg</span>
+            </div>
+            <div class="menu-modal-body">
+                <div class="menu-modal-header">
+                    <h3 id="menuModalTitle" class="menu-modal-title">Item Title</h3>
+                    <span id="menuModalPrice" class="menu-modal-price">₹0</span>
+                </div>
+                <p id="menuModalDesc" class="menu-modal-desc">Detailed item description goes here.</p>
+                <div class="menu-modal-action">
+                    <a href="#" id="menuModalWaBtn" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

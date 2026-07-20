@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo Showcase | VelvetBite Templates</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Italianno&family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-luxury">
+
+    <!-- Dynamic Theme Customizer Overlay (Fixed on Left side) -->
+    <div class="theme-customizer" id="themeCustomizer">
+        <div class="customizer-toggle" id="customizerToggle">
+            <i class="fa-solid fa-palette"></i>
+        </div>
+        <div class="customizer-panel">
+            <h4>Customize Design</h4>
+            <p>Switch restaurant templates instantly to see color systems, layouts, and typography adapt:</p>
+            <div class="customizer-options">
+                <button class="opt-btn active" data-theme="luxury">
+                    <span class="dot-color ruby"></span> Luxury French
+                </button>
+                <button class="opt-btn" data-theme="pizza">
+                    <span class="dot-color orange"></span> Napoli Pizza
+                </button>
+                <button class="opt-btn" data-theme="coffee">
+                    <span class="dot-color teal"></span> Urban Cafe
+                </button>
+            </div>
+            <div class="customizer-badge">
+                <i class="fa-solid fa-bolt"></i> Real-time Sync Active
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" id="brandLogo">L'Étoile Noir</a>
+            <div class="nav-links">
+                <a href="#hero" class="link-item">Home</a>
+                <a href="#menu" class="link-item">Menu</a>
+                <a href="#reservation" class="link-item">Book Table</a>
+                <a href="#reviews" class="link-item">Reviews</a>
+            </div>
+            <div class="nav-actions">
+                <button class="cart-trigger" id="cartTrigger">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <h5 class="hero-subtitle" id="heroSub">Michelin Starred Fine Dining</h5>
+            <h1 class="hero-title" id="heroTitle">Gastronomy Perfected</h1>
+            <p class="hero-desc" id="heroDesc">Experience modern French dining and degustation curated by culinary director Arthur Laurent in an elegant interior setting.</p>
+            <div class="hero-ctas">
+                <a href="#reservation" class="btn btn-primary">Book Seating</a>
+                <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Showcase Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Culinary Selection</h2>
+                <div class="category-tabs" id="menuTabs">
+                    <button class="tab-btn active" data-category="all">All Specialties</button>
+                    <button class="tab-btn" data-category="appetizers">Appetizers</button>
+                    <button class="tab-btn" data-category="mains">Mains</button>
+                    <button class="tab-btn" data-category="desserts">Desserts</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Dynamically Rendered by JS based on Selected Theme -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seating & Table Reservations Section -->
+    <section class="booking-section" id="reservation">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-info">
+                    <h2>Secure Your Seating</h2>
+                    <p>Select your dining preferences and time window below. Bookings are instantly synced and routed to the administrator control log.</p>
+                    
+                    <div class="booking-meta">
+                        <div class="meta-item">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span>Fine Dining & Private Events Hosting Available</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Kitchen service open Daily: 12:00 PM - 11:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-form-card">
+                    <form id="reservationForm">
+                        <div class="form-group">
+                            <label for="resName">Guest Full Name</label>
+                            <input type="text" id="resName" required placeholder="Guest Name">
+                        </div>
+                        <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                            <div>
+                                <label for="resDate">Select Date</label>
+                                <input type="date" id="resDate" required>
+                            </div>
+                            <div>
+                                <label for="resSlot">Select Time Slot</label>
+                                <select id="resSlot" required>
+                                    <option>07:00 PM</option>
+                                    <option>08:30 PM</option>
+                                    <option>10:00 PM</option>
+                                    <option>01:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                            <div>
+                                <label for="resGuests">Number of Guests</label>
+                                <input type="number" id="resGuests" min="1" max="12" value="2" required>
+                            </div>
+                            <div>
+                                <label for="resArea">Seating Preferences</label>
+                                <select id="resArea">
+                                    <option>Main Dining Hall</option>
+                                    <option>Rooftop Terrace</option>
+                                    <option>Private Chef Lounge</option>
+                                    <option>Garden Patio</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Confirm Booking Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Patrons Feedback</h2>
+                <p>Read real impressions from dining guests or leave a new rating below.</p>
+            </div>
+
+            <!-- Reviews list -->
+            <div class="reviews-list-grid" id="reviewsGrid">
+                <!-- Dynamically populated reviews -->
+            </div>
+
+            <!-- Review write form -->
+            <div class="write-review-card">
+                <h3>Leave a Star Review</h3>
+                <form id="reviewForm">
+                    <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:1.5rem;">
+                        <div>
+                            <div class="form-group">
+                                <label>Star Rating</label>
+                                <div class="star-rating-selector" id="starRatingSelector">
+                                    <span class="star-opt" data-rating="5"><i class="fa-solid fa-star"></i></span>
+                                    <span class="star-opt" data-rating="4"><i class="fa-solid fa-star"></i></span>
+                                    <span class="star-opt" data-rating="3"><i class="fa-solid fa-star"></i></span>
+                                    <span class="star-opt" data-rating="2"><i class="fa-solid fa-star"></i></span>
+                                    <span class="star-opt" data-rating="1"><i class="fa-solid fa-star"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="revAuthor">Your Name</label>
+                                <input type="text" id="revAuthor" required placeholder="Guest Name">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="revText">Your Feedback Comments</label>
+                                <textarea id="revText" rows="4" required placeholder="Detail your dining experience..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="align-self:flex-end;">Submit Review</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sliding Cart Drawer Overlay -->
+    <div class="cart-drawer-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3>Your Culinary Basket</h3>
+                <button class="close-cart" id="closeCartBtn">&times;</button>
+            </div>
+            <div class="cart-items-container" id="cartItemsList">
+                <!-- Cart items list here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <button class="btn btn-primary btn-block" id="checkoutBtn">Complete Reservation Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Popup -->
+    <div class="sync-notification-toast" id="syncNotification">
+        <div class="toast-content">
+            <i class="fa-solid fa-circle-check toast-icon"></i>
+            <div class="toast-body">
+                <h5 id="toastTitle">Order Sent</h5>
+                <p id="toastDesc">Your details have been successfully synchronized.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p id="footerCopyright">© 2026 L'Étoile Noir. Meticulously designed by VelvetBite Studio.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript code -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komorebi Cafe | Specialty Matcha & Coffee House</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                Komorebi<span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="menu.html" class="nav-link">Digital Menu</a>
+                <a href="gallery.html" class="nav-link">Gallery & Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+                <a href="tel:+919999999999" class="btn btn-nav" style="padding: 0.6rem 1.4rem; border-radius: 50px; font-size: 0.8rem; background-color: var(--color-primary); color: #fff;"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="section-tag">Matcha & Specialty Brews</span>
+                <h1 class="hero-title">Experience the Art of <span>Zen Dining</span></h1>
+                <p class="hero-text">Welcome to Komorebi, a tranquil sanctuary where traditional Japanese matcha rituals blend harmoniously with modern third-wave specialty espresso craftsmanship.</p>
+                <div class="hero-actions">
+                    <a href="menu.html" class="btn btn-primary">View Menu</a>
+                    <button class="btn btn-secondary" id="heroQrTrigger"><i class="fa-solid fa-qrcode"></i> Scan QR Menu</button>
+                </div>
+            </div>
+            
+            <div class="hero-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=800&auto=format&fit=crop&q=80" alt="Japanese Matcha Whisking Setup" class="hero-main-img">
+                <div class="hero-badge-card">
+                    <i class="fa-solid fa-seedling"></i>
+                    <div class="hero-badge-text">
+                        <h4>100% Organic</h4>
+                        <p>Ceremonial Uji Matcha sourced straight from Kyoto farms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container about-grid">
+            <div class="about-img-grid">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=500&auto=format&fit=crop&q=60" alt="Specialty Coffee Dripper" class="about-img">
+                <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=500&auto=format&fit=crop&q=60" alt="Minimalist Cafe Space" class="about-img">
+            </div>
+            
+            <div class="about-content">
+                <span class="section-tag">Our Philosophy</span>
+                <h2 class="about-title">Sunlight Filtering Through Leaves</h2>
+                <p class="about-text">Named after the Japanese word for "sunlight filtering through trees," Komorebi Cafe offers a peaceful escape from the urban rush. We believe in the beauty of simplicity (Wabi-Sabi), reflected in our organic wood textures, stone bowls, and minimal design language.</p>
+                <p class="about-text">Every cup of ceremonial matcha and single-origin coffee is brewed with precision, intent, and attention to detail. We invite you to sit down, unplug, and enjoy the present moment.</p>
+                <a href="gallery.html" class="btn btn-secondary">Explore Our Space</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Scanner Promo Banner -->
+    <section class="qr-section">
+        <div class="container">
+            <div class="qr-card-container">
+                <div class="qr-info">
+                    <span class="section-tag">Tabletop QR Technology</span>
+                    <h2 class="qr-title">Instant Digital Menu Scan</h2>
+                    <p class="qr-text">We value your time and comfort. Each table at Komorebi features a custom QR Code. Simply scan it with your phone's camera to browse our complete digital catalog and check details instantly on your screen.</p>
+                    <button class="btn btn-primary" id="tableQrTrigger"><i class="fa-solid fa-qrcode"></i> Try Table Scan QR</button>
+                </div>
+                
+                <div class="qr-mockup-wrapper">
+                    <div class="qr-code-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://localhost:8000/growth/menu.html" alt="Komorebi Cafe Menu QR">
+                        <br><span>Table No. 04</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Reviews</span>
+                <h2 class="section-title">Loved by Our Guests</h2>
+                <p class="section-subtitle">Read feedback from our neighborhood guests and tea lovers about their ambient dining experience at Komorebi.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Komorebi serves the best matcha latte I have had outside of Kyoto. The ceramic bowls they use are gorgeous, and the quiet minimalist environment is perfect for reading."</p>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Elena Vance" class="author-avatar">
+                        <div class="author-details">
+                            <h4>Elena Vance</h4>
+                            <p>Matcha Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The sourdough pastries pair beautifully with their single-origin drip coffee. Tapping their digital menu and placing orders over WhatsApp is fast and incredibly convenient."</p>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Marcus Brody" class="author-avatar">
+                        <div class="author-details">
+                            <h4>Marcus Brody</h4>
+                            <p>Local Architect</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"A clean, quiet, and extremely premium cafe. The dark mode toggle on their site is a touch of modern genius. Highly recommend the Uji Matcha Affogato!"</p>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80" alt="Yuki Tanaka" class="author-avatar">
+                        <div class="author-details">
+                            <h4>Yuki Tanaka</h4>
+                            <p>Specialty Coffee Blogger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <a href="index.html" class="logo" style="color: #FAF7F2;">
+                Komorebi<span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="footer-nav">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="menu.html" class="footer-link">Menu</a>
+                <a href="gallery.html" class="footer-link">Gallery & Contact</a>
+            </nav>
+        </div>
+        <div class="container">
+            <p class="copyright">&copy; 2026 Komorebi Cafe. All Rights Reserved. Growth Plan Template Showcase.</p>
+        </div>
+    </footer>
+
+    <!-- QR Code Scan Modal Overlay -->
+    <div class="qr-modal-overlay" id="qrModal">
+        <div class="qr-modal-card">
+            <button class="qr-modal-close" id="qrModalClose">&times;</button>
+            <h3 class="font-serif">Scan Table QR Menu</h3>
+            <p>Scan this QR code with your mobile camera to instantly access our digital menu on your device.</p>
+            <div class="qr-code-box" style="display:inline-block; margin: 0 auto;">
+                <!-- Dynamically generate QR code to match our menu.html layout -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://rocky-pc.github.io/growth/menu.html" alt="Komorebi Cafe Menu QR">
+                <br><span>Table No. 04</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I'd%20like%20to%20place%20an%20order%20or%20make%20an%20inquiry." target="_blank" class="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

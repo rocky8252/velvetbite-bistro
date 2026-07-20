@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Contact | Komorebi Cafe</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                Komorebi<span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Digital Menu</a>
+                <a href="gallery.html" class="nav-link active">Gallery & Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+                <a href="tel:+919999999999" class="btn btn-nav" style="padding: 0.6rem 1.4rem; border-radius: 50px; font-size: 0.8rem; background-color: var(--color-primary); color: #fff;"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Page Section -->
+    <section class="gallery-section-page">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Visual Story</span>
+                <h1 class="section-title">The Zen Gallery</h1>
+                <p class="section-subtitle">Take a virtual tour of our minimalist architectural details, handcrafted brewing instruments, and artisan pastry creations. Click any photo to zoom.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                
+                <!-- Photo 1: Matcha Whisking -->
+                <div class="gallery-grid-item tall" data-image="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&auto=format&fit=crop&q=80" alt="Ceremonial Whisking Chawan">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Ceremonial Matcha</span>
+                    </div>
+                </div>
+
+                <!-- Photo 2: Coffee V60 -->
+                <div class="gallery-grid-item" data-image="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=600&auto=format&fit=crop&q=80" alt="Specialty V60 Pour-over">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>V60 Extraction</span>
+                    </div>
+                </div>
+
+                <!-- Photo 3: Cafe Space -->
+                <div class="gallery-grid-item wide" data-image="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600&auto=format&fit=crop&q=80" alt="Komorebi Minimal Interior">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Cozy Reading Corner</span>
+                    </div>
+                </div>
+
+                <!-- Photo 4: Basque Cheesecake -->
+                <div class="gallery-grid-item" data-image="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?w=600&auto=format&fit=crop&q=80" alt="Basque Burnt Cheesecake Slice">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Baked Basque Cheesecake</span>
+                    </div>
+                </div>
+
+                <!-- Photo 5: Latte Art Matcha -->
+                <div class="gallery-grid-item tall" data-image="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop&q=80" alt="Pouring Latte Art Pattern">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Matcha Pouring Art</span>
+                    </div>
+                </div>
+
+                <!-- Photo 6: Matcha Croissants -->
+                <div class="gallery-grid-item" data-image="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&auto=format&fit=crop&q=80" alt="Handcrafted Matcha Croissants">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Matcha Almond Bakery</span>
+                    </div>
+                </div>
+
+                <!-- Photo 7: Cinnamon Morning Bun -->
+                <div class="gallery-grid-item" data-image="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80" alt="Fresh Cinnamon Glazed Morning Buns">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Sourdough Cinnamon Buns</span>
+                    </div>
+                </div>
+
+                <!-- Photo 8: Matcha Spritz glass -->
+                <div class="gallery-grid-item wide" data-image="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&auto=format&fit=crop&q=80" alt="Chilled Matcha Tonic Spritz Glass">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Matcha Yuzu Cooler</span>
+                    </div>
+                </div>
+
+                <!-- Photo 9: Sakura tea steep -->
+                <div class="gallery-grid-item" data-image="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop&q=80" alt="Warm Sakura Cherry Blossoms Steeping">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Kyoto Sakura Steeping</span>
+                    </div>
+                </div>
+
+                <!-- Photo 10: Iced Latte cups -->
+                <div class="gallery-grid-item" data-image="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=1000&auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=600&auto=format&fit=crop&q=80" alt="Chilled Matcha Basil Lattes Cups">
+                    <div class="gallery-hover-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span>Iced Basil Matcha Cups</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Hours Details Block -->
+    <section class="contact-section-page" id="contact">
+        <div class="container contact-grid">
+            
+            <div class="contact-info-card">
+                <h2 class="contact-info-title font-serif">Visit the Sanctuary</h2>
+                <div class="contact-rows">
+                    <div class="contact-row-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="contact-row-text">
+                            <h4>Location Address</h4>
+                            <p>Plot 42, 1st Cross, Zen Layout, Sector 4, Bangalore, KA - 560001</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-row-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div class="contact-row-text">
+                            <h4>Hours of Tranquility</h4>
+                            <p>Tuesday - Sunday: 08:00 AM - 09:00 PM<br><strong>Monday: Closed for Roasting</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-row-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="contact-row-text">
+                            <h4>General Inquiries</h4>
+                            <p>hello@komorebicafe.in<br>+91 99999 99999</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://wa.me/919999999999?text=Hi%20Komorebi,%20I'd%20like%20to%20inquire%20about%20a%20table%20reservation." target="_blank" class="btn btn-primary" style="width: 100%;"><i class="fa-brands fa-whatsapp"></i> Chat Reservation</a>
+            </div>
+
+            <div class="map-wrapper">
+                <!-- Premium Google Maps iframe coords -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.001654483786!2d77.6226!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44eab%3A0x78ef56b9ddfc4e45!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1688000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <a href="index.html" class="logo" style="color: #FAF7F2;">
+                Komorebi<span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="footer-nav">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="menu.html" class="footer-link">Menu</a>
+                <a href="gallery.html" class="footer-link">Gallery & Contact</a>
+            </nav>
+        </div>
+        <div class="container">
+            <p class="copyright">&copy; 2026 Komorebi Cafe. All Rights Reserved. Growth Plan Template Showcase.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal Overlay -->
+    <div class="lightbox-overlay" id="lightboxModal">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image display">&times;</button>
+        <img class="lightbox-img" id="lightboxImage" src="" alt="Zoomed view">
+    </div>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/919999999999?text=Hi%20Komorebi%20Cafe,%20I'd%20like%20to%20place%20an%20order%20or%20make%20an%20inquiry." target="_blank" class="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
