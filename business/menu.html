@@ -214,6 +214,27 @@
 <a href="https://wa.me/919999999999?text=Hi,%20order%20from%20Digital%20Menu!" target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
 <button class="back-top" id="backTop"><i class="fa-solid fa-chevron-up"></i></button>
 <footer class="footer"><div class="container"><div class="footer-bottom" style="border-top:none;margin-top:0;">© 2026 VelvetBite Bistro. QR Digital Menu — 30+ Items, 6 Categories.</div></div></footer>
+<!-- Menu Details Modal Overlay -->
+<div class="menu-modal-overlay" id="menuDetailsModal">
+    <div class="menu-modal-card">
+        <button class="menu-modal-close" id="menuModalClose" aria-label="Close details">&times;</button>
+        <div class="menu-modal-img">
+            <img id="menuModalImage" src="" alt="Food item image">
+            <span class="diet-tag veg menu-modal-badge" id="menuModalBadge">Veg</span>
+        </div>
+        <div class="menu-modal-body">
+            <div class="menu-modal-header">
+                <h3 id="menuModalTitle" class="menu-modal-title">Item Title</h3>
+                <span id="menuModalPrice" class="menu-modal-price">₹0</span>
+            </div>
+            <p id="menuModalDesc" class="menu-modal-desc">Detailed item description goes here.</p>
+            <div class="menu-modal-action">
+                <a href="#" id="menuModalWaBtn" target="_blank" class="btn btn-primary btn-block"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>

@@ -112,6 +112,58 @@ document.addEventListener('DOMContentLoaded', () => {
         if (searchInput) { searchInput.value = btn.dataset.pill; filterMenu(); }
     }));
 
+    // ── 7.5 Menu Details Popup Modal ──
+    const modal = document.getElementById('menuDetailsModal');
+    if (modal) {
+        const modalImg = document.getElementById('menuModalImage');
+        const modalBadge = document.getElementById('menuModalBadge');
+        const modalTitle = document.getElementById('menuModalTitle');
+        const modalPrice = document.getElementById('menuModalPrice');
+        const modalDesc = document.getElementById('menuModalDesc');
+        const modalWaBtn = document.getElementById('menuModalWaBtn');
+        const modalClose = document.getElementById('menuModalClose');
+
+        document.querySelectorAll('.menu-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('a') || e.target.closest('button')) return;
+
+                const imgUrl = card.querySelector('img')?.src || '';
+                const title = card.querySelector('.card-title')?.textContent.trim() || '';
+                const price = card.querySelector('.price-tag')?.textContent.trim() || '';
+                const desc = card.querySelector('.card-text')?.textContent.trim() || '';
+                const badgeEl = card.querySelector('.diet-tag');
+                const badgeText = badgeEl ? badgeEl.textContent.trim() : 'Special';
+
+                if (modalImg) modalImg.src = imgUrl;
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalPrice) modalPrice.textContent = price;
+                if (modalDesc) modalDesc.textContent = desc;
+                if (modalBadge) {
+                    modalBadge.textContent = badgeText;
+                    modalBadge.className = 'diet-tag ' + (badgeEl ? badgeEl.classList.contains('veg') ? 'veg' : badgeEl.classList.contains('vegan') ? 'vegan' : 'nonveg' : 'veg');
+                }
+
+                if (modalWaBtn) {
+                    const orderText = `Hi VelvetBite Bistro, I want to order:\n• *${title}* (${price})\n\nPlease confirm my order.`;
+                    modalWaBtn.href = `https://wa.me/919999999999?text=${encodeURIComponent(orderText)}`;
+                }
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    }
+
     // ── 8. Photo Gallery Lightbox ──
     document.querySelectorAll('.photo-item').forEach(item => {
         item.addEventListener('click', () => {
