@@ -4,6 +4,7 @@
 :root {
     --color-bg-light: #FAF7F2;          /* Soft Cream Sand */
     --color-bg-white: #ffffff;          /* Pure Card White */
+    --color-card-bg: #ffffff;           /* Container Card White */
     --color-bg-dark: #1E221B;           /* Deep Moss Green */
     --color-text-dark: #242921;         /* Deep Charcoal Moss */
     --color-text-muted: #677063;        /* Sage Charcoal */
@@ -24,6 +25,7 @@
 body.dark-theme {
     --color-bg-light: #10130E;          /* Zen Black Moss */
     --color-bg-white: #181C15;          /* Deep Card Moss */
+    --color-card-bg: #181C15;           /* Container Card Deep Moss */
     --color-bg-dark: #070906;           /* Dark Charcoal */
     --color-text-dark: #F1F4F0;         /* Pure Cream Off-White */
     --color-text-muted: #9AA497;        /* Muted Sage */
@@ -60,6 +62,7 @@ html {
 
 body {
     overflow-x: hidden;
+    background-color: var(--color-bg-light);
     color: var(--color-text-muted);
 }
 
@@ -1348,7 +1351,7 @@ body.dark-theme .qr-standee-card {
     position: relative;
 }
 .booking-grid {
-    background: var(--color-card-bg, #ffffff);
+    background: var(--color-bg-white, #ffffff);
     border: 1px solid var(--color-border, rgba(0, 0, 0, 0.08));
     border-radius: 24px;
     padding: 3.5rem;
@@ -1357,7 +1360,9 @@ body.dark-theme .qr-standee-card {
     overflow: hidden;
 }
 body.dark-theme .booking-grid {
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    background-color: var(--color-bg-white, #181C15);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 }
 .booking-form {
     display: flex;
@@ -1649,7 +1654,7 @@ body.dark-theme .booking-submit-btn:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 body.dark-theme .menu-filter-bar {
-    background-color: #1a221a;
+    background-color: var(--color-bg-white, #181C15);
     border-color: rgba(255, 255, 255, 0.08);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
@@ -2069,6 +2074,40 @@ body.dark-theme .menu-item-card:hover {
 }
 .menu-item-card:hover .menu-item-img img {
     transform: scale(1.08);
+}
+
+/* --- Dark Mode Typography & Container Overrides --- */
+body.dark-theme .menu-page-header {
+    background-color: var(--color-bg-light);
+}
+body.dark-theme .menu-hero-title {
+    color: #F1F4F0;
+}
+body.dark-theme .menu-hero-subtitle {
+    color: #9AA497;
+}
+body.dark-theme .menu-category-title {
+    color: #F1F4F0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+body.dark-theme .item-title {
+    color: #F1F4F0;
+}
+body.dark-theme .item-price {
+    color: #DCBB93;
+}
+body.dark-theme .item-desc {
+    color: #9AA497;
+}
+body.dark-theme .menu-empty-state {
+    background: #181C15;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-theme .menu-empty-state h3 {
+    color: #F1F4F0;
+}
+body.dark-theme .menu-empty-state p {
+    color: #9AA497;
 }
 
 
