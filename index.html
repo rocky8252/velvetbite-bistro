@@ -1103,6 +1103,7 @@
                 <div class="pricing-toggle-container">
                     <button class="pricing-toggle-btn active" id="pricingTogglePlans"><i class="fa-solid fa-layer-group"></i> Standard Packages</button>
                     <button class="pricing-toggle-btn" id="pricingToggleCalc"><i class="fa-solid fa-calculator"></i> Build Custom Plan</button>
+                    <button class="pricing-toggle-btn" id="pricingToggleRoi"><i class="fa-solid fa-wallet"></i> Aggregator Savings Calculator</button>
                 </div>
 
                 <div class="pricing-plans-wrapper" id="pricingPlansWrapper">
@@ -1397,6 +1398,80 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Zomato/Swiggy ROI Calculator Wrapper -->
+                <div class="pricing-roi-wrapper" id="pricingRoiWrapper" style="display: none;">
+                    <div class="calc-container glow-card">
+                        <div class="calc-left">
+                            <h3 class="calc-title font-alt">Stop Giving Away 25% to Aggregators!</h3>
+                            <p class="plan-best-for" style="margin-bottom: 2.5rem; min-height: auto; color: var(--text-secondary);">Calculate how much hard-earned profit you lose to Swiggy & Zomato commissions, and see the instant financial payback of a direct WhatsApp ordering website.</p>
+                            
+                            <!-- Input 1: Daily Orders -->
+                            <div class="calc-group">
+                                <div class="calc-label-row">
+                                    <label class="calc-field-label">Daily Online Orders</label>
+                                    <span class="calc-value-badge" id="roiOrdersLabel">100 Orders/day</span>
+                                </div>
+                                <input type="range" min="10" max="500" value="100" class="calc-range" id="roiOrdersRange">
+                            </div>
+
+                            <!-- Input 2: Average Order Value -->
+                            <div class="calc-group">
+                                <div class="calc-label-row">
+                                    <label class="calc-field-label">Average Order Value (AOV)</label>
+                                    <span class="calc-value-badge" id="roiAovLabel">₹400</span>
+                                </div>
+                                <input type="range" min="100" max="1000" step="50" value="400" class="calc-range" id="roiAovRange">
+                            </div>
+
+                            <!-- Input 3: Commission rate -->
+                            <div class="calc-group">
+                                <div class="calc-label-row">
+                                    <label class="calc-field-label">Aggregator Commission Rate (%)</label>
+                                    <span class="calc-value-badge" id="roiCommLabel">25%</span>
+                                </div>
+                                <input type="range" min="15" max="30" value="25" class="calc-range" id="roiCommRange">
+                            </div>
+                        </div>
+
+                        <div class="calc-right">
+                            <div class="calc-sticky-summary">
+                                <h4 class="summary-title" style="color: var(--text-primary); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem;">Your Annual Savings Report</h4>
+                                
+                                <div style="display:flex; flex-direction:column; gap: 1.2rem; margin-bottom: 1.5rem;">
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span style="font-size:0.85rem; color:var(--text-secondary);">Monthly Commissions Lost</span>
+                                        <span style="font-size:1.15rem; font-weight:700; color:var(--accent-red);" id="roiMonthlyLoss">₹3,04,000</span>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span style="font-size:0.85rem; color:var(--text-secondary);">Yearly Commissions Lost</span>
+                                        <span style="font-size:1.15rem; font-weight:700; color:var(--accent-red);" id="roiYearlyLoss">₹36,48,000</span>
+                                    </div>
+                                    
+                                    <div class="summary-divider" style="margin: 0.5rem 0;"></div>
+                                    
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <span style="font-size:0.85rem; color:var(--text-secondary);">Growth Plan Setup Cost</span>
+                                        <span style="font-size:1rem; font-weight:600; color:var(--text-primary);">₹4,999 (One-Time)</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="summary-total-row" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.08);">
+                                    <span style="font-size: 0.95rem; font-weight: 700; color:#4caf50;">Net Annual Profit Recovered</span>
+                                    <span class="total-price-value" style="color:#4caf50; font-size: 1.8rem;" id="roiNetSavings">₹36,43,001</span>
+                                </div>
+                                
+                                <p class="summary-note" id="roiPaybackSpeed" style="color:var(--text-primary); font-weight: 600; margin: 1.2rem 0; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fa-solid fa-bolt" style="color: #ffc107;"></i> Paid back in less than 1 day of orders!</p>
+                                
+                                <a href="#" target="_blank" class="btn btn-primary btn-glow-red calc-cta-btn" id="roiWhatsAppBtn">
+                                    <span class="btn-glow-layer"></span>
+                                    <i class="fa-brands fa-whatsapp"></i> Stop Commissions & Get Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Comparison Table -->
                 <div class="comparison-container">

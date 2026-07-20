@@ -282,5 +282,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Close Demo Preview Banner Handler
+    const clientDemoBanner = document.getElementById('clientDemoBanner');
+    const closeDemoBanner = document.getElementById('closeDemoBanner');
+    if (clientDemoBanner && closeDemoBanner) {
+        closeDemoBanner.addEventListener('click', () => {
+            clientDemoBanner.style.display = 'none';
+        });
+    }
+
     console.log("Komorebi Cafe scripts successfully loaded.");
 });

@@ -1292,3 +1292,52 @@ body.dark-theme .header {
         padding: 1.5rem;
     }
 }
+
+/* --- Client Preview Demo Banner --- */
+.client-demo-banner {
+    background: linear-gradient(90deg, #111111, #222222);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10000;
+    font-family: 'Outfit', sans-serif;
+}
+.demo-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.demo-badge {
+    background: var(--color-accent, #c2a373);
+    color: #000000;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+.demo-text {
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.4;
+    color: #cccccc;
+}
+.demo-text strong {
+    color: #ffffff;
+}
+.demo-banner-close {
+    background: none;
+    border: none;
+    color: #aaaaaa;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.demo-banner-close:hover {
+    color: #ffffff;
+}

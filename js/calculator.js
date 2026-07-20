@@ -1,24 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- 1. Dynamic Pricing Calculator Logic ---
+    // --- 1. Dynamic Pricing Calculator & ROI Toggle Logic ---
     const pricingTogglePlans = document.getElementById('pricingTogglePlans');
     const pricingToggleCalc = document.getElementById('pricingToggleCalc');
+    const pricingToggleRoi = document.getElementById('pricingToggleRoi');
     const pricingPlansWrapper = document.getElementById('pricingPlansWrapper');
     const pricingCalcWrapper = document.getElementById('pricingCalcWrapper');
+    const pricingRoiWrapper = document.getElementById('pricingRoiWrapper');
 
-    if (pricingTogglePlans && pricingToggleCalc && pricingPlansWrapper && pricingCalcWrapper) {
+    if (pricingTogglePlans && pricingToggleCalc && pricingToggleRoi && pricingPlansWrapper && pricingCalcWrapper && pricingRoiWrapper) {
         pricingTogglePlans.addEventListener('click', () => {
             pricingTogglePlans.classList.add('active');
             pricingToggleCalc.classList.remove('active');
+            pricingToggleRoi.classList.remove('active');
             pricingPlansWrapper.style.display = 'block';
             pricingCalcWrapper.style.display = 'none';
+            pricingRoiWrapper.style.display = 'none';
         });
 
         pricingToggleCalc.addEventListener('click', () => {
             pricingToggleCalc.classList.add('active');
             pricingTogglePlans.classList.remove('active');
+            pricingToggleRoi.classList.remove('active');
             pricingPlansWrapper.style.display = 'none';
             pricingCalcWrapper.style.display = 'block';
+            pricingRoiWrapper.style.display = 'none';
+        });
+
+        pricingToggleRoi.addEventListener('click', () => {
+            pricingToggleRoi.classList.add('active');
+            pricingTogglePlans.classList.remove('active');
+            pricingToggleCalc.classList.remove('active');
+            pricingPlansWrapper.style.display = 'none';
+            pricingCalcWrapper.style.display = 'none';
+            pricingRoiWrapper.style.display = 'block';
         });
     }
 
@@ -157,6 +171,105 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Initial run
         updateCalculator();
+    }
+
+    // --- 2. Zomato/Swiggy ROI Calculator Logic ---
+    const roiOrdersRange = document.getElementById('roiOrdersRange');
+    const roiAovRange = document.getElementById('roiAovRange');
+    const roiCommRange = document.getElementById('roiCommRange');
+
+    const roiOrdersLabel = document.getElementById('roiOrdersLabel');
+    const roiAovLabel = document.getElementById('roiAovLabel');
+    const roiCommLabel = document.getElementById('roiCommLabel');
+
+    const roiMonthlyLoss = document.getElementById('roiMonthlyLoss');
+    const roiYearlyLoss = document.getElementById('roiYearlyLoss');
+    const roiNetSavings = document.getElementById('roiNetSavings');
+    const roiPaybackSpeed = document.getElementById('roiPaybackSpeed');
+    const roiWhatsAppBtn = document.getElementById('roiWhatsAppBtn');
+
+    function updateRoiCalculator() {
+        if (!roiOrdersRange || !roiMonthlyLoss) return;
+
+        const orders = parseInt(roiOrdersRange.value);
+        const aov = parseInt(roiAovRange.value);
+        const comm = parseInt(roiCommRange.value);
+
+        // Update labels
+        roiOrdersLabel.textContent = `${orders} Order${orders > 1 ? 's' : ''}/day`;
+        roiAovLabel.textContent = `₹${aov}`;
+        roiCommLabel.textContent = `${comm}%`;
+
+        // Compute math
+        const monthlyOrders = orders * 30.4;
+        const monthlyRev = monthlyOrders * aov;
+        const monthlyCommissionPaid = Math.round(monthlyRev * (comm / 100));
+        const yearlyCommissionPaid = Math.round(monthlyCommissionPaid * 12);
+        
+        const growthPlanCost = 4999;
+        const netProfitRecovered = yearlyCommissionPaid - growthPlanCost;
+
+        // Calculate payback speed in days
+        const dailyRevenue = orders * aov;
+        const dailyCommission = dailyRevenue * (comm / 100);
+        const paybackDays = Math.ceil(growthPlanCost / dailyCommission);
+
+        // Update text counters
+        animateNumberCounter(roiMonthlyLoss, monthlyCommissionPaid, '₹');
+        animateNumberCounter(roiYearlyLoss, yearlyCommissionPaid, '₹');
+        animateNumberCounter(roiNetSavings, netProfitRecovered > 0 ? netProfitRecovered : 0, '₹');
+
+        // Update payback speed label
+        if (paybackDays <= 1) {
+            roiPaybackSpeed.innerHTML = `<i class="fa-solid fa-bolt" style="color: #ffc107;"></i> Paid back in less than 1 day of orders!`;
+        } else {
+            roiPaybackSpeed.innerHTML = `<i class="fa-solid fa-bolt" style="color: #ffc107;"></i> Paid back in just ${paybackDays} days of orders!`;
+        }
+
+        // WhatsApp message trigger text prefilled
+        const msg = `Hi VelvetBite, I ran your aggregator savings calculator for my restaurant:\n\n` +
+                    `• Daily Orders: ${orders}\n` +
+                    `• Avg Order Value: ₹${aov}\n` +
+                    `• Aggregator Commission: ${comm}%\n\n` +
+                    `• Monthly Lost Profit: ₹${monthlyCommissionPaid.toLocaleString('en-IN')}\n` +
+                    `• Yearly Lost Profit: ₹${yearlyCommissionPaid.toLocaleString('en-IN')}\n` +
+                    `• Cost of VelvetBite Website: ₹4,999 (one-time Growth plan)\n\n` +
+                    `Estimated Annual Savings: ₹${netProfitRecovered.toLocaleString('en-IN')}\n` +
+                    `I want to claim my direct ordering website. Please guide me on next steps.`;
+        
+        roiWhatsAppBtn.href = `https://wa.me/919999999999?text=${encodeURIComponent(msg)}`;
+    }
+
+    // Reuse counter animator with generic element helper
+    function animateNumberCounter(element, targetVal, prefix = '') {
+        if (!element) return;
+        let currentText = element.textContent.replace(/[^\d]/g, '');
+        let current = parseInt(currentText) || 0;
+        let step = Math.ceil((targetVal - current) / 10);
+        
+        if (step === 0) {
+            element.textContent = `${prefix}${targetVal.toLocaleString('en-IN')}`;
+            return;
+        }
+
+        // Use custom interval property on element to prevent cross-talking animations
+        if (element.counterInterval) clearInterval(element.counterInterval);
+        
+        element.counterInterval = setInterval(() => {
+            current += step;
+            if ((step > 0 && current >= targetVal) || (step < 0 && current <= targetVal)) {
+                current = targetVal;
+                clearInterval(element.counterInterval);
+            }
+            element.textContent = `${prefix}${current.toLocaleString('en-IN')}`;
+        }, 20);
+    }
+
+    if (roiOrdersRange) {
+        [roiOrdersRange, roiAovRange, roiCommRange].forEach(input => {
+            input.addEventListener('input', updateRoiCalculator);
+        });
+        updateRoiCalculator();
     }
 
 });
