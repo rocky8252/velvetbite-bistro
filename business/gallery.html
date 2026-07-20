@@ -3,121 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HD Gallery & Video Reels | VelvetBite Business Plan</title>
-    
-    <!-- Google Fonts -->
+    <title>HD Gallery & Video Reels | VelvetBite Bistro Business Plan</title>
+    <meta name="description" content="High-definition restaurant gallery with food photography, interior ambience shots, chef action shots, and 1080p drone video reels.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Client Preview Demo Banner -->
+    <div class="scroll-progress" id="scrollProgress"></div>
     <div class="client-demo-banner" id="clientDemoBanner">
         <div class="demo-banner-content">
-            <span class="demo-badge">BUSINESS PLAN DEMO</span>
-            <p class="demo-text">💡 <strong>Restaurant Owner Preview:</strong> Try the <strong>High-Definition Photo Gallery & Drone Video Reels Support</strong>!</p>
+            <span class="demo-badge">HD GALLERY</span>
+            <p class="demo-text">💡 <strong>Owner Preview:</strong> <strong>High-definition Photo Gallery with Lightbox Zoom & 1080p Video Reels Support</strong></p>
         </div>
-        <button class="demo-banner-close" id="closeDemoBanner" aria-label="Close Preview Banner">&times;</button>
+        <button class="demo-banner-close" id="closeDemoBanner">&times;</button>
     </div>
-
-    <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="container navbar-container">
-            <a href="index.html" class="logo">
-                VelvetBite Bistro<span class="logo-dot">.</span>
-            </a>
-            
+            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="menu.html" class="nav-link">Digital Menu</a>
-                <a href="index.html#specials" class="nav-link">Today's Special</a>
-                <a href="index.html#combos" class="nav-link">Offers & Combos</a>
                 <a href="gallery.html" class="nav-link active">Gallery & Reels</a>
                 <a href="reservation.html" class="nav-link">Table Booking</a>
-                <a href="reviews.html" class="nav-link">Reviews & FAQ</a>
+                <a href="reviews.html" class="nav-link">Reviews</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
-            
-            <div class="nav-actions">
-                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
-                <a href="tel:+919999999999" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.82rem;"><i class="fa-solid fa-phone"></i> Call Desk</a>
-            </div>
+            <div class="nav-actions"><button id="themeToggleBtn" class="theme-toggle-btn"><i class="fa-solid fa-moon"></i></button></div>
         </div>
     </header>
 
-    <!-- Gallery Hero -->
-    <section class="hero-section" style="padding: 4rem 0 3rem;">
-        <div class="container text-center">
-            <span class="section-tag"><i class="fa-solid fa-camera-retro"></i> Visual Experience & Video Support</span>
-            <h1 class="font-serif hero-title" style="font-size: 3rem;">Photo & Video Reels Gallery</h1>
-            <p class="section-subtitle">Take a virtual walkthrough of our ambient dining spaces, kitchen masterclass prep, and signature food presentations.</p>
-        </div>
-    </section>
-
-    <!-- Video Reels Section -->
-    <section style="padding: 2rem 0 4rem; background-color: var(--color-card-bg);">
+    <!-- Photo Gallery -->
+    <section style="padding:4rem 0;">
         <div class="container">
-            <div style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">
-                <span class="section-tag"><i class="fa-solid fa-circle-play"></i> Video Reels & Drone Tours</span>
-                <h2 class="section-title font-serif">1080p Video Reels</h2>
+            <div class="text-center" style="max-width:700px;margin:0 auto 2rem;">
+                <span class="section-tag fade-up"><i class="fa-solid fa-camera-retro"></i> High-Definition Gallery</span>
+                <h1 class="font-serif section-title fade-up delay-1">Our Visual Story</h1>
+                <p class="section-subtitle fade-up delay-2">Click any photo to open the fullscreen lightbox viewer.</p>
             </div>
-
-            <div class="video-grid">
-                
-                <!-- Reel 1 -->
-                <div class="video-reel-card" data-title="Atmospheric Drone Dining Walkthrough">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60" alt="Dining Room Reel">
-                    <div class="video-overlay">
-                        <h4 class="font-serif" style="font-size:1.15rem; margin-bottom:0.2rem;">Dining Hall Walkthrough</h4>
-                        <p style="font-size:0.78rem; opacity:0.85;">0:45 • Ambient Lighting & Music</p>
-                    </div>
-                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
-                </div>
-
-                <!-- Reel 2 -->
-                <div class="video-reel-card" data-title="Chef Plating & Woodfired Pizza Line">
-                    <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500&auto=format&fit=crop&q=60" alt="Chef Prep Reel">
-                    <div class="video-overlay">
-                        <h4 class="font-serif" style="font-size:1.15rem; margin-bottom:0.2rem;">Woodfired Pizza Masterclass</h4>
-                        <p style="font-size:0.78rem; opacity:0.85;">1:15 • Kitchen Preparation Line</p>
-                    </div>
-                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
-                </div>
-
-                <!-- Reel 3 -->
-                <div class="video-reel-card" data-title="Barista Pour Over & Craft Cocktails">
-                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop&q=60" alt="Cocktail Reel">
-                    <div class="video-overlay">
-                        <h4 class="font-serif" style="font-size:1.15rem; margin-bottom:0.2rem;">Smoked Cocktails & Bar</h4>
-                        <p style="font-size:0.78rem; opacity:0.85;">0:50 • Mixology & Espresso Bar</p>
-                    </div>
-                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
-                </div>
-
+            <div class="photo-gallery-grid">
+                <div class="photo-gallery-item fade-up"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60" alt="Dining Hall"><div class="photo-overlay">Dining Hall Ambience</div></div>
+                <div class="photo-gallery-item fade-up delay-1"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format&fit=crop&q=60" alt="Signature Dish"><div class="photo-overlay">Chef Signature Plating</div></div>
+                <div class="photo-gallery-item fade-up delay-2"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&auto=format&fit=crop&q=60" alt="Bar Area"><div class="photo-overlay">Cocktail Bar</div></div>
+                <div class="photo-gallery-item fade-up delay-3"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&auto=format&fit=crop&q=60" alt="Fine Dining"><div class="photo-overlay">Fine Dining Setup</div></div>
+                <div class="photo-gallery-item fade-up"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" alt="Steak Plating"><div class="photo-overlay">Wagyu Ribeye Plating</div></div>
+                <div class="photo-gallery-item fade-up delay-1"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop&q=60" alt="Craft Cocktails"><div class="photo-overlay">Smoked Cocktails</div></div>
+                <div class="photo-gallery-item fade-up delay-2"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500&auto=format&fit=crop&q=60" alt="Pizza Oven"><div class="photo-overlay">Woodfired Pizza</div></div>
+                <div class="photo-gallery-item fade-up delay-3"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=500&auto=format&fit=crop&q=60" alt="Outdoor Terrace"><div class="photo-overlay">Garden Terrace</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Floating Live WhatsApp Chat -->
-    <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20have%20an%20inquiry%20about%20your%20Business%20Plan%20Gallery." target="_blank" class="floating-whatsapp-btn" aria-label="Live WhatsApp Chat">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container text-center">
-            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
-            <p style="margin-top:0.8rem; font-size:0.85rem; color:var(--color-text-muted);">© 2026 VelvetBite Enterprise Bistro. ₹7,999 Business Plan Gallery.</p>
+    <!-- Video Reels -->
+    <section style="padding:4rem 0;background-color:var(--color-card-bg);">
+        <div class="container">
+            <div class="text-center" style="max-width:700px;margin:0 auto 2rem;">
+                <span class="section-tag fade-up"><i class="fa-solid fa-circle-play"></i> Video Reels & Drone Tours</span>
+                <h2 class="section-title font-serif fade-up delay-1">1080p Video Gallery</h2>
+                <p class="section-subtitle fade-up delay-2">Cinematic walkthrough reels of our kitchen, dining floor, and crafted drinks.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-reel-card fade-up" data-title="Atmospheric Drone Dining Walkthrough">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60" alt="Dining Reel">
+                    <div class="video-overlay"><h4 class="font-serif" style="font-size:1.1rem;margin-bottom:0.2rem;">Dining Hall Walkthrough</h4><p style="font-size:0.78rem;opacity:0.85;">0:45 • Ambient Lighting</p></div>
+                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-reel-card fade-up delay-1" data-title="Woodfired Pizza Masterclass">
+                    <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500&auto=format&fit=crop&q=60" alt="Pizza Reel">
+                    <div class="video-overlay"><h4 class="font-serif" style="font-size:1.1rem;margin-bottom:0.2rem;">Pizza Masterclass</h4><p style="font-size:0.78rem;opacity:0.85;">1:15 • Kitchen Prep</p></div>
+                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-reel-card fade-up delay-2" data-title="Barista Pour Over & Cocktail Crafting">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop&q=60" alt="Cocktail Reel">
+                    <div class="video-overlay"><h4 class="font-serif" style="font-size:1.1rem;margin-bottom:0.2rem;">Smoked Cocktails & Espresso</h4><p style="font-size:0.78rem;opacity:0.85;">0:50 • Mixology Bar</p></div>
+                    <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Script -->
+    <a href="https://wa.me/919999999999" target="_blank" class="floating-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+    <footer class="footer"><div class="container"><div class="footer-bottom" style="border-top:none;margin-top:0;"><p>© 2026 VelvetBite Bistro. ₹7,999 Business Plan — HD Gallery & Video Reels.</p></div></div></footer>
     <script src="app.js"></script>
 </body>
 </html>

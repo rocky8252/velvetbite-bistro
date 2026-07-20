@@ -3,115 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Reviews & Google Feed | VelvetBite Business Plan</title>
-    
-    <!-- Google Fonts -->
+    <title>Customer Reviews & Google Feed | VelvetBite Bistro</title>
+    <meta name="description" content="Read verified Google reviews from 520+ patrons. Leave your own star rating and feedback for VelvetBite Bistro.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Client Preview Demo Banner -->
+    <div class="scroll-progress" id="scrollProgress"></div>
     <div class="client-demo-banner" id="clientDemoBanner">
         <div class="demo-banner-content">
-            <span class="demo-badge">BUSINESS PLAN DEMO</span>
-            <p class="demo-text">💡 <strong>Restaurant Owner Preview:</strong> Try the <strong>Google Reviews Feed & Interactive Star Review Submission Form</strong>!</p>
+            <span class="demo-badge">REVIEWS</span>
+            <p class="demo-text">💡 <strong>Owner Preview:</strong> <strong>Google Reviews Feed Badge & Interactive Star Review Submission Form</strong></p>
         </div>
-        <button class="demo-banner-close" id="closeDemoBanner" aria-label="Close Preview Banner">&times;</button>
+        <button class="demo-banner-close" id="closeDemoBanner">&times;</button>
     </div>
-
-    <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="container navbar-container">
-            <a href="index.html" class="logo">
-                VelvetBite Bistro<span class="logo-dot">.</span>
-            </a>
-            
+            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="menu.html" class="nav-link">Digital Menu</a>
-                <a href="index.html#specials" class="nav-link">Today's Special</a>
-                <a href="index.html#combos" class="nav-link">Offers & Combos</a>
                 <a href="gallery.html" class="nav-link">Gallery & Reels</a>
                 <a href="reservation.html" class="nav-link">Table Booking</a>
-                <a href="reviews.html" class="nav-link active">Reviews & FAQ</a>
+                <a href="reviews.html" class="nav-link active">Reviews</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
-            
-            <div class="nav-actions">
-                <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
-                <a href="tel:+919999999999" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.82rem;"><i class="fa-solid fa-phone"></i> Call Desk</a>
-            </div>
+            <div class="nav-actions"><button id="themeToggleBtn" class="theme-toggle-btn"><i class="fa-solid fa-moon"></i></button></div>
         </div>
     </header>
 
-    <!-- Reviews Hero -->
-    <section class="hero-section" style="padding: 4rem 0 3rem;">
-        <div class="container text-center">
-            <span class="section-tag"><i class="fa-solid fa-star text-gold" style="color:#ffc107;"></i> Verified Google Reviews Feed</span>
-            <h1 class="font-serif hero-title" style="font-size: 3rem;">Patrons Feedback</h1>
-            <p class="section-subtitle">Read real impressions from dining guests or submit your rating to our live feed below.</p>
+    <!-- Google Reviews Badge -->
+    <section style="padding:4rem 0 2rem;">
+        <div class="container">
+            <div class="text-center" style="max-width:700px;margin:0 auto 2rem;">
+                <span class="section-tag fade-up"><i class="fa-solid fa-star" style="color:#ffc107;"></i> Verified Reviews</span>
+                <h1 class="font-serif section-title fade-up delay-1">Patron Feedback</h1>
+            </div>
+
+            <!-- Google Reviews Feed Badge -->
+            <div class="google-reviews-badge fade-up scale-in">
+                <div class="google-logo-icon">
+                    <span style="color:#4285F4;font-weight:800;">G</span><span style="color:#EA4335;font-weight:800;">o</span><span style="color:#FBBC04;font-weight:800;">o</span><span style="color:#4285F4;font-weight:800;">g</span><span style="color:#34A853;font-weight:800;">l</span><span style="color:#EA4335;font-weight:800;">e</span>
+                </div>
+                <div style="text-align:center;">
+                    <div class="google-rating-number">4.9</div>
+                    <div class="google-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <p style="font-size:0.82rem;color:var(--color-text-muted);margin-top:0.3rem;">Based on 520+ verified reviews</p>
+                </div>
+                <a href="https://google.com/maps" target="_blank" class="btn btn-secondary" style="font-size:0.82rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> View on Google Maps</a>
+            </div>
         </div>
     </section>
 
     <!-- Reviews Grid -->
-    <section style="padding: 2rem 0 6rem;">
+    <section style="padding:1rem 0 4rem;">
         <div class="container">
-            
             <div class="cards-grid-3" id="reviewsGrid">
-                
-                <!-- Review 1 -->
-                <div class="glow-card">
-                    <div style="display:flex; justify-space-between; align-items:center; margin-bottom:0.8rem;">
-                        <h4 class="font-serif" style="font-size:1.05rem; font-weight:700; color:var(--color-text-dark);">Nisha Kapoor</h4>
-                        <span style="color:#ffc107; font-weight:700; font-size:0.85rem;"><i class="fa-solid fa-star"></i> 5.0</span>
+                <div class="glow-card fade-up">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+                        <h4 style="font-size:1.05rem;font-weight:700;color:var(--color-text-dark);">Nisha Kapoor</h4>
+                        <span style="color:#ffc107;font-weight:700;font-size:0.85rem;"><i class="fa-solid fa-star"></i> 5.0</span>
                     </div>
-                    <p style="font-size:0.9rem; line-height:1.5; color:var(--color-text-muted);">The Truffle Wild Mushroom Pizza and Ceremonial Matcha were absolutely outstanding. Loved the ambient lighting in the Garden Terrace!</p>
-                    <span style="font-size:0.75rem; color:#4caf50; font-weight:600; display:block; margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review</span>
+                    <p style="font-size:0.88rem;line-height:1.5;color:var(--color-text-muted);">The Truffle Wild Mushroom Pizza was absolutely outstanding. Loved the ambient Garden Terrace with bonsai plants and natural sunlight!</p>
+                    <span style="font-size:0.75rem;color:#4caf50;font-weight:600;display:block;margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review • 2 days ago</span>
                 </div>
-
-                <!-- Review 2 -->
-                <div class="glow-card">
-                    <div style="display:flex; justify-space-between; align-items:center; margin-bottom:0.8rem;">
-                        <h4 class="font-serif" style="font-size:1.05rem; font-weight:700; color:var(--color-text-dark);">Siddharth Gupta</h4>
-                        <span style="color:#ffc107; font-weight:700; font-size:0.85rem;"><i class="fa-solid fa-star"></i> 5.0</span>
+                <div class="glow-card fade-up delay-1">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+                        <h4 style="font-size:1.05rem;font-weight:700;color:var(--color-text-dark);">Siddharth Gupta</h4>
+                        <span style="color:#ffc107;font-weight:700;font-size:0.85rem;"><i class="fa-solid fa-star"></i> 5.0</span>
                     </div>
-                    <p style="font-size:0.9rem; line-height:1.5; color:var(--color-text-muted);">Direct WhatsApp table booking was so smooth! No waiting line, our table was pre-arranged in the Espresso Bar zone.</p>
-                    <span style="font-size:0.75rem; color:#4caf50; font-weight:600; display:block; margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review</span>
+                    <p style="font-size:0.88rem;line-height:1.5;color:var(--color-text-muted);">Direct WhatsApp table booking was incredibly smooth! No waiting line, our table was pre-arranged in the Espresso Bar zone. Highly recommended!</p>
+                    <span style="font-size:0.75rem;color:#4caf50;font-weight:600;display:block;margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review • 5 days ago</span>
                 </div>
-
-                <!-- Review 3 -->
-                <div class="glow-card">
-                    <div style="display:flex; justify-space-between; align-items:center; margin-bottom:0.8rem;">
-                        <h4 class="font-serif" style="font-size:1.05rem; font-weight:700; color:var(--color-text-dark);">Elena Vance</h4>
-                        <span style="color:#ffc107; font-weight:700; font-size:0.85rem;"><i class="fa-solid fa-star"></i> 4.9</span>
+                <div class="glow-card fade-up delay-2">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+                        <h4 style="font-size:1.05rem;font-weight:700;color:var(--color-text-dark);">Elena Vance</h4>
+                        <span style="color:#ffc107;font-weight:700;font-size:0.85rem;"><i class="fa-solid fa-star"></i> 4.9</span>
                     </div>
-                    <p style="font-size:0.9rem; line-height:1.5; color:var(--color-text-muted);">The Family Royal Feast Combo deal is a massive value for money. Best wood-fired pizza crust in town!</p>
-                    <span style="font-size:0.75rem; color:#4caf50; font-weight:600; display:block; margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review</span>
+                    <p style="font-size:0.88rem;line-height:1.5;color:var(--color-text-muted);">The Family Royal Feast Combo deal is a massive value for money. Best wood-fired pizza crust in town and the chocolate lava cake was divine!</p>
+                    <span style="font-size:0.75rem;color:#4caf50;font-weight:600;display:block;margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review • 1 week ago</span>
                 </div>
-
+                <div class="glow-card fade-up">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+                        <h4 style="font-size:1.05rem;font-weight:700;color:var(--color-text-dark);">Rohan Mehta</h4>
+                        <span style="color:#ffc107;font-weight:700;font-size:0.85rem;"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                    <p style="font-size:0.88rem;line-height:1.5;color:var(--color-text-muted);">Outstanding pour-over coffee notes and the almond croissant is flaky perfection. The cozy Matcha Lounge is my favorite remote work spot.</p>
+                    <span style="font-size:0.75rem;color:#4caf50;font-weight:600;display:block;margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review • 2 weeks ago</span>
+                </div>
+                <div class="glow-card fade-up delay-1">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+                        <h4 style="font-size:1.05rem;font-weight:700;color:var(--color-text-dark);">Ananya Singh</h4>
+                        <span style="color:#ffc107;font-weight:700;font-size:0.85rem;"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <p style="font-size:0.88rem;line-height:1.5;color:var(--color-text-muted);">Celebrated my birthday here and the staff was amazing! They arranged a surprise dessert platter in the VIP lounge. Will definitely come back.</p>
+                    <span style="font-size:0.75rem;color:#4caf50;font-weight:600;display:block;margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review • 3 weeks ago</span>
+                </div>
+                <div class="glow-card fade-up delay-2">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+                        <h4 style="font-size:1.05rem;font-weight:700;color:var(--color-text-dark);">Marco Rodriguez</h4>
+                        <span style="color:#ffc107;font-weight:700;font-size:0.85rem;"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <p style="font-size:0.88rem;line-height:1.5;color:var(--color-text-muted);">As a chef myself, I can say the Wagyu Ribeye A5 here is exceptional. Perfectly seared with the right amount of truffle butter. Outstanding.</p>
+                    <span style="font-size:0.75rem;color:#4caf50;font-weight:600;display:block;margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Google Review • 1 month ago</span>
+                </div>
             </div>
 
-            <!-- Submit Review Form Card -->
-            <div class="glow-card" style="margin-top:4rem; padding:3rem;">
-                <h3 class="font-serif" style="font-size:1.5rem; margin-bottom:0.5rem; color:var(--color-text-dark);">Leave a Verified Star Review</h3>
-                <p style="font-size:0.9rem; color:var(--color-text-muted); margin-bottom:2rem;">Share your dining experience to help us maintain culinary excellence.</p>
-
+            <!-- Submit Review Form -->
+            <div class="glow-card fade-up" style="margin-top:4rem;padding:3rem;">
+                <h3 class="font-serif" style="font-size:1.4rem;margin-bottom:0.5rem;color:var(--color-text-dark);">Leave a Verified Star Review</h3>
+                <p style="font-size:0.88rem;color:var(--color-text-muted);margin-bottom:2rem;">Share your dining experience to help us maintain culinary excellence.</p>
                 <form id="businessReviewForm">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+                        <div><label class="form-label">Your Full Name</label><input type="text" id="revName" class="form-input" required placeholder="Guest Name"></div>
                         <div>
-                            <label style="font-size:0.75rem; font-weight:700; color:var(--color-text-muted); display:block; margin-bottom:0.4rem;">YOUR FULL NAME</label>
-                            <input type="text" id="revName" required placeholder="Guest Name" style="width:100%; padding:0.85rem 1rem; border-radius:8px; border:1px solid var(--border-soft); background:rgba(0,0,0,0.02); color:var(--color-text-dark); font-family:inherit;">
-                        </div>
-                        <div>
-                            <label style="font-size:0.75rem; font-weight:700; color:var(--color-text-muted); display:block; margin-bottom:0.4rem;">STAR RATING</label>
-                            <div style="display:flex; gap:0.5rem; font-size:1.3rem; color:#ffc107; cursor:pointer; padding-top:0.3rem;">
+                            <label class="form-label">Star Rating</label>
+                            <div style="display:flex;gap:0.5rem;font-size:1.3rem;cursor:pointer;padding-top:0.5rem;">
                                 <span class="star-opt active" data-rating="1"><i class="fa-solid fa-star"></i></span>
                                 <span class="star-opt active" data-rating="2"><i class="fa-solid fa-star"></i></span>
                                 <span class="star-opt active" data-rating="3"><i class="fa-solid fa-star"></i></span>
@@ -120,33 +130,16 @@
                             </div>
                         </div>
                     </div>
-
-                    <div style="margin-bottom:1.8rem;">
-                        <label style="font-size:0.75rem; font-weight:700; color:var(--color-text-muted); display:block; margin-bottom:0.4rem;">YOUR FEEDBACK COMMENTS</label>
-                        <textarea id="revComment" rows="3" required placeholder="Tell us about the food quality, service, and ambiance..." style="width:100%; padding:0.85rem 1rem; border-radius:8px; border:1px solid var(--border-soft); background:rgba(0,0,0,0.02); color:var(--color-text-dark); font-family:inherit;"></textarea>
-                    </div>
-
+                    <div style="margin-bottom:1.8rem;"><label class="form-label">Your Feedback Comments</label><textarea id="revComment" class="form-input" rows="4" required placeholder="Tell us about the food quality, service, and ambiance..."></textarea></div>
                     <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Verified Review</button>
                 </form>
             </div>
-
         </div>
     </section>
 
-    <!-- Floating Live WhatsApp Chat -->
-    <a href="https://wa.me/919999999999?text=Hi%20VelvetBite,%20I%20have%20an%20inquiry%20about%20your%20Business%20Plan%20Reviews." target="_blank" class="floating-whatsapp-btn" aria-label="Live WhatsApp Chat">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container text-center">
-            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
-            <p style="margin-top:0.8rem; font-size:0.85rem; color:var(--color-text-muted);">© 2026 VelvetBite Enterprise Bistro. ₹7,999 Business Plan Reviews.</p>
-        </div>
-    </footer>
-
-    <!-- Script -->
+    <a href="https://wa.me/919999999999" target="_blank" class="floating-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+    <footer class="footer"><div class="container"><div class="footer-bottom" style="border-top:none;margin-top:0;"><p>© 2026 VelvetBite Bistro. ₹7,999 Business Plan — Customer Reviews & Google Feed.</p></div></div></footer>
     <script src="app.js"></script>
 </body>
 </html>
