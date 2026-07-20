@@ -39,32 +39,93 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 3. QR Code Scanner Popup Modal (on Home Page) ---
+    // --- 3. QR Code Scanner Popup Modal & Tabletop Standee Builder (on Home Page) ---
     const qrModal = document.getElementById('qrModal');
     const qrModalClose = document.getElementById('qrModalClose');
     const heroQrTrigger = document.getElementById('heroQrTrigger');
     const tableQrTrigger = document.getElementById('tableQrTrigger');
+    const standeeQrImg = document.getElementById('standeeQrImg');
+    const standeeTableNumber = document.getElementById('standeeTableNumber');
+    const standeeTableSelector = document.getElementById('standeeTableSelector');
+    const downloadQrBtn = document.getElementById('downloadQrBtn');
+    const printStandeeBtn = document.getElementById('printStandeeBtn');
 
-    // Dynamically update QR code images based on current domain/IP
-    const qrImages = document.querySelectorAll('.qr-code-box img');
-    if (qrImages.length > 0) {
+    // Compile dynamic menu URL containing table number parameters
+    function getMenuUrl(tableNum) {
         const currentOrigin = window.location.origin;
         let path = window.location.pathname;
-        // Remove trailing index.html if present
         if (path.endsWith('index.html')) {
             path = path.slice(0, -10);
         }
-        // Ensure path ends with slash
         if (!path.endsWith('/')) {
             path += '/';
         }
-        const targetMenuUrl = currentOrigin + path + 'menu.html';
-        qrImages.forEach(img => {
-            img.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(targetMenuUrl)}`;
-        });
-        console.log("QR menu target URL configured: ", targetMenuUrl);
+        return `${currentOrigin}${path}menu.html?table=${tableNum}`;
+    }
 
-        // If user is opening it on localhost or 127.0.0.1, inject a network IP testing notice below the QR code.
+    // Update QR image src and Standee table label
+    function refreshQrCode() {
+        const tableNum = standeeTableSelector ? standeeTableSelector.value : "04";
+        const targetUrl = getMenuUrl(tableNum);
+        
+        if (standeeQrImg) {
+            standeeQrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(targetUrl)}`;
+        }
+        if (standeeTableNumber) {
+            standeeTableNumber.textContent = tableNum;
+        }
+
+        // Keep the inline mockup card on index page pointed to default Table 04
+        const staticQrImages = document.querySelectorAll('.qr-code-box img:not(#standeeQrImg)');
+        staticQrImages.forEach(img => {
+            img.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(getMenuUrl("04"))}`;
+        });
+    }
+
+    // Initialize QR Code source settings
+    if (document.querySelectorAll('.qr-code-box img').length > 0) {
+        refreshQrCode();
+
+        // Listen for table dropdown choices
+        if (standeeTableSelector) {
+            standeeTableSelector.addEventListener('change', refreshQrCode);
+        }
+
+        // Download QR Code PNG button trigger
+        if (downloadQrBtn) {
+            downloadQrBtn.addEventListener('click', () => {
+                const qrImg = document.getElementById('standeeQrImg');
+                if (qrImg && qrImg.src) {
+                    const tableNum = standeeTableSelector ? standeeTableSelector.value : "04";
+                    // Download via Blob conversion to bypass default browser navigation locks
+                    fetch(qrImg.src)
+                        .then(res => res.blob())
+                        .then(blob => {
+                            const blobUrl = URL.createObjectURL(blob);
+                            const link = document.createElement('a');
+                            link.href = blobUrl;
+                            link.download = `komorebi_qr_menu_table_${tableNum}.png`;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            URL.revokeObjectURL(blobUrl);
+                        })
+                        .catch(err => {
+                            console.error("CORS fetch failed, redirecting to raw image: ", err);
+                            window.open(qrImg.src, '_blank');
+                        });
+                }
+            });
+        }
+
+        // Print Standee card button trigger
+        if (printStandeeBtn) {
+            printStandeeBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
+
+        // Local network testing notice injection
         const hostname = window.location.hostname;
         if (hostname === 'localhost' || hostname === '127.0.0.1') {
             const qrBoxes = document.querySelectorAll('.qr-code-box');

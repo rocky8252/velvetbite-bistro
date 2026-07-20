@@ -1130,3 +1130,165 @@ body.dark-theme .header.scrolled {
     cursor: pointer;
 }
 
+/* --- QR Standee Builder & Printer Styling --- */
+.standee-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2.5rem;
+    align-items: center;
+    text-align: left;
+}
+
+/* Wood/Gold frame design mimicking table stands */
+.qr-standee-card {
+    background-color: #FAF7F2;          /* Light Cream Standee body */
+    border: 8px double #C29661;         /* Gold double border */
+    border-radius: 12px;
+    padding: 2.5rem 1.8rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #242921;
+    max-width: 290px;
+    margin: 0 auto;
+}
+
+body.dark-theme .qr-standee-card {
+    background-color: #FAF7F2; /* Keep white/sand standee for physical high contrast printing */
+    border-color: #C29661;
+    color: #242921;
+}
+
+.standee-logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #52654C;
+    margin-bottom: 0.3rem;
+}
+
+.standee-logo .logo-dot {
+    color: #C29661;
+}
+
+.standee-tagline {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #677063;
+    margin-bottom: 1.5rem;
+}
+
+.qr-standee-card .qr-code-box {
+    background-color: #ffffff;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px dashed rgba(82, 101, 76, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.qr-standee-card .qr-code-box img {
+    width: 170px;
+    height: 170px;
+}
+
+.standee-table-badge {
+    font-size: 0.85rem;
+    font-weight: 800;
+    background-color: #52654C;
+    color: #ffffff;
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.standee-footer-social {
+    font-size: 0.55rem;
+    font-weight: 500;
+    color: #677063;
+}
+
+/* Control Settings Styles */
+.standee-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.control-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.control-select {
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    border: var(--border-soft);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.control-select:focus {
+    border-color: var(--color-primary);
+}
+
+.qr-modal-card {
+    max-width: 650px !important;
+}
+
+/* Dynamic Local IP alert override inside standee layout */
+.qr-local-hint {
+    margin-top: 1rem;
+    font-size: 0.72rem !important;
+    text-align: left;
+}
+
+@media (max-width: 575px) {
+    .standee-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* --- Printable Area Setup --- */
+@media print {
+    /* Hide all page UI, backgrounds, and overlay shadows */
+    body * {
+        visibility: hidden;
+    }
+    
+    /* Display ONLY the standee card */
+    #qrStandeeCard, #qrStandeeCard * {
+        visibility: visible;
+    }
+    
+    #qrStandeeCard {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1.3);
+        box-shadow: none !important;
+        border: 8px double #C29661 !important;
+        background-color: #FAF7F2 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+
