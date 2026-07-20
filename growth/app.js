@@ -380,6 +380,136 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 7. Digital Menu Multi-Filter & Live Search Controller ---
+    const menuFilterBtns = document.querySelectorAll('.menu-filter-btn');
+    const dietFilterBtns = document.querySelectorAll('.diet-filter-btn');
+    const menuSearchInput = document.getElementById('menuSearchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const menuResultsCount = document.getElementById('menuResultsCount');
+    const resetFiltersLink = document.getElementById('resetFiltersLink');
+    const menuEmptyState = document.getElementById('menuEmptyState');
+    const emptyStateResetBtn = document.getElementById('emptyStateResetBtn');
+    const menuCategoryGroups = document.querySelectorAll('.menu-category-group');
+    const filterMenuItemCards = document.querySelectorAll('.menu-item-card');
+
+    if (filterMenuItemCards.length > 0) {
+        let selectedCategory = 'all';
+        let selectedDiet = 'all';
+        let searchQuery = '';
+
+        const applyMenuFilters = () => {
+            let visibleCount = 0;
+
+            filterMenuItemCards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                const cardDiet = card.getAttribute('data-diet');
+                const cardSearch = (card.getAttribute('data-search') || '').toLowerCase();
+
+                const matchCat = (selectedCategory === 'all' || cardCat === selectedCategory);
+                const matchDiet = (selectedDiet === 'all' || cardDiet === selectedDiet);
+                const matchSearch = (searchQuery === '' || cardSearch.includes(searchQuery.toLowerCase()));
+
+                if (matchCat && matchDiet && matchSearch) {
+                    card.classList.remove('is-hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('is-hidden');
+                }
+            });
+
+            // Update category headers visibility
+            menuCategoryGroups.forEach(group => {
+                const groupCards = group.querySelectorAll('.menu-item-card:not(.is-hidden)');
+                if (groupCards.length === 0) {
+                    group.style.display = 'none';
+                } else {
+                    group.style.display = 'block';
+                }
+            });
+
+            // Update results counter & empty state
+            if (menuResultsCount) {
+                if (selectedCategory === 'all' && selectedDiet === 'all' && searchQuery === '') {
+                    menuResultsCount.textContent = `Showing all ${visibleCount} signature handcrafted creations`;
+                    if (resetFiltersLink) resetFiltersLink.style.display = 'none';
+                } else {
+                    menuResultsCount.textContent = `Showing ${visibleCount} signature item${visibleCount === 1 ? '' : 's'} matching your selection`;
+                    if (resetFiltersLink) resetFiltersLink.style.display = 'inline-block';
+                }
+            }
+
+            if (menuEmptyState) {
+                if (visibleCount === 0) {
+                    menuEmptyState.style.display = 'block';
+                } else {
+                    menuEmptyState.style.display = 'none';
+                }
+            }
+
+            if (clearSearchBtn) {
+                clearSearchBtn.style.display = searchQuery !== '' ? 'block' : 'none';
+            }
+        };
+
+        // Category Tab Listeners
+        menuFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                menuFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedCategory = btn.getAttribute('data-cat');
+                applyMenuFilters();
+            });
+        });
+
+        // Diet Pill Listeners
+        dietFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                dietFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedDiet = btn.getAttribute('data-diet');
+                applyMenuFilters();
+            });
+        });
+
+        // Live Search Input Listener
+        if (menuSearchInput) {
+            menuSearchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim();
+                applyMenuFilters();
+            });
+        }
+
+        // Clear Search Trigger
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', () => {
+                if (menuSearchInput) menuSearchInput.value = '';
+                searchQuery = '';
+                applyMenuFilters();
+            });
+        }
+
+        // Reset All Filters Handlers
+        const resetAllFilters = () => {
+            selectedCategory = 'all';
+            selectedDiet = 'all';
+            searchQuery = '';
+            if (menuSearchInput) menuSearchInput.value = '';
+            
+            menuFilterBtns.forEach(b => b.classList.remove('active'));
+            const catAll = document.querySelector('.menu-filter-btn[data-cat="all"]');
+            if (catAll) catAll.classList.add('active');
+
+            dietFilterBtns.forEach(b => b.classList.remove('active'));
+            const dietAll = document.querySelector('.diet-filter-btn[data-diet="all"]');
+            if (dietAll) dietAll.classList.add('active');
+
+            applyMenuFilters();
+        };
+
+        if (resetFiltersLink) resetFiltersLink.addEventListener('click', resetAllFilters);
+        if (emptyStateResetBtn) emptyStateResetBtn.addEventListener('click', resetAllFilters);
+    }
+
     // Close Demo Preview Banner Handler
     const clientDemoBanner = document.getElementById('clientDemoBanner');
     const closeDemoBanner = document.getElementById('closeDemoBanner');
