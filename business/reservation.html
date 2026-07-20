@@ -3,131 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Reservation | VelvetBite Bistro — Premium Dining Zones</title>
-    <meta name="description" content="Book your table online at VelvetBite Bistro. Choose from Garden Terrace, Matcha Lounge, Espresso Bar, or VIP Lounge dining zones.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <title>Table Reservation | VelvetBite Bistro — 4 Premium Dining Zones</title>
+    <meta name="description" content="Book your table at VelvetBite Bistro. Choose Garden Terrace, Matcha Lounge, Espresso Bar, or VIP Lounge.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-    <div class="client-demo-banner" id="clientDemoBanner">
-        <div class="demo-banner-content">
-            <span class="demo-badge">TABLE BOOKING</span>
-            <p class="demo-text">💡 <strong>Owner Preview:</strong> <strong>Table Reservation Form with Premium Dining Zone Selector & Direct WhatsApp Booking Confirmation</strong></p>
-        </div>
-        <button class="demo-banner-close" id="closeDemoBanner">&times;</button>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="demo-banner" id="demoBanner">
+    <div style="display:flex;align-items:center;"><span class="demo-banner-badge">TABLE BOOKING</span><span>💡 <strong>4 Dining Zones + WhatsApp Reservation Confirmation</strong></span></div>
+    <button id="bannerClose">&times;</button>
+</div>
+<header class="header" id="header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">VelvetBite Bistro<span>.</span></a>
+        <nav class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="menu.html" class="nav-link">Digital Menu</a><a href="gallery.html" class="nav-link">Gallery & Reels</a><a href="reservation.html" class="nav-link active">Table Booking</a><a href="reviews.html" class="nav-link">Reviews</a></nav>
+        <div class="nav-actions"><button id="themeBtn" class="theme-btn"><i class="fa-solid fa-moon"></i></button></div>
     </div>
-    <header class="header" id="header">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="menu.html" class="nav-link">Digital Menu</a>
-                <a href="gallery.html" class="nav-link">Gallery & Reels</a>
-                <a href="reservation.html" class="nav-link active">Table Booking</a>
-                <a href="reviews.html" class="nav-link">Reviews</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="nav-actions"><button id="themeToggleBtn" class="theme-toggle-btn"><i class="fa-solid fa-moon"></i></button></div>
+</header>
+
+<section style="padding:4rem 0 2rem;">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label"><i class="fa-solid fa-chair"></i> Select Dining Zone</div>
+            <h1 class="section-title font-serif">Reserve Your Table</h1>
+            <p class="section-desc">Choose your preferred zone and complete the reservation form.</p>
         </div>
-    </header>
-
-    <!-- Zone Selector -->
-    <section style="padding:4rem 0 2rem;">
-        <div class="container">
-            <div class="text-center" style="max-width:700px;margin:0 auto 2.5rem;">
-                <span class="section-tag fade-up"><i class="fa-solid fa-chair"></i> Select Your Dining Zone</span>
-                <h1 class="font-serif section-title fade-up delay-1">Reserve Your Table</h1>
-                <p class="section-subtitle fade-up delay-2">Choose from our curated dining zones and complete the reservation form below.</p>
+        <div class="grid-4" style="margin-bottom:1.5rem;">
+            <div class="zone-card active" data-zone="Garden Terrace">
+                <div class="zone-emoji">🌿</div>
+                <h4 class="zone-title">Garden Terrace</h4>
+                <p class="zone-desc">Outdoor with bonsai, fairy lights & sunlight.</p>
+                <div class="zone-tags"><span class="zone-tag green">Open Air</span><span class="zone-tag orange">2-6 guests</span></div>
             </div>
-
-            <div class="cards-grid-4" style="margin-bottom:1.5rem;">
-                <div class="booking-zone-card active fade-up" data-zone="Garden Terrace">
-                    <div style="font-size:2rem;margin-bottom:0.8rem;">🌿</div>
-                    <h4 style="font-size:1rem;font-weight:700;color:var(--color-text-dark);margin-bottom:0.3rem;">Garden Terrace</h4>
-                    <p style="font-size:0.8rem;color:var(--color-text-muted);">Outdoor seating with bonsai trees, fairy lights & natural sunlight.</p>
-                    <div style="margin-top:0.8rem;display:flex;gap:0.5rem;">
-                        <span style="font-size:0.68rem;background:rgba(76,175,80,0.1);color:#4caf50;padding:2px 8px;border-radius:50px;font-weight:700;">Open Air</span>
-                        <span style="font-size:0.68rem;background:rgba(255,152,0,0.1);color:#ff9800;padding:2px 8px;border-radius:50px;font-weight:700;">2-6 guests</span>
-                    </div>
-                </div>
-                <div class="booking-zone-card fade-up delay-1" data-zone="Matcha Lounge">
-                    <div style="font-size:2rem;margin-bottom:0.8rem;">🍵</div>
-                    <h4 style="font-size:1rem;font-weight:700;color:var(--color-text-dark);margin-bottom:0.3rem;">Matcha Lounge</h4>
-                    <p style="font-size:0.8rem;color:var(--color-text-muted);">Cozy Japanese-inspired tatami-style seating with bamboo accents.</p>
-                    <div style="margin-top:0.8rem;display:flex;gap:0.5rem;">
-                        <span style="font-size:0.68rem;background:rgba(76,175,80,0.1);color:#4caf50;padding:2px 8px;border-radius:50px;font-weight:700;">Indoor</span>
-                        <span style="font-size:0.68rem;background:rgba(255,152,0,0.1);color:#ff9800;padding:2px 8px;border-radius:50px;font-weight:700;">2-4 guests</span>
-                    </div>
-                </div>
-                <div class="booking-zone-card fade-up delay-2" data-zone="Espresso Bar">
-                    <div style="font-size:2rem;margin-bottom:0.8rem;">☕</div>
-                    <h4 style="font-size:1rem;font-weight:700;color:var(--color-text-dark);margin-bottom:0.3rem;">Espresso Bar</h4>
-                    <p style="font-size:0.8rem;color:var(--color-text-muted);">High-stool counter seating facing the open barista station.</p>
-                    <div style="margin-top:0.8rem;display:flex;gap:0.5rem;">
-                        <span style="font-size:0.68rem;background:rgba(76,175,80,0.1);color:#4caf50;padding:2px 8px;border-radius:50px;font-weight:700;">Counter</span>
-                        <span style="font-size:0.68rem;background:rgba(255,152,0,0.1);color:#ff9800;padding:2px 8px;border-radius:50px;font-weight:700;">1-3 guests</span>
-                    </div>
-                </div>
-                <div class="booking-zone-card fade-up delay-3" data-zone="Private VIP Lounge">
-                    <div style="font-size:2rem;margin-bottom:0.8rem;">👑</div>
-                    <h4 style="font-size:1rem;font-weight:700;color:var(--color-text-dark);margin-bottom:0.3rem;">Private VIP Lounge</h4>
-                    <p style="font-size:0.8rem;color:var(--color-text-muted);">Exclusive private dining room for celebrations and corporate events.</p>
-                    <div style="margin-top:0.8rem;display:flex;gap:0.5rem;">
-                        <span style="font-size:0.68rem;background:rgba(183,28,28,0.1);color:var(--color-primary);padding:2px 8px;border-radius:50px;font-weight:700;">Premium</span>
-                        <span style="font-size:0.68rem;background:rgba(255,152,0,0.1);color:#ff9800;padding:2px 8px;border-radius:50px;font-weight:700;">8-20 guests</span>
-                    </div>
-                </div>
+            <div class="zone-card" data-zone="Matcha Lounge">
+                <div class="zone-emoji">🍵</div>
+                <h4 class="zone-title">Matcha Lounge</h4>
+                <p class="zone-desc">Cozy Japanese tatami-style seating.</p>
+                <div class="zone-tags"><span class="zone-tag green">Indoor</span><span class="zone-tag orange">2-4 guests</span></div>
             </div>
-
-            <div class="glow-card fade-up" style="padding:0.8rem 1.5rem;margin-bottom:2rem;text-align:center;background:linear-gradient(135deg,rgba(76,175,80,0.05),rgba(197,168,128,0.05));border-color:var(--color-accent);">
-                <p id="statusBoxText" style="font-size:0.88rem;font-weight:600;color:var(--color-text-dark);">✨ Premium table reserved in Garden Terrace! Complete the form to confirm.</p>
+            <div class="zone-card" data-zone="Espresso Bar">
+                <div class="zone-emoji">☕</div>
+                <h4 class="zone-title">Espresso Bar</h4>
+                <p class="zone-desc">Counter seating facing the barista station.</p>
+                <div class="zone-tags"><span class="zone-tag green">Counter</span><span class="zone-tag orange">1-3 guests</span></div>
+            </div>
+            <div class="zone-card" data-zone="Private VIP Lounge">
+                <div class="zone-emoji">👑</div>
+                <h4 class="zone-title">Private VIP Lounge</h4>
+                <p class="zone-desc">Exclusive room for celebrations & events.</p>
+                <div class="zone-tags"><span class="zone-tag red">Premium</span><span class="zone-tag orange">8-20 guests</span></div>
             </div>
         </div>
-    </section>
+        <div class="status-bar" style="margin-bottom:2rem;"><span id="statusText">✨ Premium table reserved in Garden Terrace! Complete the form below.</span></div>
+    </div>
+</section>
 
-    <!-- Reservation Form -->
-    <section style="padding:0 0 5rem;">
-        <div class="container">
-            <div class="glow-card fade-up" style="max-width:750px;margin:0 auto;padding:3rem;">
-                <h3 class="font-serif" style="font-size:1.3rem;margin-bottom:1.5rem;color:var(--color-text-dark);">Complete Your Reservation</h3>
-                <form id="businessResForm">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
-                        <div><label class="form-label">Full Name</label><input type="text" id="resName" class="form-input" required placeholder="Your Name"></div>
-                        <div><label class="form-label">Phone Number</label><input type="tel" id="resPhone" class="form-input" required placeholder="+91 99999 99999"></div>
+<section style="padding:0 0 5rem;">
+    <div class="container">
+        <div class="card" style="max-width:750px;margin:0 auto;padding:2.5rem;overflow:visible;">
+            <h3 class="card-title" style="font-size:1.3rem;margin-bottom:1.5rem;">Complete Your Reservation</h3>
+            <form id="resForm">
+                <div class="form-row" style="margin-bottom:1rem;">
+                    <div class="form-group"><label class="form-label">Full Name</label><input type="text" id="resName" class="form-input" required placeholder="Your Name"></div>
+                    <div class="form-group"><label class="form-label">Phone</label><input type="tel" id="resPhone" class="form-input" required placeholder="+91 99999 99999"></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group"><label class="form-label">Date</label><input type="date" id="resDate" class="form-input" required></div>
+                    <div class="form-group"><label class="form-label">Time</label><input type="time" id="resTime" class="form-input" required></div>
+                    <div class="form-group"><label class="form-label">Guests</label>
+                        <select id="resGuests" class="form-input"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5-6</option><option>7-8</option><option>9-12 (VIP)</option><option>13-20 (Event)</option></select>
                     </div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
-                        <div><label class="form-label">Preferred Date</label><input type="date" id="resDate" class="form-input" required></div>
-                        <div><label class="form-label">Preferred Time</label><input type="time" id="resTime" class="form-input" required></div>
-                        <div><label class="form-label">Number of Guests</label>
-                            <select id="resGuests" class="form-input">
-                                <option>1 Guest</option>
-                                <option selected>2 Guests</option>
-                                <option>3 Guests</option>
-                                <option>4 Guests</option>
-                                <option>5-6 Guests</option>
-                                <option>7-8 Guests</option>
-                                <option>9-12 Guests (VIP)</option>
-                                <option>13-20 Guests (VIP Event)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div style="margin-bottom:1.8rem;">
-                        <label class="form-label">Special Requests / Occasion</label>
-                        <textarea id="resNotes" class="form-input" rows="3" placeholder="Birthday celebration, window seat preference, dietary requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block"><i class="fa-brands fa-whatsapp"></i> Confirm Reservation via WhatsApp</button>
-                </form>
-            </div>
+                </div>
+                <div class="form-group"><label class="form-label">Special Requests</label><textarea id="resNotes" class="form-input" rows="3" placeholder="Birthday, window seat, dietary needs..."></textarea></div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-brands fa-whatsapp"></i> Confirm via WhatsApp</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
-    <a href="https://wa.me/919999999999" target="_blank" class="floating-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i></a>
-    <button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
-    <footer class="footer"><div class="container"><div class="footer-bottom" style="border-top:none;margin-top:0;"><p>© 2026 VelvetBite Bistro. ₹7,999 Business Plan — Table Reservation Form.</p></div></div></footer>
-    <script src="app.js"></script>
+<a href="https://wa.me/919999999999" target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="back-top" id="backTop"><i class="fa-solid fa-chevron-up"></i></button>
+<footer class="footer"><div class="container"><div class="footer-bottom" style="border-top:none;margin-top:0;">© 2026 VelvetBite Bistro. Table Reservation.</div></div></footer>
+<script src="app.js"></script>
 </body>
 </html>

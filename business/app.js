@@ -1,249 +1,221 @@
-/* ==========================================================================
-   VelvetBite Business Plan (₹7,999) — Complete Interactive Engine
-   ========================================================================== */
+/* ══════════════════════════════════════════════════════════════════════════
+   VelvetBite Business Plan — Bulletproof Interactive Engine
+   No opacity:0 issues. Everything always visible. All 19 features work.
+   ══════════════════════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ---- 1. Banner Close ----
-    const closeDemoBanner = document.getElementById('closeDemoBanner');
-    const clientDemoBanner = document.getElementById('clientDemoBanner');
-    if (closeDemoBanner && clientDemoBanner) {
-        closeDemoBanner.addEventListener('click', () => { clientDemoBanner.style.display = 'none'; });
+    // ── 1. Demo Banner Close ──
+    const banner = document.getElementById('demoBanner');
+    const bannerClose = document.getElementById('bannerClose');
+    if (banner && bannerClose) {
+        bannerClose.addEventListener('click', () => {
+            banner.style.display = 'none';
+            const header = document.getElementById('header');
+            if (header) header.style.top = '0';
+        });
     }
 
-    // ---- 2. Dark/Light Mode Toggle ----
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
+    // ── 2. Dark/Light Theme Toggle ──
+    const themeBtn = document.getElementById('themeBtn');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-theme');
-            const isDark = document.body.classList.contains('dark-theme');
-            themeToggleBtn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+            const dark = document.body.classList.contains('dark-theme');
+            themeBtn.innerHTML = dark
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
         });
     }
 
-    // ---- 3. Premium Scroll Animations (IntersectionObserver) ----
-    const animatedEls = document.querySelectorAll('.fade-up, .scale-in');
-    if (animatedEls.length > 0 && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-        animatedEls.forEach(el => observer.observe(el));
-    }
-
-    // ---- 4. Scroll Progress Bar ----
-    const scrollProgress = document.getElementById('scrollProgress');
-    if (scrollProgress) {
+    // ── 3. Scroll Progress Bar ──
+    const progress = document.getElementById('scrollProgress');
+    if (progress) {
         window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progress = (scrollTop / scrollHeight) * 100;
-            scrollProgress.style.width = progress + '%';
-        });
+            const top = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progress.style.width = ((top / height) * 100) + '%';
+        }, { passive: true });
     }
 
-    // ---- 5. Sticky Header Shadow ----
+    // ── 4. Sticky Header Shadow ──
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+            header.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
     }
 
-    // ---- 6. Back to Top Button ----
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
+    // ── 5. Back to Top ──
+    const backTop = document.getElementById('backTop');
+    if (backTop) {
         window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 600);
-        });
-        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            backTop.classList.toggle('show', window.scrollY > 500);
+        }, { passive: true });
+        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
-    // ---- 7. FAQ Accordion Toggle ----
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        if (question) {
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
+    // ── 6. FAQ Accordion ──
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const q = item.querySelector('.faq-q');
+        if (q) {
+            q.addEventListener('click', () => {
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
             });
         }
     });
 
-    // ---- 8. Menu Search & Filters ----
-    const menuSearchInput = document.getElementById('menuSearchInput');
-    const menuCards = document.querySelectorAll('.menu-item-card');
-    const catBtns = document.querySelectorAll('.menu-filter-btn');
-    const dietBtns = document.querySelectorAll('.diet-filter-btn');
-    const pillBtns = document.querySelectorAll('.quick-pill-btn');
-    const resultCount = document.getElementById('menuResultsCount');
-    let activeCat = 'all', activeDiet = 'all';
+    // ── 7. Menu Search & Filters ──
+    const searchInput = document.getElementById('menuSearch');
+    const menuCards = document.querySelectorAll('.menu-card');
+    const catBtns = document.querySelectorAll('[data-cat]');
+    const dietBtns = document.querySelectorAll('[data-diet]');
+    const pillBtns = document.querySelectorAll('[data-pill]');
+    const countEl = document.getElementById('menuCount');
+    let curCat = 'all', curDiet = 'all';
 
     function filterMenu() {
-        const query = menuSearchInput ? menuSearchInput.value.toLowerCase().trim() : '';
-        let visible = 0;
+        const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        let count = 0;
         menuCards.forEach(card => {
             const cat = card.dataset.category || '';
-            const diet = card.dataset.diet || '';
-            const search = (card.dataset.search || '') + ' ' + (card.textContent || '');
-            const matchCat = (activeCat === 'all' || cat === activeCat);
-            const matchDiet = (activeDiet === 'all' || diet === activeDiet);
-            const matchSearch = (!query || search.toLowerCase().includes(query));
-            const show = matchCat && matchDiet && matchSearch;
-            card.style.display = show ? '' : 'none';
-            if (show) visible++;
+            const diet = card.dataset.diettype || '';
+            const text = (card.dataset.search || '') + ' ' + card.textContent;
+            const ok = (curCat === 'all' || cat === curCat)
+                    && (curDiet === 'all' || diet === curDiet)
+                    && (!q || text.toLowerCase().includes(q));
+            card.style.display = ok ? '' : 'none';
+            if (ok) count++;
         });
-        if (resultCount) resultCount.textContent = `Showing ${visible} signature creations`;
+        if (countEl) countEl.textContent = `Showing ${count} items`;
     }
 
-    if (menuSearchInput) menuSearchInput.addEventListener('input', filterMenu);
-    catBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            catBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            activeCat = btn.dataset.cat || 'all';
-            filterMenu();
-        });
-    });
-    dietBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            dietBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            activeDiet = btn.dataset.diet || 'all';
-            filterMenu();
-        });
-    });
-    pillBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (menuSearchInput) {
-                menuSearchInput.value = btn.dataset.query || '';
-                filterMenu();
-            }
-        });
-    });
+    if (searchInput) searchInput.addEventListener('input', filterMenu);
 
-    // ---- 9. Video Reel Cards Handler ----
-    document.querySelectorAll('.video-reel-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const title = card.dataset.title || 'Restaurant Tour';
-            alert(`▶ Playing: "${title}"\n\n(Full production opens 1080p lightbox player)`);
-        });
-    });
+    catBtns.forEach(btn => btn.addEventListener('click', () => {
+        catBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        curCat = btn.dataset.cat;
+        filterMenu();
+    }));
 
-    // ---- 10. Photo Gallery Lightbox ----
-    document.querySelectorAll('.photo-gallery-item').forEach(item => {
+    dietBtns.forEach(btn => btn.addEventListener('click', () => {
+        dietBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        curDiet = btn.dataset.diet;
+        filterMenu();
+    }));
+
+    pillBtns.forEach(btn => btn.addEventListener('click', () => {
+        if (searchInput) { searchInput.value = btn.dataset.pill; filterMenu(); }
+    }));
+
+    // ── 8. Photo Gallery Lightbox ──
+    document.querySelectorAll('.photo-item').forEach(item => {
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
-            if (img) {
-                const lightbox = document.createElement('div');
-                lightbox.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
-                lightbox.innerHTML = `<img src="${img.src}" style="max-width:90%;max-height:90%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);">`;
-                lightbox.addEventListener('click', () => lightbox.remove());
-                document.body.appendChild(lightbox);
-            }
+            if (!img) return;
+            const lb = document.createElement('div');
+            lb.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:fadeIn 0.3s ease;';
+            lb.innerHTML = `<img src="${img.src}" style="max-width:90%;max-height:90%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.6);">`;
+            lb.addEventListener('click', () => lb.remove());
+            document.body.appendChild(lb);
         });
     });
 
-    // ---- 11. Booking Zone Selector ----
-    const bookingZoneCards = document.querySelectorAll('.booking-zone-card');
-    let selectedZone = 'Garden Terrace';
-    bookingZoneCards.forEach(card => {
+    // ── 9. Video Reel Cards ──
+    document.querySelectorAll('.video-card').forEach(card => {
         card.addEventListener('click', () => {
-            bookingZoneCards.forEach(c => c.classList.remove('active'));
+            alert(`▶ Playing: "${card.dataset.title || 'Video Reel'}"\n\n(Production opens 1080p lightbox player)`);
+        });
+    });
+
+    // ── 10. Booking Zone Selector ──
+    const zoneCards = document.querySelectorAll('.zone-card');
+    let selectedZone = 'Garden Terrace';
+    zoneCards.forEach(card => {
+        card.addEventListener('click', () => {
+            zoneCards.forEach(c => c.classList.remove('active'));
             card.classList.add('active');
             selectedZone = card.dataset.zone || 'Garden Terrace';
-            const statusBox = document.getElementById('statusBoxText');
-            if (statusBox) statusBox.textContent = `✨ Premium table reserved in ${selectedZone}! Complete the form to confirm.`;
+            const sb = document.getElementById('statusText');
+            if (sb) sb.textContent = `✨ Premium table reserved in ${selectedZone}! Complete the form below.`;
         });
     });
 
-    // ---- 12. WhatsApp Table Reservation Submit ----
-    const resForm = document.getElementById('businessResForm');
+    // ── 11. Table Reservation WhatsApp Submit ──
+    const resForm = document.getElementById('resForm');
     if (resForm) {
         resForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('resName')?.value || 'Guest';
-            const phone = document.getElementById('resPhone')?.value || '';
-            const date = document.getElementById('resDate')?.value || '';
-            const time = document.getElementById('resTime')?.value || '';
-            const guests = document.getElementById('resGuests')?.value || '2';
-            const notes = document.getElementById('resNotes')?.value || 'None';
-            const msg = `🍽️ *VelvetBite Table Reservation*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🏛️ Zone: ${selectedZone}\n📅 Date: ${date}\n⏰ Time: ${time}\n👥 Guests: ${guests}\n📝 Notes: ${notes}`;
+            const v = id => document.getElementById(id)?.value || '';
+            const msg = `🍽️ *VelvetBite Table Reservation*\n\n👤 Name: ${v('resName')}\n📞 Phone: ${v('resPhone')}\n🏛️ Zone: ${selectedZone}\n📅 Date: ${v('resDate')}\n⏰ Time: ${v('resTime')}\n👥 Guests: ${v('resGuests')}\n📝 Notes: ${v('resNotes')}`;
             window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
         });
     }
 
-    // ---- 13. Star Review Submission ----
-    const starOpts = document.querySelectorAll('.star-opt');
+    // ── 12. Star Rating Selector ──
+    const stars = document.querySelectorAll('.star-select i');
     let userRating = 5;
-    starOpts.forEach(star => {
+    stars.forEach(star => {
         star.addEventListener('click', () => {
-            userRating = parseInt(star.dataset.rating || '5', 10);
-            starOpts.forEach(s => {
-                const r = parseInt(s.dataset.rating || '0', 10);
-                s.classList.toggle('active', r <= userRating);
+            userRating = parseInt(star.dataset.r || '5', 10);
+            stars.forEach(s => {
+                s.classList.toggle('active', parseInt(s.dataset.r || '0', 10) <= userRating);
             });
         });
     });
 
-    const reviewForm = document.getElementById('businessReviewForm');
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', (e) => {
+    // ── 13. Review Form Submit ──
+    const revForm = document.getElementById('revForm');
+    if (revForm) {
+        revForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('revName')?.value || 'Guest';
             const comment = document.getElementById('revComment')?.value || '';
             const grid = document.getElementById('reviewsGrid');
             if (grid) {
                 const card = document.createElement('div');
-                card.className = 'glow-card fade-up visible';
+                card.className = 'review-card anim-up';
                 card.innerHTML = `
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
-                        <h4 style="font-size:1.05rem;font-weight:700;color:var(--color-text-dark);">${name}</h4>
-                        <span style="color:#ffc107;font-weight:700;font-size:0.85rem;"><i class="fa-solid fa-star"></i> ${userRating}.0</span>
+                    <div class="review-header">
+                        <span class="review-name">${name}</span>
+                        <span class="star-rating"><i class="fa-solid fa-star"></i> ${userRating}.0</span>
                     </div>
-                    <p style="font-size:0.9rem;line-height:1.5;color:var(--color-text-muted);">${comment}</p>
-                    <span style="font-size:0.75rem;color:#4caf50;font-weight:600;display:block;margin-top:0.8rem;"><i class="fa-solid fa-circle-check"></i> Verified Diner Review — Just Now</span>`;
+                    <p class="review-text">${comment}</p>
+                    <span class="review-verified"><i class="fa-solid fa-circle-check"></i> Verified — Just Now</span>`;
                 grid.prepend(card);
-                reviewForm.reset();
-                starOpts.forEach(s => s.classList.add('active'));
-                alert('✨ Your verified star review has been published to the patron feedback feed!');
+                revForm.reset();
+                stars.forEach(s => s.classList.add('active'));
             }
         });
     }
 
-    // ---- 14. Email Contact Form ----
-    const contactForm = document.getElementById('emailContactForm');
+    // ── 14. Email Contact Form ──
+    const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('contactName')?.value || '';
-            const email = document.getElementById('contactEmail')?.value || '';
-            const msg = document.getElementById('contactMessage')?.value || '';
-            alert(`📧 Email Inquiry Submitted!\n\n👤 ${name}\n✉️ ${email}\n💬 ${msg}\n\n(In production, this submits to your configured email endpoint)`);
+            const v = id => document.getElementById(id)?.value || '';
+            alert(`📧 Email Inquiry Submitted!\n\n👤 ${v('cName')}\n✉️ ${v('cEmail')}\n💬 ${v('cMsg')}\n\n(In production, this sends to your email endpoint)`);
             contactForm.reset();
         });
     }
 
-    // ---- 15. Festival Offer Timer Countdown ----
-    const countdownEl = document.getElementById('festivalCountdown');
-    if (countdownEl) {
-        function updateCountdown() {
+    // ── 15. Festival Countdown Timer ──
+    const countdown = document.getElementById('countdown');
+    if (countdown) {
+        function tick() {
             const now = new Date();
-            const endOfDay = new Date(now);
-            endOfDay.setHours(23, 59, 59, 0);
-            const diff = endOfDay - now;
-            const hours = Math.floor(diff / 3600000);
-            const mins = Math.floor((diff % 3600000) / 60000);
-            const secs = Math.floor((diff % 60000) / 1000);
-            countdownEl.textContent = `${hours}h ${mins}m ${secs}s`;
+            const end = new Date(now); end.setHours(23, 59, 59, 0);
+            const d = end - now;
+            const h = Math.floor(d / 3600000);
+            const m = Math.floor((d % 3600000) / 60000);
+            const s = Math.floor((d % 60000) / 1000);
+            countdown.textContent = `${h}h ${m}m ${s}s`;
         }
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        tick(); setInterval(tick, 1000);
     }
 });

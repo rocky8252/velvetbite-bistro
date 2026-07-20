@@ -3,299 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital QR Menu | VelvetBite Bistro — Unlimited Categories & Items</title>
-    <meta name="description" content="Explore 30+ signature items across 6 unlimited categories. Filter by Veg, Non-Veg, search instantly, and order via WhatsApp with 0% commission.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <title>Digital QR Menu | VelvetBite Bistro — 30+ Items, 6 Categories</title>
+    <meta name="description" content="Browse 30+ artisan items across 6 unlimited categories. Filter by Veg/Vegan/Non-Veg, search instantly, order via WhatsApp.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <div class="client-demo-banner" id="clientDemoBanner">
-        <div class="demo-banner-content">
-            <span class="demo-badge">QR DIGITAL MENU</span>
-            <p class="demo-text">💡 <strong>Owner Preview:</strong> <strong>Unlimited Categories, Unlimited Items, Search, Filters, Star Ratings & WhatsApp Ordering</strong> — all included!</p>
-        </div>
-        <button class="demo-banner-close" id="closeDemoBanner">&times;</button>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="demo-banner" id="demoBanner">
+    <div style="display:flex;align-items:center;"><span class="demo-banner-badge">QR MENU</span><span>💡 <strong>Unlimited Categories & Items, Search, Diet Filters, Star Ratings, WhatsApp Ordering</strong></span></div>
+    <button id="bannerClose">&times;</button>
+</div>
+<header class="header" id="header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">VelvetBite Bistro<span>.</span></a>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="menu.html" class="nav-link active">Digital Menu</a>
+            <a href="gallery.html" class="nav-link">Gallery & Reels</a>
+            <a href="reservation.html" class="nav-link">Table Booking</a>
+            <a href="reviews.html" class="nav-link">Reviews</a>
+        </nav>
+        <div class="nav-actions"><button id="themeBtn" class="theme-btn"><i class="fa-solid fa-moon"></i></button></div>
     </div>
+</header>
 
-    <header class="header" id="header">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">VelvetBite Bistro<span class="logo-dot">.</span></a>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="menu.html" class="nav-link active">Digital Menu</a>
-                <a href="gallery.html" class="nav-link">Gallery & Reels</a>
-                <a href="reservation.html" class="nav-link">Table Booking</a>
-                <a href="reviews.html" class="nav-link">Reviews</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="nav-actions">
-                <button id="themeToggleBtn" class="theme-toggle-btn"><i class="fa-solid fa-moon"></i></button>
+<section class="hero" style="padding:3rem 0 2rem;">
+    <div class="container" style="text-align:center;">
+        <div class="section-label"><i class="fa-solid fa-qrcode"></i> QR Code Digital Menu</div>
+        <h1 class="section-title font-serif" style="font-size:2.8rem;">Our Culinary Catalog</h1>
+        <p class="section-desc" style="margin:0 auto;">30+ artisan creations across 6 categories. Scan QR at your table or browse below.</p>
+    </div>
+</section>
+
+<section style="padding:1rem 0 5rem;">
+    <div class="container">
+        <!-- Filter Panel -->
+        <div class="card" style="padding:1.8rem;margin-bottom:2.5rem;overflow:visible;">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="menuSearch" placeholder="Search matcha, espresso, pizza, salmon, steak, cheesecake...">
+            </div>
+            <div class="pills-row">
+                <span class="pill-label"><i class="fa-solid fa-fire-flame-curved"></i> Popular:</span>
+                <button class="pill-btn" data-pill="Matcha">🍵 Matcha</button>
+                <button class="pill-btn" data-pill="Espresso">☕ Espresso</button>
+                <button class="pill-btn" data-pill="Pizza">🍕 Pizza</button>
+                <button class="pill-btn" data-pill="Salmon">🍣 Salmon</button>
+                <button class="pill-btn" data-pill="Steak">🥩 Steak</button>
+                <button class="pill-btn" data-pill="Cheesecake">🍰 Cheesecake</button>
+            </div>
+            <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;">
+                <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+                    <button class="filter-btn active" data-cat="all"><i class="fa-solid fa-border-all"></i> All (30)</button>
+                    <button class="filter-btn" data-cat="matcha"><i class="fa-solid fa-leaf"></i> Matcha (5)</button>
+                    <button class="filter-btn" data-cat="coffee"><i class="fa-solid fa-mug-hot"></i> Coffee (5)</button>
+                    <button class="filter-btn" data-cat="starters"><i class="fa-solid fa-bowl-food"></i> Starters (5)</button>
+                    <button class="filter-btn" data-cat="mains"><i class="fa-solid fa-pizza-slice"></i> Mains (5)</button>
+                    <button class="filter-btn" data-cat="desserts"><i class="fa-solid fa-cake-candles"></i> Desserts (5)</button>
+                    <button class="filter-btn" data-cat="drinks"><i class="fa-solid fa-wine-glass"></i> Drinks (5)</button>
+                </div>
+                <div style="display:flex;gap:0.4rem;">
+                    <button class="filter-btn active" data-diet="all">All Diets</button>
+                    <button class="filter-btn" data-diet="veg"><i class="fa-solid fa-circle" style="color:#43a047;font-size:0.5rem;"></i> Veg</button>
+                    <button class="filter-btn" data-diet="vegan"><i class="fa-solid fa-seedling" style="color:#7cb342;"></i> Vegan</button>
+                    <button class="filter-btn" data-diet="nonveg"><i class="fa-solid fa-drumstick-bite" style="color:#ef5350;"></i> Non-Veg</button>
+                </div>
+            </div>
+            <div style="margin-top:0.8rem;font-size:0.78rem;color:var(--text-muted);" id="menuCount">Showing 30 items</div>
+        </div>
+
+        <!-- 30 Menu Items -->
+        <div class="grid-3" id="menuGrid">
+
+            <!-- MATCHA (5) -->
+            <div class="card menu-card" data-category="matcha" data-diettype="veg" data-search="ceremonial matcha shot uji green tea">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&auto=format&fit=crop&q=60" alt="Ceremonial Matcha"><span class="price-tag">₹250</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Ceremonial Matcha Shot</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Stoneground Uji green tea whisked in a traditional chawan bowl.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 3 min • 45 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="matcha" data-diettype="veg" data-search="iced matcha latte oat milk cold">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400&auto=format&fit=crop&q=60" alt="Iced Matcha Latte"><span class="price-tag">₹320</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Iced Matcha Oat Latte</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">Chilled ceremonial matcha with organic oat milk over ice.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 4 min • 180 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="matcha" data-diettype="veg" data-search="hojicha roasted tea japanese warm">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=400&auto=format&fit=crop&q=60" alt="Hojicha Latte"><span class="price-tag">₹290</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Roasted Hojicha Latte</h3><span class="star-rating">★ 4.7</span></div><p class="card-text">Slow-roasted Japanese hojicha with steamed milk and caramel notes.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 5 min • 160 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="matcha" data-diettype="veg" data-search="matcha tiramisu dessert cake">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&auto=format&fit=crop&q=60" alt="Matcha Tiramisu"><span class="price-tag">₹380</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Matcha Tiramisu</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Mascarpone cream, matcha-soaked ladyfingers, cocoa dusting.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 2 min • 350 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="matcha" data-diettype="veg" data-search="matcha affogato ice cream espresso">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&auto=format&fit=crop&q=60" alt="Matcha Affogato"><span class="price-tag">₹340</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Matcha Affogato</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">Vanilla gelato drowned in a hot double-shot matcha pour.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 3 min • 280 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+
+            <!-- COFFEE (5) -->
+            <div class="card menu-card" data-category="coffee" data-diettype="vegan" data-search="single origin espresso colombian arabica">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&auto=format&fit=crop&q=60" alt="Espresso"><span class="price-tag">₹220</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Single-Origin Espresso</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Double-shot Colombian Supremo with rich chocolate notes.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 3 min • 10 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="coffee" data-diettype="vegan" data-search="cold brew iced coffee 18 hour">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&auto=format&fit=crop&q=60" alt="Cold Brew"><span class="price-tag">₹320</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">18-Hour Cold Brew</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">Slow-steeped Colombian beans over block ice with citrus finish.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 2 min • 15 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="coffee" data-diettype="veg" data-search="vanilla latte oat milk warm espresso">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&auto=format&fit=crop&q=60" alt="Vanilla Latte"><span class="price-tag">₹350</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Madagascar Vanilla Latte</h3><span class="star-rating">★ 4.7</span></div><p class="card-text">Double espresso with steamed oat milk and natural vanilla pod syrup.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 4 min • 220 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="coffee" data-diettype="veg" data-search="caramel macchiato sweet espresso foam">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&auto=format&fit=crop&q=60" alt="Caramel Macchiato"><span class="price-tag">₹380</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Salted Caramel Macchiato</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">Layered espresso, steamed milk, vanilla, salted caramel drizzle.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 5 min • 310 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="coffee" data-diettype="vegan" data-search="pour over filter drip ethiopian">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&auto=format&fit=crop&q=60" alt="Pour Over"><span class="price-tag">₹280</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Ethiopian Pour Over</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Hand-poured Yirgacheffe with floral, blueberry, jasmine notes.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 6 min • 5 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
+            </div>
+
+            <!-- STARTERS (5) -->
+            <div class="card menu-card" data-category="starters" data-diettype="nonveg" data-search="smoked salmon avocado toast sourdough">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&auto=format&fit=crop&q=60" alt="Salmon Toast"><span class="price-tag">₹520</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Smoked Salmon Avo Toast</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Norwegian salmon on avocado sourdough with capers & dill.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 8 min • 380 kcal</span><span class="diet-tag nonveg">Non-Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="starters" data-diettype="vegan" data-search="truffle edamame soy beans japanese">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1543339318-b43dc53e19b3?w=400&auto=format&fit=crop&q=60" alt="Edamame"><span class="price-tag">₹350</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Truffle Edamame</h3><span class="star-rating">★ 4.7</span></div><p class="card-text">Steamed soy beans tossed in garlic truffle butter, Maldon salt.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 6 min • 220 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="starters" data-diettype="nonveg" data-search="chicken gyoza dumpling japanese fried">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&auto=format&fit=crop&q=60" alt="Gyoza"><span class="price-tag">₹420</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Pan-Fried Chicken Gyoza</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">6-piece crispy-bottom dumplings with ponzu dipping sauce.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 10 min • 310 kcal</span><span class="diet-tag nonveg">Non-Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="starters" data-diettype="veg" data-search="bruschetta tomato basil bread italian">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400&auto=format&fit=crop&q=60" alt="Bruschetta"><span class="price-tag">₹320</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Classic Italian Bruschetta</h3><span class="star-rating">★ 4.6</span></div><p class="card-text">Grilled ciabatta, diced heirloom tomatoes, basil, balsamic glaze.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 7 min • 250 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="starters" data-diettype="nonveg" data-search="prawn tempura shrimp crispy seafood">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&auto=format&fit=crop&q=60" alt="Tempura"><span class="price-tag">₹580</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Tiger Prawn Tempura</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">5-piece crispy tiger prawns with wasabi mayo & pickled ginger.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 12 min • 340 kcal</span><span class="diet-tag nonveg">Non-Veg</span></div></div>
+            </div>
+
+            <!-- MAINS (5) -->
+            <div class="card menu-card" data-category="mains" data-diettype="nonveg" data-search="wagyu ribeye steak A5 japanese beef">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&auto=format&fit=crop&q=60" alt="Wagyu"><span class="price-tag">₹2,800</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Seared Wagyu Ribeye A5</h3><span class="star-rating">★ 5.0</span></div><p class="card-text">Grade A5 Japanese Wagyu with micro herbs, aged balsamic glaze.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 18 min • 620 kcal</span><span class="diet-tag nonveg">Non-Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="mains" data-diettype="veg" data-search="truffle mushroom pizza woodfired sourdough">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=400&auto=format&fit=crop&q=60" alt="Pizza"><span class="price-tag">₹820</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Truffle Mushroom Pizza</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Wood-fired sourdough, fior di latte, porcini, white truffle oil.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 10 min • 580 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="mains" data-diettype="nonveg" data-search="lobster tail butter seafood luxury">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=400&auto=format&fit=crop&q=60" alt="Lobster"><span class="price-tag">₹2,100</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Atlantic Lobster Tail</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Butter poached lobster, sweet corn puree, saffron emulsion.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 20 min • 480 kcal</span><span class="diet-tag nonveg">Non-Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="mains" data-diettype="veg" data-search="truffle risotto arborio parmesan italian">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=400&auto=format&fit=crop&q=60" alt="Risotto"><span class="price-tag">₹750</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Black Truffle Risotto</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">Creamy arborio rice, shaved black truffle, aged Parmigiano.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 15 min • 520 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="mains" data-diettype="nonveg" data-search="grilled chicken breast herb lemon">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=400&auto=format&fit=crop&q=60" alt="Chicken"><span class="price-tag">₹680</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Herb-Grilled Chicken</h3><span class="star-rating">★ 4.7</span></div><p class="card-text">Free-range chicken, rosemary-lemon marinade, roasted vegetables.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 16 min • 420 kcal</span><span class="diet-tag nonveg">Non-Veg</span></div></div>
+            </div>
+
+            <!-- DESSERTS (5) -->
+            <div class="card menu-card" data-category="desserts" data-diettype="veg" data-search="basque burnt cheesecake caramel custard">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?w=400&auto=format&fit=crop&q=60" alt="Cheesecake"><span class="price-tag">₹380</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Basque Burnt Cheesecake</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Crustless high-baked cheesecake, caramelized top, custard center.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 2 min • 420 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="desserts" data-diettype="veg" data-search="chocolate lava cake molten fondant">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&auto=format&fit=crop&q=60" alt="Lava Cake"><span class="price-tag">₹420</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Molten Chocolate Lava</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Belgian dark chocolate fondant with vanilla bean ice cream.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 12 min • 480 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="desserts" data-diettype="veg" data-search="creme brulee pistachio french custard">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=400&auto=format&fit=crop&q=60" alt="Crème Brûlée"><span class="price-tag">₹360</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Pistachio Crème Brûlée</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">French custard infused with Sicilian pistachio, caramelized crust.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 3 min • 350 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="desserts" data-diettype="veg" data-search="souffle pancake fluffy japanese">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=400&auto=format&fit=crop&q=60" alt="Soufflé Pancakes"><span class="price-tag">₹450</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Japanese Soufflé Pancakes</h3><span class="star-rating">★ 5.0</span></div><p class="card-text">Cloud-like pancakes, whipped cream, maple syrup, fresh berries.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 15 min • 520 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="desserts" data-diettype="veg" data-search="almond croissant french pastry baked">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=400&auto=format&fit=crop&q=60" alt="Croissant"><span class="price-tag">₹280</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Almond Croissant</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">Double-baked flaky pastry, sweet almond frangipane filling.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 2 min • 320 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+
+            <!-- DRINKS (5) -->
+            <div class="card menu-card" data-category="drinks" data-diettype="veg" data-search="smoked negroni gin cocktail craft">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&auto=format&fit=crop&q=60" alt="Negroni"><span class="price-tag">₹550</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Smoked Rosemary Negroni</h3><span class="star-rating">★ 4.9</span></div><p class="card-text">Artisanal gin, torched rosemary, Campari, sweet vermouth.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 5 min • 180 kcal</span><span style="font-size:0.65rem;font-weight:700;color:var(--accent-gold);"><i class="fa-solid fa-martini-glass-citrus"></i> Craft</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="drinks" data-diettype="veg" data-search="mango lassi smoothie indian yogurt">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&auto=format&fit=crop&q=60" alt="Mango Lassi"><span class="price-tag">₹250</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Alphonso Mango Lassi</h3><span class="star-rating">★ 4.7</span></div><p class="card-text">Alphonso mango pulp blended with yogurt and cardamom.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 3 min • 280 kcal</span><span class="diet-tag veg">Veg</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="drinks" data-diettype="vegan" data-search="watermelon mint cooler juice fresh">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?w=400&auto=format&fit=crop&q=60" alt="Watermelon Cooler"><span class="price-tag">₹220</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Watermelon Mint Cooler</h3><span class="star-rating">★ 4.6</span></div><p class="card-text">Fresh watermelon with crushed mint and lime splash.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 3 min • 90 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="drinks" data-diettype="vegan" data-search="berry smoothie bowl acai blueberry">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1502741224143-90386d7f8c82?w=400&auto=format&fit=crop&q=60" alt="Berry Smoothie"><span class="price-tag">₹350</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Berry Smoothie Bowl</h3><span class="star-rating">★ 4.8</span></div><p class="card-text">Açaí, blueberry, strawberry blend with granola & chia.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 5 min • 320 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
+            </div>
+            <div class="card menu-card" data-category="drinks" data-diettype="vegan" data-search="sparkling lemonade elderflower bubbly">
+                <div class="card-img"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=60" alt="Sparkling Lemonade"><span class="price-tag">₹280</span></div>
+                <div class="card-body"><div style="display:flex;justify-content:space-between;align-items:center;"><h3 class="card-title">Elderflower Sparkling Lemonade</h3><span class="star-rating">★ 4.7</span></div><p class="card-text">Bubbly lemonade with elderflower cordial and crushed ice.</p><div class="card-meta"><span class="card-meta-info"><i class="fa-regular fa-clock"></i> 3 min • 110 kcal</span><span class="diet-tag vegan">Vegan</span></div></div>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- Hero -->
-    <section class="hero-section" style="padding:3.5rem 0 2.5rem;">
-        <div class="container text-center">
-            <span class="section-tag fade-up"><i class="fa-solid fa-qrcode"></i> QR Code Digital Menu — Unlimited Items</span>
-            <h1 class="font-serif hero-title fade-up delay-1" style="font-size:2.8rem;">Our Culinary Catalog</h1>
-            <p class="section-subtitle fade-up delay-2">30+ artisan creations across 6 unlimited categories. Scan QR at your table or browse below.</p>
-        </div>
-    </section>
-
-    <!-- Menu Content -->
-    <section style="padding:1rem 0 5rem;">
-        <div class="container">
-            <!-- Filter Panel -->
-            <div class="glow-card fade-up" style="margin-bottom:3rem;">
-                <div style="position:relative;margin-bottom:1.2rem;">
-                    <i class="fa-solid fa-magnifying-glass" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--color-primary);font-size:1.1rem;"></i>
-                    <input type="text" id="menuSearchInput" class="form-input" style="padding-left:3.2rem;border-radius:50px;" placeholder="Search matcha, espresso, pizza, salmon, steak, cheesecake...">
-                </div>
-                <div class="search-suggestions-row" style="margin-bottom:1.2rem;">
-                    <span class="suggestion-label"><i class="fa-solid fa-fire-flame-curved"></i> Popular:</span>
-                    <button type="button" class="quick-pill-btn" data-query="Matcha">🍵 Matcha</button>
-                    <button type="button" class="quick-pill-btn" data-query="Espresso">☕ Espresso</button>
-                    <button type="button" class="quick-pill-btn" data-query="Pizza">🍕 Pizza</button>
-                    <button type="button" class="quick-pill-btn" data-query="Salmon">🍣 Salmon</button>
-                    <button type="button" class="quick-pill-btn" data-query="Steak">🥩 Steak</button>
-                    <button type="button" class="quick-pill-btn" data-query="Cheesecake">🍰 Cheesecake</button>
-                </div>
-                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-                    <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
-                        <button class="menu-filter-btn active" data-cat="all"><i class="fa-solid fa-border-all"></i> All (30)</button>
-                        <button class="menu-filter-btn" data-cat="matcha"><i class="fa-solid fa-leaf"></i> Matcha (5)</button>
-                        <button class="menu-filter-btn" data-cat="coffee"><i class="fa-solid fa-mug-hot"></i> Coffee (5)</button>
-                        <button class="menu-filter-btn" data-cat="starters"><i class="fa-solid fa-bowl-food"></i> Starters (5)</button>
-                        <button class="menu-filter-btn" data-cat="mains"><i class="fa-solid fa-pizza-slice"></i> Mains (5)</button>
-                        <button class="menu-filter-btn" data-cat="desserts"><i class="fa-solid fa-cake-candles"></i> Desserts (5)</button>
-                        <button class="menu-filter-btn" data-cat="drinks"><i class="fa-solid fa-wine-glass"></i> Drinks (5)</button>
-                    </div>
-                    <div style="display:flex;gap:0.4rem;">
-                        <button class="diet-filter-btn active" data-diet="all">All Diets</button>
-                        <button class="diet-filter-btn" data-diet="veg"><i class="fa-solid fa-circle" style="color:#4caf50;font-size:0.6rem;"></i> Veg</button>
-                        <button class="diet-filter-btn" data-diet="vegan"><i class="fa-solid fa-seedling" style="color:#8bc34a;font-size:0.7rem;"></i> Vegan</button>
-                        <button class="diet-filter-btn" data-diet="nonveg"><i class="fa-solid fa-drumstick-bite" style="color:#ef5350;font-size:0.7rem;"></i> Non-Veg</button>
-                    </div>
-                </div>
-                <div style="margin-top:1rem;font-size:0.82rem;color:var(--color-text-muted);"><span id="menuResultsCount">Showing 30 signature creations</span></div>
-            </div>
-
-            <!-- 30 Items Grid -->
-            <div class="cards-grid-3" id="businessMenuGrid">
-
-                <!-- ─── MATCHA (5) ─── -->
-                <div class="glow-card menu-item-card fade-up" data-category="matcha" data-diet="veg" data-search="ceremonial matcha shot uji green tea traditional japanese">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&auto=format&fit=crop&q=60" alt="Ceremonial Matcha"><span class="special-price-badge">₹250</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Ceremonial Matcha Shot</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Stoneground Uji green tea whisked in a traditional chawan bowl.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 3 min • 45 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="matcha" data-diet="veg" data-search="iced matcha latte oat milk cold green tea">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400&auto=format&fit=crop&q=60" alt="Iced Matcha Latte"><span class="special-price-badge">₹320</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Iced Matcha Oat Latte</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Chilled ceremonial grade matcha with creamy organic oat milk over ice.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 4 min • 180 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-2" data-category="matcha" data-diet="veg" data-search="hojicha roasted tea japanese warm">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=400&auto=format&fit=crop&q=60" alt="Hojicha Latte"><span class="special-price-badge">₹290</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Roasted Hojicha Latte</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.7</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Slow-roasted Japanese hojicha tea with steamed milk and caramel notes.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 5 min • 160 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up" data-category="matcha" data-diet="veg" data-search="matcha tiramisu dessert cake green tea">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&auto=format&fit=crop&q=60" alt="Matcha Tiramisu"><span class="special-price-badge">₹380</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Matcha Tiramisu</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Layers of mascarpone cream, matcha-soaked ladyfingers, and cocoa dusting.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 2 min • 350 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="matcha" data-diet="veg" data-search="matcha affogato ice cream espresso green tea">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&auto=format&fit=crop&q=60" alt="Matcha Affogato"><span class="special-price-badge">₹340</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Matcha Affogato</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Vanilla bean gelato drowned in a hot double-shot matcha pour.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 3 min • 280 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-
-                <!-- ─── COFFEE (5) ─── -->
-                <div class="glow-card menu-item-card fade-up" data-category="coffee" data-diet="veg" data-search="single origin espresso colombian arabica black coffee">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&auto=format&fit=crop&q=60" alt="Single Origin Espresso"><span class="special-price-badge">₹220</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Single-Origin Espresso</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Double-shot Colombian Supremo Arabica with rich chocolate notes.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 3 min • 10 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="coffee" data-diet="veg" data-search="cold brew iced coffee 18 hour steeped">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&auto=format&fit=crop&q=60" alt="Cold Brew"><span class="special-price-badge">₹320</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">18-Hour Cold Brew</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Slow-steeped Colombian beans over block ice with citrus finish.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 2 min • 15 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-2" data-category="coffee" data-diet="veg" data-search="vanilla latte oat milk warm espresso">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&auto=format&fit=crop&q=60" alt="Vanilla Oat Latte"><span class="special-price-badge">₹350</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Madagascar Vanilla Latte</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.7</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Double espresso with steamed oat milk and natural vanilla pod syrup.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 4 min • 220 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up" data-category="coffee" data-diet="veg" data-search="caramel macchiato sweet espresso foam">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&auto=format&fit=crop&q=60" alt="Caramel Macchiato"><span class="special-price-badge">₹380</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Salted Caramel Macchiato</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Layered espresso, steamed milk, vanilla syrup, and salted caramel drizzle.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 5 min • 310 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="coffee" data-diet="veg" data-search="pour over filter coffee drip ethiopian">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&auto=format&fit=crop&q=60" alt="Pour Over"><span class="special-price-badge">₹280</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Ethiopian Pour Over</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Hand-poured Yirgacheffe with floral, blueberry, and jasmine notes.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 6 min • 5 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-
-                <!-- ─── STARTERS (5) ─── -->
-                <div class="glow-card menu-item-card fade-up" data-category="starters" data-diet="nonveg" data-search="smoked salmon avocado toast sourdough brunch">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&auto=format&fit=crop&q=60" alt="Salmon Avocado Toast"><span class="special-price-badge">₹520</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Smoked Salmon Avo Toast</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Norwegian smoked salmon on crushed avocado sourdough with capers & dill.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 8 min • 380 kcal</span><span class="item-diet-badge nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="starters" data-diet="veg" data-search="truffle edamame appetizer soy beans japanese">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1543339318-b43dc53e19b3?w=400&auto=format&fit=crop&q=60" alt="Truffle Edamame"><span class="special-price-badge">₹350</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Truffle Edamame</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.7</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Steamed soy beans tossed in garlic truffle butter and Maldon sea salt.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 6 min • 220 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-2" data-category="starters" data-diet="nonveg" data-search="chicken gyoza dumpling japanese fried">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&auto=format&fit=crop&q=60" alt="Gyoza"><span class="special-price-badge">₹420</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Pan-Fried Chicken Gyoza</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">6-piece crispy-bottom Japanese dumplings with ponzu dipping sauce.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 10 min • 310 kcal</span><span class="item-diet-badge nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up" data-category="starters" data-diet="veg" data-search="bruschetta tomato basil bread italian">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400&auto=format&fit=crop&q=60" alt="Bruschetta"><span class="special-price-badge">₹320</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Classic Italian Bruschetta</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.6</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Grilled ciabatta with diced heirloom tomatoes, fresh basil, and balsamic glaze.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 7 min • 250 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="starters" data-diet="nonveg" data-search="prawn tempura shrimp crispy japanese seafood">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&auto=format&fit=crop&q=60" alt="Prawn Tempura"><span class="special-price-badge">₹580</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Tiger Prawn Tempura</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">5-piece crispy battered tiger prawns with wasabi mayo and pickled ginger.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 12 min • 340 kcal</span><span class="item-diet-badge nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span></div>
-                </div>
-
-                <!-- ─── MAINS (5) ─── -->
-                <div class="glow-card menu-item-card fade-up" data-category="mains" data-diet="nonveg" data-search="wagyu ribeye steak A5 japanese beef">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&auto=format&fit=crop&q=60" alt="Wagyu Ribeye"><span class="special-price-badge">₹2,800</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Seared Wagyu Ribeye A5</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 5.0</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Grade A5 Japanese Wagyu with micro herbs and aged balsamic glaze.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 18 min • 620 kcal</span><span class="item-diet-badge nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="mains" data-diet="veg" data-search="truffle mushroom pizza woodfired sourdough napoli">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=400&auto=format&fit=crop&q=60" alt="Truffle Pizza"><span class="special-price-badge">₹820</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Truffle Wild Mushroom Pizza</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Wood-fired sourdough, fior di latte, porcini, and white truffle oil.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 10 min • 580 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-2" data-category="mains" data-diet="nonveg" data-search="lobster tail butter poached seafood luxury">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=400&auto=format&fit=crop&q=60" alt="Lobster Tail"><span class="special-price-badge">₹2,100</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Atlantic Lobster Tail</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Butter poached lobster, sweet corn puree, and saffron emulsion.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 20 min • 480 kcal</span><span class="item-diet-badge nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up" data-category="mains" data-diet="veg" data-search="truffle risotto arborio rice parmesan italian">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=400&auto=format&fit=crop&q=60" alt="Truffle Risotto"><span class="special-price-badge">₹750</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Black Truffle Risotto</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Creamy arborio rice with shaved black truffle and aged Parmigiano.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 15 min • 520 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="mains" data-diet="nonveg" data-search="grilled chicken breast herb lemon dinner healthy">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=400&auto=format&fit=crop&q=60" alt="Herb Grilled Chicken"><span class="special-price-badge">₹680</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Herb-Grilled Chicken Breast</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.7</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Free-range chicken marinated in rosemary-lemon with roasted vegetables.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 16 min • 420 kcal</span><span class="item-diet-badge nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg</span></div>
-                </div>
-
-                <!-- ─── DESSERTS (5) ─── -->
-                <div class="glow-card menu-item-card fade-up" data-category="desserts" data-diet="veg" data-search="basque burnt cheesecake caramel custard">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?w=400&auto=format&fit=crop&q=60" alt="Basque Cheesecake"><span class="special-price-badge">₹380</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Basque Burnt Cheesecake</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Crustless high-baked cheesecake with caramelized top and custard center.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 2 min • 420 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="desserts" data-diet="veg" data-search="chocolate lava cake molten fondant warm">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&auto=format&fit=crop&q=60" alt="Chocolate Lava"><span class="special-price-badge">₹420</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Molten Chocolate Lava Cake</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Warm Belgian dark chocolate fondant with vanilla bean ice cream.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 12 min • 480 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-2" data-category="desserts" data-diet="veg" data-search="pistachio creme brulee french custard dessert">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=400&auto=format&fit=crop&q=60" alt="Crème Brûlée"><span class="special-price-badge">₹360</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Pistachio Crème Brûlée</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Classic French custard infused with Sicilian pistachio and caramelized sugar crust.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 3 min • 350 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up" data-category="desserts" data-diet="veg" data-search="souffle pancake fluffy japanese stack">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=400&auto=format&fit=crop&q=60" alt="Soufflé Pancakes"><span class="special-price-badge">₹450</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Japanese Soufflé Pancakes</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 5.0</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Cloud-like fluffy pancakes with whipped cream, maple syrup, and fresh berries.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 15 min • 520 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="desserts" data-diet="veg" data-search="almond croissant french pastry baked butter">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=400&auto=format&fit=crop&q=60" alt="Almond Croissant"><span class="special-price-badge">₹280</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Artisanal Almond Croissant</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Double-baked flaky French pastry filled with sweet almond frangipane cream.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 2 min • 320 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-
-                <!-- ─── DRINKS (5) ─── -->
-                <div class="glow-card menu-item-card fade-up" data-category="drinks" data-diet="veg" data-search="smoked negroni gin cocktail craft bar rosemary">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&auto=format&fit=crop&q=60" alt="Smoked Negroni"><span class="special-price-badge">₹550</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Smoked Rosemary Negroni</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.9</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Artisanal gin with torched rosemary, Campari, and sweet red vermouth.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 5 min • 180 kcal</span><span style="font-size:0.7rem;font-weight:700;color:var(--color-accent);"><i class="fa-solid fa-martini-glass-citrus"></i> Craft</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="drinks" data-diet="veg" data-search="mango lassi smoothie indian yogurt fresh">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&auto=format&fit=crop&q=60" alt="Mango Lassi"><span class="special-price-badge">₹250</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Alphonso Mango Lassi</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.7</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Thick Alphonso mango pulp blended with fresh yogurt and cardamom.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 3 min • 280 kcal</span><span class="item-diet-badge veg"><i class="fa-solid fa-leaf"></i> Veg</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-2" data-category="drinks" data-diet="veg" data-search="watermelon mint cooler juice fresh summer">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?w=400&auto=format&fit=crop&q=60" alt="Watermelon Cooler"><span class="special-price-badge">₹220</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Watermelon Mint Cooler</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.6</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Fresh-pressed watermelon with crushed mint and a splash of lime.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 3 min • 90 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up" data-category="drinks" data-diet="veg" data-search="berry smoothie bowl acai blueberry healthy">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1502741224143-90386d7f8c82?w=400&auto=format&fit=crop&q=60" alt="Berry Smoothie"><span class="special-price-badge">₹350</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Mixed Berry Smoothie Bowl</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.8</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Açaí, blueberry, and strawberry blend topped with granola and chia seeds.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 5 min • 320 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-                <div class="glow-card menu-item-card fade-up delay-1" data-category="drinks" data-diet="veg" data-search="sparkling lemonade elderflower bubbly refreshing">
-                    <div class="special-card-img"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=60" alt="Sparkling Lemonade"><span class="special-price-badge">₹280</span></div>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;"><h3 class="font-serif" style="font-size:1.1rem;color:var(--color-text-dark);">Elderflower Sparkling Lemonade</h3><span style="font-size:0.72rem;color:#ffc107;font-weight:700;">★ 4.7</span></div>
-                    <p style="font-size:0.82rem;line-height:1.5;color:var(--color-text-muted);margin-bottom:0.8rem;">Bubbly fresh lemonade with elderflower cordial and crushed ice.</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.72rem;font-weight:600;"><i class="fa-regular fa-clock"></i> 3 min • 110 kcal</span><span class="item-diet-badge vegan"><i class="fa-solid fa-seedling"></i> Vegan</span></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/919999999999?text=Hi,%20I%20want%20to%20order%20from%20the%20Digital%20Menu!" target="_blank" class="floating-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i></a>
-    <button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border-top:none;margin-top:0;">
-                <p>© 2026 VelvetBite Bistro. ₹7,999 Business Plan — QR Digital Menu with Unlimited Categories & Items.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="app.js"></script>
+<a href="https://wa.me/919999999999?text=Hi,%20order%20from%20Digital%20Menu!" target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="back-top" id="backTop"><i class="fa-solid fa-chevron-up"></i></button>
+<footer class="footer"><div class="container"><div class="footer-bottom" style="border-top:none;margin-top:0;">© 2026 VelvetBite Bistro. QR Digital Menu — 30+ Items, 6 Categories.</div></div></footer>
+<script src="app.js"></script>
 </body>
 </html>
