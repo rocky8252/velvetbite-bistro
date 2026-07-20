@@ -282,6 +282,104 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 6. Zen Table Booking Logic ---
+    const zenBookingForm = document.getElementById('zenBookingForm');
+    const bookingZoneCards = document.querySelectorAll('.booking-zone-card');
+    const bookZoneInput = document.getElementById('bookZone');
+    
+    const bookName = document.getElementById('bookName');
+    const bookPhone = document.getElementById('bookPhone');
+    const bookDate = document.getElementById('bookDate');
+    const bookTime = document.getElementById('bookTime');
+    const bookGuests = document.getElementById('bookGuests');
+    const bookNotes = document.getElementById('bookNotes');
+    
+    const bookingStatusText = document.getElementById('bookingStatusText');
+    const bookingStatusBox = document.getElementById('bookingStatusBox');
+
+    if (bookingZoneCards.length > 0) {
+        bookingZoneCards.forEach(card => {
+            card.addEventListener('click', () => {
+                bookingZoneCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                
+                const zoneVal = card.getAttribute('data-zone');
+                if (bookZoneInput) {
+                    bookZoneInput.value = zoneVal;
+                }
+                updateBookingStatus();
+            });
+        });
+    }
+
+    function updateBookingStatus() {
+        if (!bookingStatusText || !bookDate || !bookTime) return;
+        
+        const dateVal = bookDate.value;
+        const timeVal = bookTime.value;
+        const guestsVal = bookGuests ? bookGuests.value : '2';
+        const zoneVal = bookZoneInput ? bookZoneInput.value : 'Garden Terrace';
+
+        if (dateVal && timeVal) {
+            bookingStatusText.textContent = `✨ Tranquil table for ${guestsVal} is available in ${zoneVal} on ${dateVal} at ${timeVal}!`;
+            if (bookingStatusBox) {
+                bookingStatusBox.style.backgroundColor = 'rgba(76, 175, 80, 0.08)';
+                bookingStatusBox.style.borderColor = 'rgba(76, 175, 80, 0.15)';
+            }
+        }
+    }
+
+    if (bookDate && bookTime) {
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const yyyy = tomorrow.getFullYear();
+        const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        const dd = String(tomorrow.getDate()).padStart(2, '0');
+        bookDate.value = `${yyyy}-${mm}-${dd}`;
+        bookDate.min = `${yyyy}-${mm}-${dd}`; // Prevent past bookings
+
+        // Bind update triggers
+        [bookDate, bookTime, bookGuests].forEach(input => {
+            if (input) input.addEventListener('change', updateBookingStatus);
+        });
+
+        // Trigger initial status
+        updateBookingStatus();
+    }
+
+    if (zenBookingForm) {
+        zenBookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = bookName.value.trim();
+            const phone = bookPhone.value.trim();
+            const date = bookDate.value;
+            const time = bookTime.value;
+            const guests = bookGuests.value;
+            const zone = bookZoneInput.value;
+            const notes = bookNotes ? bookNotes.value.trim() : '';
+
+            // Construct WhatsApp Message
+            let msg = `Hi Komorebi Cafe, I'd like to reserve a table:\n\n` +
+                      `• Name: ${name}\n` +
+                      `• Phone: ${phone}\n` +
+                      `• Guests: ${guests} Person(s)\n` +
+                      `• Date: ${date}\n` +
+                      `• Time: ${time}\n` +
+                      `• Preferred Zone: ${zone}`;
+            
+            if (notes) {
+                msg += `\n• Special Request: ${notes}`;
+            }
+            msg += `\n\nPlease confirm availability. Thank you!`;
+
+            // Open WhatsApp link
+            const waUrl = `https://wa.me/919999999999?text=${encodeURIComponent(msg)}`;
+            window.open(waUrl, '_blank');
+        });
+    }
+
     // Close Demo Preview Banner Handler
     const clientDemoBanner = document.getElementById('clientDemoBanner');
     const closeDemoBanner = document.getElementById('closeDemoBanner');
